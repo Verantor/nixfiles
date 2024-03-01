@@ -23,24 +23,58 @@
     firefox
     helix
     vscode
-    pkgs.adw-gtk3
-    pkgs.gnome.gnome-tweaks
-    sunshine
-    gamescope
-    mangohud
-    goverlay
-    nil
+
+    #GNOME
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.tiling-assistant
     gnomeExtensions.forge
+    adw-gtk3
+    gnome.gnome-tweaks
+
+    #GAMING
+    sunshine
+    gamescope
+    mangohud
+    goverlay
+
+    bottles
+
+    #NIX things
+    nix-output-monitor
+
+    #TOPS
+    btop # replacement of htop/nmon
+    iotop # io monitoring
+    iftop # network monitoring
+
+    #Tools: shit
+    nmap
+    #Tools: utils
+    lsd
+
     xwaylandvideobridge
     lapce
     alejandra
     libnotify
-    bottles
-  ];
 
+    nil
+  ];
+  programs.git = {
+    enable = true;
+    userName = "Ver";
+    userEmail = "verantor@protonmail.com";
+  };
+  programs.starship = {
+    enable = true;
+    # custom settings
+    settings = {
+      add_newline = false;
+      aws.disabled = true;
+      gcloud.disabled = true;
+      line_break.disabled = true;
+    };
+  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
