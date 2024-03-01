@@ -91,13 +91,7 @@
     packages = with pkgs; [
     ];
   };
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "ver" = import ./home.nix;
-    };
-  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;

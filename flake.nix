@@ -31,6 +31,7 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
@@ -48,6 +49,15 @@
             # given the users in this list the right to specify additional substituters via:
             #    1. `nixConfig.substituters` in `flake.nix`
             nix.settings.trusted-users = ["ver"];
+          }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.ver = import ./home.nix;
+
+            home-manager.extraSpecialArgs = inputs;
           }
         ];
       };
