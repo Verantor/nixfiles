@@ -32,6 +32,8 @@
     nil
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.tiling-assistant
+    gnomeExtensions.forge
     xwaylandvideobridge
     lapce
     alejandra
