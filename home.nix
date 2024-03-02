@@ -32,6 +32,7 @@
     gnomeExtensions.tiling-assistant
     gnomeExtensions.forge
     gnomeExtensions.valent
+    gnomeExtensions.appindicator
     valent
     adw-gtk3
     gnome.gnome-tweaks
