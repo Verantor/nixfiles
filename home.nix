@@ -63,6 +63,7 @@
     libnotify
 
     nil
+    qbittorrent-qt5
   ];
   programs.git = {
     enable = true;
