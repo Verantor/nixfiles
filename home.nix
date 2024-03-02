@@ -24,16 +24,20 @@
     helix
     vscode
 
+    mullvad-vpn
+
     #GNOME
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.tiling-assistant
     gnomeExtensions.forge
+    gnomeExtensions.valent
+    valent
     adw-gtk3
     gnome.gnome-tweaks
 
     #GAMING
-    sunshine
+    #sunshine in systems
     gamescope
     mangohud
     goverlay
