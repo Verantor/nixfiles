@@ -93,7 +93,11 @@
     packages = with pkgs; [
     ];
   };
-
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
+    jetbrains-mono
+  ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
