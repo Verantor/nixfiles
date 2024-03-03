@@ -98,6 +98,10 @@
     fira-code-symbols
     jetbrains-mono
   ];
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;

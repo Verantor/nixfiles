@@ -29,7 +29,7 @@
       withVencord = true;
     })
     mullvad-vpn
-
+    blender-hip
     #GNOME
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
