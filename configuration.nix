@@ -124,6 +124,7 @@
     gamescope
     mangohud
     gamemode
+    wine
     (lutris.override {
       extraLibraries = pkgs: [
         # List library dependencies here
