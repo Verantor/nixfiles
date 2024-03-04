@@ -45,6 +45,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = ["amdgpu"];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -93,6 +94,14 @@
     packages = with pkgs; [
     ];
   };
+  hardware.opengl = {
+    # Mesa
+    enable = true;
+
+    # Vulkan
+    driSupport = true;
+    driSupport32Bit = true;
+  };
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
@@ -101,7 +110,6 @@
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
@@ -113,13 +121,21 @@
     git
     sunshine
     #  inputs.nix-software-center.packages.${system}.nix-software-center
-    bottles-unwrapped
     gamescope
     mangohud
     gamemode
-
-    libunwind
+    (lutris.override {
+      extraLibraries = pkgs: [
+        # List library dependencies here
+      ];
+    })
+    (lutris.override {
+      extraPkgs = pkgs: [
+        # List package dependencies here
+      ];
+    })
   ];
+
   programs.steam = {
     enable = true;
   };
