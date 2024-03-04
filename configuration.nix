@@ -112,7 +112,11 @@
     #  wget
     git
     sunshine
-    ##    inputs.nix-software-center.packages.${system}.nix-software-center
+    #  inputs.nix-software-center.packages.${system}.nix-software-center
+    bottles-unwrapped
+    gamescope
+    mangohud
+    gamemode
   ];
   programs.steam = {
     enable = true;

@@ -28,6 +28,7 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    anki-bin
     mullvad-vpn
     blender-hip
     #GNOME
@@ -42,12 +43,7 @@
     gnome.gnome-tweaks
 
     #GAMING
-    #sunshine in systems
-    gamescope
-    mangohud
     goverlay
-
-    bottles
 
     #NIX things
     nix-output-monitor

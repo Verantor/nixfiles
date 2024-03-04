@@ -2,7 +2,7 @@
   description = "cornflakes";
 
   inputs = {
-    #nix-software-center.url = "github:snowfallorg/nix-software-center";
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
