@@ -117,6 +117,8 @@
     gamescope
     mangohud
     gamemode
+
+    libunwind
   ];
   programs.steam = {
     enable = true;
