@@ -1,16 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
+
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+        KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
+  '';
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -45,27 +49,25 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = ["amdgpu"];
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  programs.fish.enable = true;
+  #services.xserver.videoDrivers = ["amdgpu"];
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.displayManager.sddm.wayland.enable = true;
   services.mullvad-vpn.enable = true;
-  # Configure keymap in X11
+  services.printing.enable = true;
+  services.flatpak.enable = true;
+  services.flatpak.packages = [
+    "com.spotify.Client"
+    "com.discordapp.Discord"
+  ];
   services.xserver.xkb = {
-    layout = "de";
+    layout = "us";
     variant = "";
   };
 
-  # Configure console keymap
-  console.keyMap = "de";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  hardware.bluetooth.enable = true;
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -81,15 +83,24 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  # services.openssh.enable = true;
+
+  # Configure keymap in X11
+
+  # Configure console keymap
+  console.keyMap = "us";
+
+  # Enable CUPS to print documents.
+  hardware.bluetooth.enable = true;
+  # Enable sound with pipewire.
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ver = {
     isNormalUser = true;
     description = "ver";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
     ];
@@ -101,45 +112,53 @@
     # Vulkan
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+      rocmPackages.clr.icd
+    ];
   };
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
     jetbrains-mono
   ];
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-  ];
+  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  services.flatpak.enable = true;
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     git
     sunshine
-    #  inputs.nix-software-center.packages.${system}.nix-software-center
+    nixpkgs-fmt
     gamescope
     mangohud
     gamemode
     wine
-    (lutris.override {
-      extraLibraries = pkgs: [
-        # List library dependencies here
-      ];
-    })
-    (lutris.override {
-      extraPkgs = pkgs: [
-        # List package dependencies here
-      ];
-    })
+    vulkan-tools
+    just
+    tio
   ];
 
+  programs.virt-manager.enable = true;
+  programs.fish.enable = true;
   programs.steam = {
     enable = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          gamescope
+        ];
+    };
   };
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged
+    # programs here, NOT in environment.systemPackages
+  ];
+
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
@@ -151,28 +170,31 @@
     dates = "09:00";
     randomizedDelaySec = "45min";
   };
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged
-    # programs here, NOT in environment.systemPackages
-  ];
+
   virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   nixpkgs.overlays = [
     (final: prev: {
-      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
-        mutter = gnomePrev.mutter.overrideAttrs (old: {
-          src = pkgs.fetchgit {
-            url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-            # GNOME 45: triple-buffering-v4-45
-            rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
-            sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
-          };
-        });
-      });
+      nixpkgs.config.packageOverrides = pkgs: {
+        mesa =
+          (pkgs.mesa.override {
+            driDrivers = [ ];
+          }).overrideAttrs (attrs: {
+            name = "mesa-git";
+            src = inputs.mesa-git;
+          });
+      };
     })
   ];
+
+  security.wrappers.sunshine = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_admin+p";
+    source = "${pkgs.sunshine}/bin/sunshine";
+  };
+  services.avahi.publish.userServices = true;
+  boot.kernelModules = [ "uinput" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -184,12 +206,9 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 47984 47989 48010 ];
+  networking.firewall.allowedUDPPorts = [ 47998 47999 48000 48002 48010 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -201,5 +220,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  boot.loader.systemd-boot.configurationLimit = 10;
+  # boot.loader.grub.configurationLimit = 10;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+  nix.settings.auto-optimise-store = true;
 }

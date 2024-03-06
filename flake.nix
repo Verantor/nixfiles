@@ -2,7 +2,11 @@
   description = "cornflakes";
 
   inputs = {
-    nix-software-center.url = "github:snowfallorg/nix-software-center";
+    mesa-git = {
+      url = "git+https://gitlab.freedesktop.org/mesa/mesa?ref=main";
+      flake = false;
+    };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,39 +33,43 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
   };
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations = {
-      who = lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        inherit system;
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , nix-flatpak
+    , ...
+    } @ inputs:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations = {
+        who = lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          inherit system;
+          modules = [
+            ./configuration.nix
+            inputs.home-manager.nixosModules.default
+            nix-flatpak.nixosModules.nix-flatpak
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-            home-manager.users.ver = import ./home.nix;
+              home-manager.users.ver = import ./home.nix;
 
-            home-manager.extraSpecialArgs = inputs;
-          }
-          {
-            # given the users in this list the right to specify additional substituters via:
-            #    1. `nixConfig.substituters` in `flake.nix`
-            nix.settings.trusted-users = ["ver"];
-          }
-        ];
+              home-manager.extraSpecialArgs = inputs;
+            }
+            {
+              # given the users in this list the right to specify additional substituters via:
+              #    1. `nixConfig.substituters` in `flake.nix`
+              nix.settings.trusted-users = [ "ver" ];
+            }
+          ];
+        };
       };
     };
-  };
 }
