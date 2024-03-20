@@ -2,10 +2,6 @@
   description = "cornflakes";
 
   inputs = {
-    mesa-git = {
-      url = "git+https://gitlab.freedesktop.org/mesa/mesa?ref=main";
-      flake = false;
-    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -47,11 +43,11 @@
     in
     {
       nixosConfigurations = {
-        who = lib.nixosSystem {
+        main = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           inherit system;
           modules = [
-            ./configuration.nix
+            ./hosts/main/configuration.nix
             inputs.home-manager.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
@@ -64,10 +60,16 @@
               home-manager.extraSpecialArgs = inputs;
             }
             {
-              # given the users in this list the right to specify additional substituters via:
-              #    1. `nixConfig.substituters` in `flake.nix`
+
               nix.settings.trusted-users = [ "ver" ];
             }
+          ];
+        };
+        iso = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/iso/configuration.nix
+
           ];
         };
       };

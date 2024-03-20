@@ -32,12 +32,12 @@
     blender-hip
 
     #GNOME
-    #gnomeExtensions.blur-my-shell
-    #gnomeExtensions.dash-to-dock
-    #gnomeExtensions.tiling-assistant
-    #gnomeExtensions.forge
-    #gnomeExtensions.valent
-    #gnomeExtensions.appindicator
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.tiling-assistant
+    gnomeExtensions.forge
+    gnomeExtensions.valent
+    gnomeExtensions.appindicator
     valent
     adw-gtk3
     gnome.gnome-tweaks
@@ -60,7 +60,7 @@
     nmap
     #Tools: utils
     lsd
-
+    partition-manager
     xwaylandvideobridge
     lapce
     alejandra

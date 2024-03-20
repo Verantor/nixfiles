@@ -11,7 +11,7 @@ set shell := ["bash", "-c"]
 
 
 up:
-  nix flake update
+  sudo nixos-rebuild switch --upgrade --flake .#who |& nom
 
 # Update specific input
 # Usage: just upp nixpkgs
@@ -20,8 +20,10 @@ history:
   nix profile history --profile /nix/var/nix/profiles/system
 
 rb:
-  sudo nixos-rebuild switch --flake .#who |& nom
+  sudo nixos-rebuild switch --flake .#main |& nom
 
+iso:
+  nix build .#nixosConfigurations.iso.config.system.build.isoImage
 
 clean:
   # remove all generations older than 7 days
