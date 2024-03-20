@@ -8,7 +8,6 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
   ];
 
   services.udev.extraRules = ''
@@ -61,7 +60,12 @@
   services.flatpak.enable = true;
   services.flatpak.packages = [
     "com.spotify.Client"
-    "com.discordapp.Discord"
+    "com.prusa3d.PrusaSlicer"
+   # "md.obsidian.Obsidian"
+    "codes.merritt.Nyrna"
+    "org.pipewire.Helvum"
+    "org.freecadweb.FreeCAD"
+    "org.raspberrypi.rpi-imager"
   ];
   services.xserver.xkb = {
     layout = "us";
@@ -128,8 +132,9 @@
     jetbrains-mono
   ];
   environment.variables.AMD_VULKAN_ICD = "RADV";
-  services.ollama.enable = true;
-  services.ollama.acceleration = "rocm";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #services.ollama.enable = true;
+  #services.ollama.acceleration = "rocm";
   programs.steam.gamescopeSession.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -149,9 +154,20 @@
     tio
     vesktop
     bottles
-    ollama
+    cargo
+    rustc
+    rust-analyzer
+    #ollama
     alvr
-
+    obsidian
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        jnoortheen.nix-ide
+        skellock.just
+        enkia.tokyo-night
+        usernamehw.errorlens
+      ];
+    })
   ];
   programs.adb.enable = true;
   programs.virt-manager.enable = true;
@@ -215,17 +231,20 @@
       from = 1714;
       to = 1764;
     }
+    57621
   ];
   networking.firewall.allowedUDPPorts = [
-    47998
-    47999
-    48000
+    {
+      from = 47998;
+      to = 48000;
+    }
     48002
     48010
     {
       from = 1714;
       to = 1764;
     }
+    5353
   ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;

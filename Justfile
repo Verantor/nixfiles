@@ -11,7 +11,7 @@ set shell := ["bash", "-c"]
 
 
 up:
-  sudo nixos-rebuild switch --upgrade --flake .#who |& nom
+  sudo nixos-rebuild switch --upgrade --flake .#main |& nom
 
 # Update specific input
 # Usage: just upp nixpkgs
@@ -38,9 +38,12 @@ gitgc:
   git reflog expire --expire-unreachable=now --all
   git gc --prune=now
 
+bd1:
+  ssh ver@192.168.178.82
 
 
-
+scan:
+  nmap 192.168.178.1-254
 
 
 fmt:

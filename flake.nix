@@ -48,6 +48,7 @@
           inherit system;
           modules = [
             ./hosts/main/configuration.nix
+            ./hardware-configuration.nix
             inputs.home-manager.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
@@ -69,6 +70,13 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/iso/configuration.nix
+
+          ];
+        };
+        cou = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/cou/configuration.nix
 
           ];
         };

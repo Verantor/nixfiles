@@ -21,12 +21,6 @@
   home.packages = with pkgs; [
     firefox
     helix
-    vscode
-    (pkgs.discord.override {
-      # remove any overrides that you don't want
-      withOpenASAR = true;
-      withVencord = true;
-    })
     anki-bin
     mullvad-vpn
     blender-hip
