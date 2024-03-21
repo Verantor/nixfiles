@@ -1,17 +1,15 @@
-
-{
-  config,
-  lib,
-  modulesPath,
-  pkgs,
-  ...
+{ config
+, lib
+, modulesPath
+, pkgs
+, ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
 
-boot = {
+  boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
     loader = {

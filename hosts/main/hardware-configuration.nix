@@ -15,7 +15,10 @@
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
+  boot.bootspec.enable = true;
+  boot.bootspec.extensions = {
+    "org.secureboot.osRelease" = config.environment.etc."os-release".source;
+  };
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/e719a9a0-bd63-4643-8289-03725a38440d";
     fsType = "ext4";

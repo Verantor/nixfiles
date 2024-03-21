@@ -7,12 +7,13 @@ let
   SSIDpassword = "almdudler";
   interface = "wlan0";
   hostname = "cu2";
-in {
-imports = [
+in
+{
+  imports = [
 
-  "${fetchTarball "https://github.com/NixOS/nixos-hardware/tarball/master"}/raspberry-pi/4"
-  ./hardware-configuration.nix
-];
+    "${fetchTarball "https://github.com/NixOS/nixos-hardware/tarball/master"}/raspberry-pi/4"
+    ./hardware-configuration.nix
+  ];
 
 
   networking = {
@@ -27,12 +28,14 @@ imports = [
     firewall.allowedTCPPorts = [ 80 7125 ];
   };
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
-  environment.systemPackages = with pkgs; [     git
+  environment.systemPackages = with pkgs; [
+    git
     wget
     htop
     vim
     tmux
-    libraspberrypi ];
+    libraspberrypi
+  ];
 
   services.openssh.enable = true;
 
@@ -43,19 +46,19 @@ imports = [
       password = password;
       extraGroups = [ "wheel" ];
     };
-    users.root ={
+    users.root = {
       openssh.authorizedKeys.keys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMSLJdX3c3bgudmooK2+W6iKCFNvMhS/PdBvRntgXRo";
     };
   };
 
 
 
-   services.octoprint = {
+  services.octoprint = {
     enable = true;
-    
-    plugins = [];
-    
-};
+
+    plugins = [ ];
+
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   hardware.enableRedistributableFirmware = true;
