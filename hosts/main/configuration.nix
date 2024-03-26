@@ -13,7 +13,7 @@
     ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
         KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
   '';
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -55,10 +55,10 @@
 
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
   #services.xserver.displayManager.sddm.enable = true;
   #services.xserver.desktopManager.plasma6.enable = true;
   #services.xserver.displayManager.defaultSession = "plasma";
@@ -86,6 +86,7 @@
     description = "ver";
     extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     shell = pkgs.fish;
+    ignoreShellProgramCheck = true;
     #packages = with pkgs; [
     #];
   };
@@ -106,6 +107,8 @@
     "org.pipewire.Helvum"
     "org.freecadweb.FreeCAD"
     "org.raspberrypi.rpi-imager"
+    "io.github.finefindus.Hieroglyphic"
+    "com.github.Darazaki.Spedread"
   ];
   environment.systemPackages = with pkgs; [
 
@@ -135,10 +138,11 @@
         usernamehw.errorlens
         rust-lang.rust-analyzer
         arrterian.nix-env-selector
+        github.copilot
       ];
     })
   ];
-  programs.fish.enable = true;
+  #programs.fish.enable = true;
 
 
   #android
@@ -178,7 +182,7 @@
     };
   };
 
-
+  programs.gnupg.agent.enable = true;
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -225,7 +229,7 @@
     5353
   ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 
 
   system.autoUpgrade = {
