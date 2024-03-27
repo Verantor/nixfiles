@@ -1,6 +1,8 @@
 {...}: {
   imports = [
+    ./firefox.nix
     ./media.nix
-    ./lock.nix
+    ./gaming.nix
+
   ];
 }

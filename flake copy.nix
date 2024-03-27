@@ -33,6 +33,8 @@
       url = "github:hyprwm/hypridle";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
   nixConfig = {
     substituters = [
@@ -58,6 +60,42 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations = import ./hosts inputs;
+      nixosConfigurations = {
+        main = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          inherit system;
+          modules = [
+            ./hosts/main/configuration.nix
+            ./hosts/main/hardware-configuration.nix
+            sops-nix.nixosModules.sops
+            inputs.home-manager.nixosModules.default
+            nix-flatpak.nixosModules.nix-flatpak
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.ver = import ./home;
+              home-manager.extraSpecialArgs = inputs;
+            }
+            {
+              nix.settings.trusted-users = [ "ver" ];
+            }
+          ];
+        };
+        iso = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/iso/configuration.nix
+
+          ];
+        };
+        cou = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/cou/configuration.nix
+
+          ];
+        };
+      };
     };
 }

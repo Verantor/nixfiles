@@ -1,6 +1,7 @@
 { config
 , pkgs
 , inputs
+, lib
 , ...
 }: {
   imports = [
@@ -9,11 +10,10 @@
     ./misc
     ./desktop
     ./cli
+    ./default.nix
   ];
-  home.username = "ver";
-  home.homeDirectory = "/home/ver";
   home.stateVersion = "23.11"; # Please read the comment before changing.
-  nixpkgs.config.allowUnfree = true;
+
 
   home.packages = with pkgs; [
 
