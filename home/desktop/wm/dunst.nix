@@ -1,10 +1,11 @@
-{
-  pkgs,
-  theme,
-  ...
-}: let
+{ pkgs
+, theme
+, ...
+}:
+let
   inherit (theme) x;
-in {
+in
+{
   services.dunst = {
     enable = true;
     package = pkgs.dunst.overrideAttrs (_: {

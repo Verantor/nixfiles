@@ -1,8 +1,8 @@
-{
-  nixpkgs,
-  self,
-  ...
-}: let
+{ nixpkgs
+, self
+, ...
+}:
+let
 
   inherit (self) inputs;
   core = ../system/core;
@@ -12,38 +12,40 @@
   services = ../system/services.nix;
   gaming = ../system/gaming.nix;
   amd = ../system/amd.nix;
+  sops = ../system/sops.nix;
 
 
 
   hw = inputs.nixos-hardware.nixosModules;
-  agenix = inputs.agenix.nixosModules.age;
+  #agenix = inputs.agenix.nixosModules.age;
   hmModule = inputs.home-manager.nixosModules.home-manager;
   flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
 
-
-  shared = [core agenix];
+  # shared = [core agenix];
+  shared = [ core ];
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     extraSpecialArgs = {
       inherit inputs;
-      #inherit self;
+      inherit self;
     };
     users.ver = {
-      imports = [../home];
+      imports = [ ../home ];
 
       #_module.args.theme = import ../theme;
     };
   };
-in {
+in
+{
 
   # desktop
   main = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =
       [
-        {networking.hostName = "main";}
+        { networking.hostName = "main"; }
         ./main
         amd
         bootloader
@@ -52,22 +54,23 @@ in {
         sunshine
         hmModule
         flatpak
-        {inherit home-manager;}
+        sops
+        { inherit home-manager; }
       ]
       ++ shared;
-    specialArgs = {inherit inputs;};
+    specialArgs = { inherit inputs; };
   };
 
   serverPi = nixpkgs.lib.nixosSystem {
     system = "aarch64";
     modules =
       [
-        {networking.hostName = "serverPi";}
+        { networking.hostName = "serverPi"; }
         hw.raspberry-pi-4
         server
         ./serverPi
       ]
       ++ shared;
-    specialArgs = {inherit inputs;};
+    specialArgs = { inherit inputs; };
   };
 }

@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ./tofi
     ./foot.nix

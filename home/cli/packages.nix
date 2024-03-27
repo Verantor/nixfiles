@@ -11,6 +11,14 @@
     tio
     ouch
     nil
+    gping
+    tealdeer
+    glow
+    catimg
+    wget
+    fd
+    hcxdumptool
+    hashcat
   ];
 
 

@@ -1,14 +1,13 @@
-{
-  pkgs,
-  lib,
-  ...
+{ pkgs
+, lib
+, ...
 }:
 with lib; let
   waybar-wttr = pkgs.stdenv.mkDerivation {
     name = "waybar-wttr";
     buildInputs = [
       (pkgs.python39.withPackages
-        (pythonPackages: with pythonPackages; [requests]))
+        (pythonPackages: with pythonPackages; [ requests ]))
     ];
     unpackPhase = "true";
     installPhase = ''
@@ -17,8 +16,9 @@ with lib; let
       chmod +x $out/bin/waybar-wttr
     '';
   };
-in {
-  home.packages = [waybar-wttr];
+in
+{
+  home.packages = [ waybar-wttr ];
   programs.waybar = {
     enable = true;
     style = import ./style.nix;
@@ -40,8 +40,8 @@ in {
           "backlight"
           "battery"
         ];
-        modules-center = [];
-        modules-right = ["pulseaudio" "network" "clock" "custom/power"];
+        modules-center = [ ];
+        modules-right = [ "pulseaudio" "network" "clock" "custom/power" ];
         "hyprland/workspaces" = {
           on-click = "activate";
           format = "{icon}";
@@ -96,7 +96,7 @@ in {
         };
         backlight = {
           format = "{icon}";
-          format-icons = ["" "" "" "" "" "" "" "" ""];
+          format-icons = [ "" "" "" "" "" "" "" "" "" ];
         };
         battery = {
           states = {
@@ -106,7 +106,7 @@ in {
           format = "{icon}";
           format-charging = "{icon}\n󰚥";
           tooltip-format = "{timeTo} {capacity}% 󱐋{power}";
-          format-icons = ["󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          format-icons = [ "󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         };
         network = {
           format-wifi = "󰤨";
@@ -124,7 +124,7 @@ in {
           format-bluetooth = "󰂯 {icon} {volume}%";
           format-muted = "󰝟 ";
           format-icons = {
-            default = ["" "" " "];
+            default = [ "" "" " " ];
           };
         };
       };

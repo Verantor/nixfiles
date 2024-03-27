@@ -1,7 +1,7 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }: {
   programs.zsh.enable = true;
   services.openssh = {
@@ -23,6 +23,7 @@
     mutableUsers = false;
     users = {
       ver = {
+        hashedPasswordFile = config.sops.secrets.userPasswordHashed.path;
         isNormalUser = true;
         extraGroups = [
           "wheel"
@@ -46,8 +47,8 @@
       };
 
       root.
-        openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMSLJdX3c3bgudmooK2+W6iKCFNvMhS/PdBvRntgXRo maxj-rothe@wev.de"
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMSLJdX3c3bgudmooK2+W6iKCFNvMhS/PdBvRntgXRo maxj-rothe@web.de"
       ];
     };
   };

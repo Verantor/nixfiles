@@ -5,22 +5,25 @@
 , ...
 }: {
   imports = [
-    inputs.hyprlock.homeManagerModules.default
-    inputs.hypridle.homeManagerModules.default
+    # inputs.hyprlock.homeManagerModules.default
+    #inputs.hypridle.homeManagerModules.default
     ./misc
     ./desktop
     ./cli
-    ./default.nix
+    ./packages.nix
   ];
   home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.username = "ver";
 
+  #TODO find out why lib.mkForce is needed
+  home.homeDirectory = lib.mkForce "/home/ver";
 
   home.packages = with pkgs; [
 
     vesktop
     bottles
     firefox
-    
+
     anki-bin
     mullvad-vpn
     blender-hip
@@ -28,22 +31,16 @@
 
     goverlay
 
-  
+
     xwaylandvideobridge
     lapce
 
     libnotify
     obsidian
     qbittorrent-qt5
-
-
-
-    #colmap insecure
   ];
 
-  home.file = {
-
-  };
+  home.file = { };
   manual.html.enable = false;
   manual.manpages.enable = false;
   manual.json.enable = false;

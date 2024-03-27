@@ -25,7 +25,7 @@
     }
     5353
   ];
-    networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
 
 

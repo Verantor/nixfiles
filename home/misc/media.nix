@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs = {
     mpv = {
       enable = true;
@@ -13,12 +13,12 @@
         vo = "gpu";
         profile = "gpu-hq";
       };
-      scripts = with pkgs.mpvScripts; [mpris thumbnail sponsorblock];
+      scripts = with pkgs.mpvScripts; [ mpris thumbnail sponsorblock ];
     };
 
     obs-studio = {
       enable = true;
-      plugins = with pkgs.obs-studio-plugins; [wlrobs];
+      plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
     };
   };
 }

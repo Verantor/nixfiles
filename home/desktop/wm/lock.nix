@@ -1,10 +1,10 @@
-{
-  pkgs,
-  lib,
-  config,
-  theme,
-  ...
-}: let
+{ pkgs
+, lib
+, config
+, theme
+, ...
+}:
+let
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${pkgs.pipewire}/bin/pw-cli i all | ${pkgs.ripgrep}/bin/rg running
     # only suspend if audio isn't running
@@ -13,7 +13,8 @@
     fi
   '';
   font_family = "Lexend";
-in {
+in
+{
   programs.hyprlock = with theme.colors; {
     enable = true;
 

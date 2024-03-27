@@ -1,5 +1,5 @@
- {pkgs, ...}: {
- 
+{ pkgs, ... }: {
+
   security.wrappers.sunshine = {
     owner = "root";
     group = "root";
