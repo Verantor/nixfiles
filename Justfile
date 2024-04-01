@@ -11,6 +11,7 @@ set shell := ["bash", "-c"]
 
 
 up:
+  sudo nix flake update
   sudo nixos-rebuild switch --upgrade --flake .#main |& nom
 
 # Update specific input
@@ -53,5 +54,6 @@ fmt:
 path:
    $env.PATH | split row ":"
 
-
-
+add:
+  git commit -am "updated"
+  git push origin main
