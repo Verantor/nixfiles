@@ -19,6 +19,10 @@
     fd
     hcxdumptool
     hashcat
+    fd
+    fzf
+    yazi
+    nnn
   ];
 
 

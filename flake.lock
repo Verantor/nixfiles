@@ -81,11 +81,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1711928460,
-        "narHash": "sha256-KGuPi4+3ECCeU+EZ8hXcI1sUoz9lxJsKptBoFZ/p+JI=",
+        "lastModified": 1712002698,
+        "narHash": "sha256-VS7pZ9uKlj/Dy0Hp6sqKAJez9EciurBuAPRX0Qx5Xpg=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "ecc1f22e050e6542948fd022694d1d7f8716a560",
+        "rev": "c377caee7abcd093fd09c386b20c32f291e86747",
         "type": "github"
       },
       "original": {
@@ -299,21 +299,6 @@
         "type": "github"
       }
     },
-    "nix-flatpak": {
-      "locked": {
-        "lastModified": 1711896236,
-        "narHash": "sha256-QBVhsdv0ujQ+3URuYNOJFBbULnScXVjiPKv9XiOBdNM=",
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "rev": "7c436bdb129a5a2df9170e6f61ab8cb852ec7c6f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1711703276,
@@ -369,7 +354,6 @@
         "hyprland": "hyprland",
         "hyprlock": "hyprlock",
         "hyprpicker": "hyprpicker",
-        "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",
         "xdg-portal-hyprland": "xdg-portal-hyprland"

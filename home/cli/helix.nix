@@ -5,7 +5,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccin_frappe";
+      theme = "tokyonight";
       keys.normal = {
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
@@ -31,7 +31,7 @@
         idle-timeout = 1;
         line-number = "relative";
         scrolloff = 5;
-        # rainbow-brackets = true;
+        #rainbow-brackets = true;
         completion-replace = true;
         bufferline = "always";
         true-color = true;
@@ -43,6 +43,7 @@
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
+          snippets = true;
         };
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
         statusline = {
@@ -92,6 +93,11 @@
           injection-regex = "(clojure|clj|edn|boot|yuck)";
           file-types = [ "clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck" ];
         }
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixfmt";
+        }
       ];
 
       language-server = {
@@ -107,7 +113,7 @@
 
         nil = {
           command = lib.getExe pkgs.nil;
-          config.nil.formatting.command = [ "${lib.getExe pkgs.alejandra}" "-q" ];
+          config.nil.formatting.command = [ "${lib.getExe pkgs.nixpkgs-fmt}" "-q" ];
         };
 
         vscode-css-language-server = {

@@ -2,7 +2,7 @@
   description = "cornflakes";
 
   inputs = {
-    nix-flatpak.url = "github:gmodena/nix-flatpak/";
+    #nix-flatpak.url = "github:gmodena/nix-flatpak/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,12 +13,6 @@
       url = "github:hyprwm/hyprpicker";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # agenix = {
-    #   url = "github:ryantm/agenix";
-    #   inputs.home-manager.follows = "home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     hyprland = {
       url = "github:hyprwm/Hyprland/";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +28,8 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
   # nixConfig = {
   #   substituters = [
@@ -49,7 +45,8 @@
     { self
     , nixpkgs
     , home-manager
-    , nix-flatpak
+    # , nix-flatpak
+    # , spicetify-nix
     , ...
     } @ inputs:
 
@@ -59,6 +56,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      extraSpecialArgs = {inherit inputs;};
       imports = [
         {
           config._module.args._inputs = inputs // { inherit (inputs) self; };

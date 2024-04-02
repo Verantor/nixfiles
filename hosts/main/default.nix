@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs
+, inputs
+, ...
+}: {
   imports = [ ./hardware-configuration.nix ];
 
 
@@ -14,6 +17,10 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -28,16 +35,16 @@
   ];
   #TODO clean up and move to separate file
 
-  services.flatpak.packages = [
-    "com.spotify.Client"
-    "com.prusa3d.PrusaSlicer"
-    "codes.merritt.Nyrna"
-    "org.pipewire.Helvum"
-    "org.freecadweb.FreeCAD"
-    "org.raspberrypi.rpi-imager"
-    "io.github.finefindus.Hieroglyphic"
-    "com.github.Darazaki.Spedread"
-  ];
+  # services.flatpak.packages = [
+  #   "com.spotify.Client"
+  #   "com.prusa3d.PrusaSlicer"
+  #   "codes.merritt.Nyrna"
+  #   "org.pipewire.Helvum"
+  #   "org.freecadweb.FreeCAD"
+  #   "org.raspberrypi.rpi-imager"
+  #   "io.github.finefindus.Hieroglyphic"
+  #   "com.github.Darazaki.Spedread"
+  # ];
   #TODO clean up and move to separate file
   environment.systemPackages = with pkgs; [
     fish

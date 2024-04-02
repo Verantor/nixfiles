@@ -1,27 +1,15 @@
 { config
-, theme
 , lib
 , ...
 }:
-let
-  pointer = config.home.pointerCursor;
-in
 {
-  wayland.windowManager.hyprland = with theme.colors; {
+  wayland.windowManager.hyprland =  {
     settings = {
       exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        # set cursor for HL itself
-        "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
 
-        # foot terminal server
-        "${lib.optionalString config.programs.foot.server.enable ''run-as-service 'foot --server''}"
       ];
 
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_forever = true;
-      };
+  
 
       xwayland = {
         force_zero_scaling = true;
@@ -29,28 +17,24 @@ in
 
       input = {
         # keyboard layout
-        kb_layout = "pl";
-        kb_options = "caps:escape";
+        kb_layout = "us";
+        kb_options = "";
         follow_mouse = 1;
-        sensitivity = 0.0;
-        touchpad = {
-          clickfinger_behavior = true;
-          tap-to-click = false;
-          scroll_factor = 0.5;
-        };
+        sensitivity = 0;
+
       };
 
       general = {
         # gaps
-        gaps_in = 6;
-        gaps_out = 11;
+        gaps_in = 2;
+        gaps_out = 4;
 
         # border thiccness
         border_size = 2;
-
+        layout = "dwindle";
         # active border color
-        "col.active_border" = "rgb(${accent})";
-        "col.inactive_border" = "rgb(${surface0})";
+        "col.active_border" = "rgba(33ccffee)";
+        "col.inactive_border" = "rgba(595959aa)";
 
         # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
         apply_sens_to_raw = 0;
@@ -58,7 +42,7 @@ in
 
       decoration = {
         # fancy corners
-        rounding = 7;
+        rounding = 10;
 
         # blur
         blur = {
@@ -73,8 +57,8 @@ in
         };
 
         # shadow config
-        drop_shadow = "no";
-        shadow_range = 20;
+        drop_shadow = "yes";
+        shadow_range = 4;
         shadow_render_power = 5;
         "col.shadow" = "rgba(292c3cee)";
       };
@@ -85,11 +69,9 @@ in
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
 
-        vfr = true;
+        vfr = 2;
 
-        # window swallowing
-        enable_swallow = true; # hide windows that spawn other windows
-        swallow_regex = "^(foot)$";
+
 
         # dpms
         mouse_move_enables_dpms = true; # enable dpms on mouse/touchpad action
@@ -119,28 +101,17 @@ in
       };
 
       dwindle = {
-        pseudotile = false;
+        pseudotile = "yes";
         preserve_split = "yes";
         no_gaps_when_only = false;
       };
 
-      "$kw" = "dwindle:no_gaps_when_only";
+    #  "$kw" = "dwindle:no_gaps_when_only";
 
-      workspace = [
-        "1, monitor:eDP-1"
-        "2, monitor:eDP-1"
-        "3, monitor:eDP-1"
-        "4, monitor:eDP-1"
-        "5, monitor:eDP-1"
-        "6, monitor:DP-2"
-        "7, monitor:DP-2"
-        "8, monitor:DP-2"
-        "9, monitor:DP-2"
-      ];
+
       monitor = [
-        ",highrr,auto,1"
-        "eDP-1,1920x1080,0x0,1"
-        "DP-2,1920x1080@144,0x-1080,1"
+        "DP-2,1920x1080@144,0x0,1"
+        "HDMI-A-1,1920x1080@60,-1920x0,1"
       ];
     };
   };

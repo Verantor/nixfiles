@@ -18,7 +18,7 @@ up:
 # Usage: just upp nixpkgs
 
 history:
-  nix profile history --profile /nix/var/nix/profiles/system
+    --profile /nix/var/nix/profiles/system
 
 rb:
   sudo nixos-rebuild switch --flake .#main |& nom
@@ -54,6 +54,6 @@ fmt:
 path:
    $env.PATH | split row ":"
 
-add:
+push:
   git commit -am "updated"
   git push origin main

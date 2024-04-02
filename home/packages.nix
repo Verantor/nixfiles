@@ -14,7 +14,7 @@
     anki-bin
     mullvad-vpn
     blender-hip
-
+    freecad
 
     goverlay
 
@@ -26,7 +26,14 @@
     obsidian
     qbittorrent-qt5
 
+    evince
+    thud
+    gnome-epub-thumbnailer
+    gnome.totem
+    libheif
 
+
+papirus-icon-theme
 
   ];
 

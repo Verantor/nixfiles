@@ -17,12 +17,9 @@ let
 
 
   hw = inputs.nixos-hardware.nixosModules;
-  #agenix = inputs.agenix.nixosModules.age;
   hmModule = inputs.home-manager.nixosModules.home-manager;
-  flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
-
-  # shared = [core agenix];
-  shared = [ core ];
+  #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
+  shared = [ core sops ];
 
   home-manager = {
     useUserPackages = true;
@@ -47,15 +44,15 @@ in
       [
         { networking.hostName = "main"; }
         ./main
-        amd
+        amd#
         bootloader
-        services
-        gaming
-        sunshine
-        hmModule
-        flatpak
+        services#
+        gaming#
+        sunshine#
+        hmModule#
+        #flatpak
         sops
-        { inherit home-manager; }
+        { inherit home-manager; }#
       ]
       ++ shared;
     specialArgs = { inherit inputs; };

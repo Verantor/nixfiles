@@ -28,19 +28,17 @@ in
   wayland.windowManager.hyprland.settings = {
     bind =
       [
-        ''${mod},RETURN,exec,run-as-service foot${lib.optionalString config.programs.foot.server.enable "client"}''
-
-        "${mod},SPACE,exec,run-as-service $(tofi-drun)"
-        "${mod},MINUS,killactive"
+      
+        "${mod},SPACE,exec,run-as-service $(wofi --show run)"
+        "${mod},T,exec,run-as-service $(kitty)"
+        "${mod},ESC,killactive"
         "${mod},P,pseudo"
 
         "${mod},H,movefocus,l"
         "${mod},L,movefocus,r"
         "${mod},K,movefocus,u"
         "${mod},J,movefocus,d"
-
-        ",XF86Bluetooth, exec, bcn"
-        "${mod},M,exec,hyprctl keyword $kw $(($(hyprctl getoption $kw -j | jaq -r '.int') ^ 1))" # toggle no_gaps_when_only
+        
         "${mod},T,togglegroup," # group focused window
         "${modshift},G,changegroupactive," # switch within the active group
         "${mod},V,togglefloating," # toggle floating for the focused window
@@ -52,11 +50,6 @@ in
         "${mod},mouse_down,workspace,e+1" # move to the next ws
         "${mod},mouse_up,workspace,e-1" # move to the previous ws
 
-        "${mod},Print,exec, pauseshot"
-        ",Print,exec, grim - | wl-copy"
-        "${modshift},O,exec,wl-ocr"
-
-        "${mod},Period,exec, tofi-emoji"
 
         "${modshift},L,exec,hyprlock"
       ]
