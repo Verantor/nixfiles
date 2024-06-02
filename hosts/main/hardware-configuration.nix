@@ -50,6 +50,17 @@
       "x-gvfs-show" # Shows the drive in the file manager
     ];
   };
+  fileSystems."/mnt/nvme" = {
+    device = "/dev/disk/by-uuid/2775eb03-2044-47c5-b7ec-5c0b0d950fb4";
+    fsType = "btrfs";
+    options = [
+      # If you don't have this options attribute, it'll default to "defaults"
+      # boot options for fstab. Search up fstab mount options you can use
+      "users" # Allows any user to mount and unmount
+      "nofail" # Prevent system from failing if this drive doesn't mount
+      "x-gvfs-show" # Shows the drive in the file manager
+    ];
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
