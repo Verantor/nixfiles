@@ -15,19 +15,34 @@ in
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXinerama
+          xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
+        ];
+    };
   };
   #Enable Gamescope
   programs.gamescope = {
     enable = true;
-    capSysNice = true; #TODO when this is fixed, remove this line
-    args = [ "--prefer-vk-device 1002:73ff" ];
-    env = {
-      "__GLX_VENDOR_LIBRARY_NAME" = "amd";
-      "DRI_PRIME" = "1";
-      "MESA_VK_DEVICE_SELECT" = "pci:1002:73ff";
-      "__VK_LAYER_MESA_OVERLAY_CONFIG" = "ld.so.preload";
-      "DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1" = "1";
-    };
+    capSysNice = false; #TODO when this is fixed, remove this line
+    # args = [ "--prefer-vk-device 1002:73ff" ];
+    # env = {
+    #   "__GLX_VENDOR_LIBRARY_NAME" = "amd";
+    #   "DRI_PRIME" = "1";
+    #   "MESA_VK_DEVICE_SELECT" = "pci:1002:73ff";
+    #   "__VK_LAYER_MESA_OVERLAY_CONFIG" = "ld.so.preload";
+    #   "DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1" = "1";
+    # };
   };
   # security.wrappers.gamescope = {
   #   owner = "root";
@@ -50,22 +65,6 @@ in
     };
   };
   #programs.steam.package = pkgs.steam.override { privateTmp = false; };
-  nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
-        libpng
-        libpulseaudio
-        libvorbis
-        stdenv.cc.cc.lib
-        libkrb5
-        keyutils
-      ];
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     protonup-qt
