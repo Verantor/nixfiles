@@ -67,8 +67,9 @@
 
     shellAliases = {
       ls = "lsd";
-      cdd = "z";
       cat = "bat";
+      cc = "clear";
+      c = "z";
       syss = "sudo systemctl status";
       sysr = "sudo systemctl restart";
       jctl = "journalctl -u --follow";
