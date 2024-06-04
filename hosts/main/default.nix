@@ -121,8 +121,6 @@
   #   rpcSecretFile = config.sops.secrets.longPassword.path;
   # };
 
-
-
   environment.systemPackages = with pkgs; [
     fish
     nushell
@@ -165,6 +163,7 @@
     nixos-generators
     fuse-overlayfs
     sops #TODO find better place for this like sops.nix
+    comma
 
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions;
