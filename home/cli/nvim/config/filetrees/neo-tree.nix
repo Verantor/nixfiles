@@ -1,6 +1,6 @@
 {
   plugins.neo-tree = {
-    enable = false;
+    enable = true;
     enableDiagnostics = true;
     enableGitStatus = true;
     enableModifiedMarkers = true;
