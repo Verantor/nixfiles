@@ -1,10 +1,6 @@
 {
   plugins.telescope = {
     enable = true;
-    enabledExtensions = [
-      "command_history"
-      "find_files"
-    ];
     extensions = {
       fzf-native = {
         enable = true;
