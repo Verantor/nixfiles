@@ -65,7 +65,7 @@
     gnome.gnome-software
 
     gnome.geary
-
+    loupe
     qt6.qtwayland
     qt5.qtwayland
     wl-screenrec

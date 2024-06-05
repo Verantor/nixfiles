@@ -27,8 +27,6 @@
     netscanner
     dua
     lazygit
-    loupe
-    impression
     android-studio
     ffmpeg
     ripgrep
@@ -52,13 +50,13 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-    options = [ "--cmd cdd" ];
+    options = [ "--cmd c" ];
   };
-  programs.eza = {
-    enable = true;
-    enableFishIntegration = true;
-    icons = true;
-  };
+  # programs.eza = {
+  #   enable = true;
+  #   enableFishIntegration = true;
+  #   icons = true;
+  # };
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -68,9 +66,11 @@
 
     shellAliases = {
       ls = "lsd";
+      ll = "lsd -l";
       cat = "bat";
       cc = "clear";
       c = "z";
+      nv = "nvim";
       syss = "sudo systemctl status";
       sysr = "sudo systemctl restart";
       jctl = "journalctl -u --follow";

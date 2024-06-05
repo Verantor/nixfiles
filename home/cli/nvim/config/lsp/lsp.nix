@@ -24,7 +24,7 @@
             };
           };
         };
-        nil_ls = { enable = true; };
+        nil-ls = { enable = true; };
         tsserver = {
           enable = false;
           filetypes = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
@@ -61,7 +61,7 @@
 
         rust-analyzer = {
           enable = true;
-          installCargo = true;
+          installCargo = true; #TODO maby conflicts with things
           installRustc = true;
           settings = {
             checkOnSave = true;

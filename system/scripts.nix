@@ -1,8 +1,7 @@
 { pkgs
 , theme
 , ...
-}:
-{
+}: {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "nixrb" ''
       nixpkgs-fmt .
@@ -20,6 +19,9 @@
       sudo nixos-rebuild switch --upgrade --flake .#main |& nom
       git commit -am "NixOS Update"
       notify-send -e "NixOS Update OK!" --icon=software-update-availableb
+    '')
+    (writeShellScriptBin "nixof" ''
+      sudo nixos-rebuild switch --offline --upgrade --flake .#main |& nom
     '')
     (writeShellScriptBin "waybar-kde-connect.sh" ''
       get_status() {
@@ -53,27 +55,27 @@
     (writeShellScriptBin "nixiso" ''
       sudo nixos-generate -f iso --flake ".#serverPi" --system aarch64-linux
     '')
-    (pkgs.writers.writePython3Bin "microphone_changer.py"
-      {
-        flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-      }
-      (builtins.readFile ../scripts/microphone_changer.py)
+    (
+      pkgs.writers.writePython3Bin "microphone_changer.py"
+        {
+          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
+        }
+        (builtins.readFile ../scripts/microphone_changer.py)
     )
-    (pkgs.writers.writePython3Bin "audio_changer.py"
-      {
-        flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-      }
-      (builtins.readFile ../scripts/audio_changer.py)
+    (
+      pkgs.writers.writePython3Bin "audio_changer.py"
+        {
+          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
+        }
+        (builtins.readFile ../scripts/audio_changer.py)
     )
-    (writeShellScriptBin "nixbr" ''
-      nixos-rebuild --target-host root@192.168.178.190 switch --flake .#serverPi |& nom
-    ''
+    (
+      writeShellScriptBin "nixbr" ''
+        nixos-rebuild --target-host root@192.168.178.190 switch --flake .#serverPi |& nom
+      ''
     )
-    (writeShellScriptBin "pvpnPortforwarding" (builtins.readFile ../scripts/pvpnPortforwarding.sh)
+    (
+      writeShellScriptBin "pvpnPortforwarding" (builtins.readFile ../scripts/pvpnPortforwarding.sh)
     )
   ];
-
-
-
 }
-  
