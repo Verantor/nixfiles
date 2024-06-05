@@ -58,7 +58,7 @@
         eslint = { enable = true; };
         pyright = { enable = true; };
         ruff-lsp = { enable = true; };
-
+        gopls = { enable = true; };
         rust-analyzer = {
           enable = true;
           installCargo = true; #TODO maby conflicts with things
