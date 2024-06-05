@@ -42,24 +42,22 @@
     enableFishIntegration = true;
     settings = {
       on_force_close = "quit";
-      simplified_ui = false;
+      simplified_ui = true;
       default_layout = "default";
       ui.pane_frames.rounded_corners = true;
-      theme = "tokyo-night-strom";
-      themes = {
-        tokyonight_storm = {
-          fg = "#c0caf5";
-          bg = "#292e42";
-          black = "#1d202f";
-          red = "#f7768e";
-          green = "#9ece6a";
-          yellow = "#e0af68";
-          blue = "#7aa2f7";
-          magenta = "#bb9af7";
-          cyan = "#7dcfff";
-          white = "#a9b1d6";
-          orange = "#ff9e64";
-        };
+      theme = "tokyonight_storm";
+      themes.tokyonight_storm = {
+        fg = "#c0caf5";
+        bg = "#292e42";
+        black = "#1d202f";
+        red = "#f7768e";
+        green = "#9ece6a";
+        yellow = "#e0af68";
+        blue = "#7aa2f7";
+        magenta = "#bb9af7";
+        cyan = "#7dcfff";
+        white = "#a9b1d6";
+        orange = "#ff9e64";
       };
     };
   };
