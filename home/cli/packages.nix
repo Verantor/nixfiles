@@ -45,7 +45,7 @@
       simplified_ui = false;
       default_layout = "default";
       ui.pane_frames.rounded_corners = true;
-      theme = "tokyonight-strom";
+      theme = "tokyo-night-strom";
     };
   };
   programs.zoxide = {
