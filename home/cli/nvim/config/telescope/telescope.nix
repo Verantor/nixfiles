@@ -1,7 +1,10 @@
 {
   plugins.telescope = {
     enable = true;
-
+    enabledExtensions = [
+      "command_history"
+      "find_files"
+    ];
     extensions = {
       fzf-native = {
         enable = true;
@@ -14,6 +17,9 @@
         };
       };
       undo = {
+        enable = true;
+      };
+      media-files = {
         enable = true;
       };
     };
