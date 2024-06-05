@@ -1,6 +1,6 @@
 {
   main = {
-    font = "JetBrainsMonoNL Nerd Font:size=12";
+    font = "JetBrainsMonoNL Nerd Font:size=15";
     dpi-aware = "yes";
     pad = "5x5 center";
   };
@@ -28,6 +28,5 @@
     bright5 = "bb9af7";
     bright6 = "7dcfff";
     bright7 = "c0caf5";
-
   };
 }
