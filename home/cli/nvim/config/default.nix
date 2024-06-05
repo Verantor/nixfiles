@@ -40,7 +40,7 @@
     ./none-ls/none-ls.nix
 
     ./snippets/luasnip.nix
-
+    ./utils/multicursors.nix
     ./statusline/lualine.nix
     ./statusline/staline.nix
 
