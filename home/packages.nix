@@ -42,7 +42,7 @@
     psst
     imhex
     overskride
-
+    solaar
     papirus-icon-theme
 
     kdePackages.qttools
