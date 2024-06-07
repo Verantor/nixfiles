@@ -2,12 +2,10 @@
 , lib
 , inputs
 , ...
-}:
-{
-
+}: {
   imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
   home.packages = with pkgs;
-    #with inputs.hyprcontrib.packages.${pkgs.system}; 
+    #with inputs.hyprcontrib.packages.${pkgs.system};
     [
       hyprnome #TODO do config
 
@@ -18,7 +16,7 @@
       slurp
       #hyprshot
       hyprpicker
-
+      waypaper
       swappy
       wl-clip-persist
       wl-clipboard
