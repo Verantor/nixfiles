@@ -8,9 +8,9 @@
       group = "+";
       separator = ""; # ➜
     };
-    # registrations = {
-    #   "<leader>t" = " Terminal";
-    # };
+    registrations = {
+      "<leader>t" = " Terminal";
+    };
     window = {
       border = "none";
       winblend = 0;
