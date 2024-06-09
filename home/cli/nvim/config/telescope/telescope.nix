@@ -17,6 +17,16 @@
       };
       media-files = {
         enable = true;
+        settings =
+          {
+            filetypes = [
+              "png"
+              "webp"
+              "jpg"
+              "jpeg"
+            ];
+            find_cmd = "rg";
+          };
       };
     };
     # If you'd prefer Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
@@ -36,7 +46,7 @@
     };
     keymaps = {
       "<leader><space>" = {
-        action = "find_files, {}";
+        action = "find_files";
         options.desc = "Find project files";
       };
       "<leader>/" = {

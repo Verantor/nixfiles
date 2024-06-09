@@ -179,6 +179,7 @@
           charliermarsh.ruff
           ms-python.python
           dart-code.flutter
+          vscodevim.vim
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
