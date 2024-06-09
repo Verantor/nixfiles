@@ -24,7 +24,7 @@ def parse_wpctl_status():
 
     # start by getting the lines after "Sinks:" and before the next blank line and store them in a list
     sinks = []
-    for line in lines[sinks_index + 1 :]:
+    for line in lines[sinks_index + 1]:
         if not line.strip():
             break
 
@@ -75,4 +75,3 @@ selected_sink_name = wofi_process.stdout.strip()
 sinks = parse_wpctl_status()
 selected_sink = next(sink for sink in sinks if sink["sink_name"] == selected_sink_name)
 subprocess.run(f"wpctl set-default {selected_sink['sink_id']}", shell=True)
-
