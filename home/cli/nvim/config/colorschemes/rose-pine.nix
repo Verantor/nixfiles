@@ -1,7 +1,7 @@
 {
   colorschemes = {
     rose-pine = {
-      enable = false;
+      enable = true;
       settings = {
         styles = {
           italic = true;
