@@ -1,7 +1,8 @@
-{ pkgs
-, inputs
-, config
-, ...
+{
+  pkgs,
+  inputs,
+  config,
+  ...
 }: {
   imports = [
     ./hardware-configuration.nix
@@ -51,7 +52,7 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  environment.pathsToLink = [ "share/thumbnailers" ];
+  environment.pathsToLink = ["share/thumbnailers"];
 
   services.xserver.enable = true;
   #services.xserver.displayManager.gdm.enable = true;
@@ -75,7 +76,7 @@
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
-  security.pam.services.hyprlock = { };
+  security.pam.services.hyprlock = {};
   security.sudo.extraConfig = "Defaults pwfeedback";
   programs.dconf.enable = true;
 
@@ -90,7 +91,7 @@
   fonts.packages = with pkgs; [
     material-icons
     material-design-icons
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
   ];
 
   services.power-profiles-daemon.enable = true;
@@ -103,7 +104,7 @@
 
   security.pam.services.login.enableGnomeKeyring = true;
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   #TODO clean up and move to separate file
 
@@ -180,6 +181,7 @@
           ms-python.python
           dart-code.flutter
           vscodevim.vim
+          golang.go
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
