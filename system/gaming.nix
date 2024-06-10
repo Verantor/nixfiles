@@ -4,7 +4,8 @@ let
     let
       hackedPkgs = pkgs.extend (final: prev: {
         buildFHSEnv = args:
-          prev.buildFHSEnv (args // {
+          prev.buildFHSEnv (args
+            // {
             extraBwrapArgs = (args.extraBwrapArgs or [ ]) ++ [ "--cap-add ALL" ];
           });
       });
@@ -81,4 +82,3 @@ in
     # })
   ];
 }
-
