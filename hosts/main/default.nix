@@ -33,7 +33,12 @@
     theme = "catppuccin-mocha";
     logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   };
+  
+  
   programs.command-not-found.enable = false;
+  programs.nix-index.enable = true;
+
+
   services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 

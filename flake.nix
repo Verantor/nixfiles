@@ -102,7 +102,7 @@
       hmModule = inputs.home-manager.nixosModules.home-manager;
       lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
-      nixDB = inputs.nix-index-database.hmModule.nix-index;
+      nixDB = inputs.nix-index-database.nixosModules.nix-index;
       shared = [ core sops ];
 
       home-manager = {
