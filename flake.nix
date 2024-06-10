@@ -50,6 +50,9 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nixarr.url = "github:rasmus-kirk/nixarr";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     # nixvim = {
     #   url = "github:nix-community/nixvim";
     #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
@@ -99,6 +102,7 @@
       hmModule = inputs.home-manager.nixosModules.home-manager;
       lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
+      nixDB = nix-index-database.nixosModules.nix-index;
       shared = [ core sops ];
 
       home-manager = {
@@ -156,7 +160,7 @@
               virt
               openrgb
               #flatpak
-
+              nixDB
               { inherit home-manager; } #
             ]
             ++ shared;
