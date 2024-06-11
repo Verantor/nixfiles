@@ -73,6 +73,11 @@
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.lightly
     qt6Packages.qt6ct
+
+    turtle
+    gnome.nautilus-python
+    gnome.nautilus-open-any-terminal
+    gnome.sushi
   ];
 
   manual.html.enable = false;

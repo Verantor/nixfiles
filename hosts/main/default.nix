@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
     ./regreet.nix
     ./programs.nix
-    ./nautilus.nix
   ];
   virtualisation.containers.enable = true;
 
@@ -23,16 +22,16 @@
     KERNEL=="hidraw*", KERNELS=="*054C:0CE6*", MODE="0660", TAG+="uaccess"
   '';
 
-  boot.plymouth = {
-    enable = true;
-    themePackages = [
-      (pkgs.catppuccin-plymouth.override {
-        variant = "mocha";
-      })
-    ];
-    theme = "catppuccin-mocha";
-    logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
-  };
+  # boot.plymouth = {
+  #   enable = true;
+  #   themePackages = [
+  #     (pkgs.catppuccin-plymouth.override {
+  #       variant = "mocha";
+  #     })
+  #   ];
+  #   theme = "catppuccin-mocha";
+  #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
+  # };
 
   programs.command-not-found.enable = false;
   programs.nix-index.enable = true;
@@ -58,8 +57,8 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.plasma6.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -96,7 +95,7 @@
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
-  services.power-profiles-daemon.enable = true;
+  # services.power-profiles-daemon.enable = true;
 
   # LAN discovery
   services.avahi = {
@@ -110,14 +109,14 @@
 
   #TODO clean up and move to separate file
 
-  services.ollama = {
-    enable = true;
-    #package = pkgs.stable.ollama;
-    #acceleration = "rocm";
-    environmentVariables = {
-      HSA_OVERRIDE_GFX_VERSION = "10.3.0 HCC_AMDGPU_TARGET=gfx1030";
-    };
-  };
+  # services.ollama = {
+  #   enable = true;
+  #   #package = pkgs.stable.ollama;
+  #   acceleration = "rocm";
+  #   environmentVariables = {
+  #     HSA_OVERRIDE_GFX_VERSION = "10.3.0 HCC_AMDGPU_TARGET=gfx1030";
+  #   };
+  # };
   # services.aria2 = {
   #   enable = true;
   #   downloadDir = "/home/ver/Downloads";
@@ -128,7 +127,6 @@
     fish
     nushell
     git
-    sunshine
     nixpkgs-fmt
     virt-manager
     wine

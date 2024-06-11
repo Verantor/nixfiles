@@ -33,7 +33,7 @@ in
         "${mod},T,exec,foot"
         "${mod},C,killactive"
         "${mod},P,pseudo"
-        "${mod},E,exec,thunar"
+        "${mod},E,exec,nautilus"
         "${mod},F,exec,firefox"
         "${mod},H,movefocus,l"
         "${mod},L,movefocus,r"
