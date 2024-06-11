@@ -34,4 +34,6 @@
   };
 
   wallpaper = ./wallpapers;
+
+  font = "FiraCode Nerd Font Mono"; #"JetBrainsMono Nerd Font Mono";
 }

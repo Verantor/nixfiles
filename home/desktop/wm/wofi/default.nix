@@ -1,5 +1,6 @@
 { pkgs
 , lib
+, theme
 , ...
 }:
 {
@@ -41,7 +42,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrains Mono Nerd Font Mono";
+        font = "${theme.font}";
         terminal = "foot"; #${pkgs.kitty}/bin/kitty
         layer = "overlay";
         width = 60;

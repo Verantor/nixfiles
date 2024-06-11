@@ -1,6 +1,6 @@
-{
+{ theme, ... }: {
   main = {
-    font = "JetBrainsMonoNL Nerd Font:size=15";
+    font = "${theme.font}:size=15";
     dpi-aware = "yes";
     pad = "5x5 center";
   };

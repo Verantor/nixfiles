@@ -5,7 +5,7 @@
 , ...
 }:
 let
-  font_family = "JetBrains Mono Nerd Font Mono";
+  font_family = "${theme.font}";
 in
 {
   # programs.hyprlock = with theme.colors; {
