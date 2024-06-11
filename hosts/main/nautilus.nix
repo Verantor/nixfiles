@@ -7,7 +7,7 @@ let
   turtle = with pkgs;
     python3.pkgs.buildPythonApplication rec {
       pname = "turtle";
-      version = "0.7";
+      version = "0.9";
 
       src = fetchFromGitLab {
         domain = "gitlab.gnome.org";
