@@ -1,17 +1,17 @@
 { pkgs, ... }: {
   #greetd.tuigreet
-  environment.systemPackages = with pkgs; [
-    greetd.tuigreet
-  ];
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland --remember --remember-session --user-menu --asterisks";
-        user = "greeter";
-      };
-    };
-  };
+  # environment.systemPackages = with pkgs; [
+  #   greetd.tuigreet
+  # ];
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland --remember --remember-session --user-menu --asterisks";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
   # programs.regreet = {
   #   cageArgs = [ "-s" "-m" "last" ];
   #   enable = true;
