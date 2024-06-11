@@ -30,24 +30,24 @@
 
   gtk.iconTheme.package = pkgs.papirus-icon-theme;
   gtk.iconTheme.name = "Papirus-Dark";
-
-  gtk.gtk3.bookmarks =
-    let
-      home = config.home.homeDirectory;
-    in
-    [
-      "file://${home}/Documents"
-      "file://${home}/Music"
-      "file://${home}/Pictures"
-      "file://${home}/Videos"
-      "file://${home}/Downloads"
-      "file://${home}/Desktop"
-      "file://${home}/Work"
-      "file://${home}/Projects"
-      "file://${home}/Vault"
-      "file://${home}/School"
-      "file://${home}/.dotfiles Config"
-    ];
+  #
+  # gtk.gtk3.bookmarks =
+  #   let
+  #     home = config.home.homeDirectory;
+  #   in
+  #   [
+  #     "file://${home}/Documents"
+  #     "file://${home}/Music"
+  #     "file://${home}/Pictures"
+  #     "file://${home}/Videos"
+  #     "file://${home}/Downloads"
+  #     "file://${home}/Desktop"
+  #     "file://${home}/Work"
+  #     "file://${home}/Projects"
+  #     "file://${home}/Vault"
+  #     "file://${home}/School"
+  #     "file://${home}/.dotfiles Config"
+  #   ];
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
