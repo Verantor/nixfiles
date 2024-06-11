@@ -59,17 +59,17 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # services.xserver.desktopManager.plasma6.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal-hyprland
-      #inputs.xdg-portal-hyprland.packages.${pkgs.system}.default
-    ];
-    config = {
-      common.default = "*";
-    };
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-gtk
+  #     #pkgs.xdg-desktop-portal-hyprland
+  #     #inputs.xdg-portal-hyprland.packages.${pkgs.system}.default
+  #   ];
+  #   config = {
+  #     common.default = "*";
+  #   };
+  # };
 
   programs.hyprland = {
     enable = true;
