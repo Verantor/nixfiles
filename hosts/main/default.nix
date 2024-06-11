@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ./regreet.nix
     ./programs.nix
+    ./nautilus.nix
   ];
   virtualisation.containers.enable = true;
 

@@ -74,9 +74,9 @@
     libsForQt5.lightly
     qt6Packages.qt6ct
 
-    turtle
-    gnome.nautilus-python
-    nautilus-open-any-terminal
+    # turtle
+    # gnome.nautilus-python
+    # nautilus-open-any-terminal
     gnome.sushi
   ];
 
