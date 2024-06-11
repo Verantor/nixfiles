@@ -76,7 +76,7 @@
 
     turtle
     gnome.nautilus-python
-    gnome.nautilus-open-any-terminal
+    nautilus-open-any-terminal
     gnome.sushi
   ];
 
