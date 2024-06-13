@@ -47,19 +47,17 @@
         lines = 5;
         fields = "filename,name,generic,keywords";
       };
-      colors = {
-        background = "1e1e2edd";
-        text = "cdd6f4ff";
-        match = "f38ba8ff";
-        selection = "585b70ff";
-        selection-match = "f38ba8ff";
-        selection-text = "cdd6f4ff";
-        border = "b4befeff";
-      };
+      # colors = {
+      #   background = "1e1e2edd";
+      #   text = "cdd6f4ff";
+      #   match = "f38ba8ff";
+      #   selection = "585b70ff";
+      #   selection-match = "f38ba8ff";
+      #   selection-text = "cdd6f4ff";
+      #   border = "b4befeff";
+      # };
     };
   };
 }
-# home.packages = with pkgs; [
-#   rofi-wayland-unwrapped
-# ];
+
 
