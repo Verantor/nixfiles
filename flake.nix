@@ -152,10 +152,8 @@
               hmModule #
               scripts
               networking
-              wireguard
               polkit
               borg
-              virt
               openrgb
               #flatpak
               nixDB
@@ -166,19 +164,7 @@
           specialArgs = { inherit inputs outputs; };
         };
 
-        serverPi = nixpkgs.lib.nixosSystem {
-          system = "aarch64";
-          modules =
-            [
-              { networking.hostName = "serverPi"; }
-              hw.raspberry-pi-4
-              server
-              #inputs.nixarr.nixosModules.default
-              ./hosts/serverPi
-            ]
-            ++ shared;
-          specialArgs = { inherit inputs outputs; };
-        };
+
       };
     };
 }
