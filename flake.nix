@@ -84,11 +84,9 @@
       inherit (self) outputs;
       core = ./system/core;
       bootloader = ./system/core/boot.nix;
-      server = ./system/server.nix;
       sunshine = ./system/sunshine.nix;
       services = ./system/services.nix;
       gaming = ./system/gaming.nix;
-      wireguard = ./system/wireguard.nix;
       amd = ./system/amd.nix;
       sops = ./system/sops.nix;
       scripts = ./system/scripts.nix;
@@ -97,7 +95,6 @@
       openrgb = ./system/openrgb.nix;
       #overlays = ./system/overlays.nix;
       borg = ./system/borg.nix;
-      virt = ./system/virt.nix;
       hw = inputs.nixos-hardware.nixosModules;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
