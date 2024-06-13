@@ -21,6 +21,9 @@
       base0E = "d3869b";
       base0F = "d65d0e";
     };
+
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata-Modern-Ice";
     fonts = {
       serif = {
         package = pkgs.cantarell-fonts;
@@ -33,8 +36,8 @@
       };
 
       monospace = {
-        package = pkgs.jetbrains-mono;
-        name = "Jetbrains Mono";
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        name = "JetBrainsMono Nerd Font Mono";
       };
 
       emoji = {
@@ -43,4 +46,21 @@
       };
     };
   };
+
+
+  fonts.sizes = {
+    applications = 12;
+    terminal = 15;
+    desktop = 10;
+    popups = 10;
+  };
+
+  opacity = {
+    applications = 1.0;
+    terminal = 1.0;
+    desktop = 1.0;
+    popups = 1.0;
+  };
+
+  polarity = "dark"; # "light" or "either"
 } 
