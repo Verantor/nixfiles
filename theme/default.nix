@@ -2,6 +2,8 @@
   # convert rrggbb hex to #rrggbb
   stylix = {
     enable = true;
+    image = ./wallpapers/wall2.png;
+
     base16Scheme = {
       base00 = "282828";
       base01 = "3c3836";
@@ -20,7 +22,6 @@
       base0E = "d3869b";
       base0F = "d65d0e";
     };
-    # image = ./wallpapers/wall2.png;
     fonts = {
       serif = {
         package = pkgs.cantarell-fonts;
