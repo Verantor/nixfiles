@@ -22,7 +22,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    stylix.url = "github:danth/stylix";
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
@@ -103,6 +103,7 @@
       lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
+      stylix = inputs.stylix.nixosModules.stylix;
       shared = [ core sops ];
 
       home-manager = {
@@ -161,6 +162,7 @@
               openrgb
               #flatpak
               nixDB
+              stylix
               { inherit home-manager; } #
             ]
             ++ shared;

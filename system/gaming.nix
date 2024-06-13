@@ -1,36 +1,24 @@
 { pkgs, ... }:
-let
-  myLutrisPkg =
-    let
-      hackedPkgs = pkgs.extend (final: prev: {
-        buildFHSEnv = args:
-          prev.buildFHSEnv (args
-            // {
-            extraBwrapArgs = (args.extraBwrapArgs or [ ]) ++ [ "--cap-add ALL" ];
-          });
-      });
-    in
-    hackedPkgs.lutris;
-in
+
 {
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
-    package = pkgs.steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-        ];
-    };
+    # package = pkgs.steam.override {
+    #   extraPkgs = pkgs:
+    #     with pkgs; [
+    #       xorg.libXcursor
+    #       xorg.libXi
+    #       xorg.libXinerama
+    #       xorg.libXScrnSaver
+    #       libpng
+    #       libpulseaudio
+    #       libvorbis
+    #       stdenv.cc.cc.lib
+    #       libkrb5
+    #       keyutils
+    #     ];
+    # };
   };
   #Enable Gamescope
   programs.gamescope = {
@@ -69,16 +57,15 @@ in
 
   environment.systemPackages = with pkgs; [
     protonup-qt
-    myLutrisPkg
-    # (lutris.override {
-    #   extraLibraries = pkgs: [
-    #     # List library dependencies here
-    #     jansson
-    #   ];
-    #   extraPkgs = pkgs: [
-    #     # List package dependencies here
-    #     jansson
-    #   ];
-    # })
+    (lutris.override {
+      extraLibraries = pkgs: [
+        # List library dependencies here
+        jansson
+      ];
+      extraPkgs = pkgs: [
+        # List package dependencies here
+        jansson
+      ];
+    })
   ];
 }

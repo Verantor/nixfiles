@@ -2,8 +2,7 @@
 , lib
 , theme
 , ...
-}:
-{
+}: {
   programs.wofi = {
     enable = true;
     style = import ./style.nix;
@@ -28,9 +27,7 @@
       location = "center";
       key_expand = "Tab";
       insensitive = false;
-
     };
-
   };
   programs.rofi = {
     enable = true;
@@ -48,6 +45,7 @@
         width = 60;
         line-height = 50;
         lines = 5;
+        fields = "filename,name,generic,keywords";
       };
       colors = {
         background = "1e1e2edd";
@@ -61,7 +59,6 @@
     };
   };
 }
-
 # home.packages = with pkgs; [
 #   rofi-wayland-unwrapped
 # ];
