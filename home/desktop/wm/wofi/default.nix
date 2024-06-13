@@ -39,7 +39,7 @@
     enable = true;
     settings = {
       main = {
-        font = "${theme.font}";
+        # font = "${theme.font}";
         terminal = "foot"; #${pkgs.kitty}/bin/kitty
         layer = "overlay";
         width = 60;
