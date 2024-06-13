@@ -26,7 +26,7 @@
     cursor.name = "Bibata-Modern-Ice";
     fonts = {
       sizes = {
-        applications = 12;
+        applications = 10;
         terminal = 15;
         desktop = 10;
         popups = 10;
