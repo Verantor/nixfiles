@@ -20,7 +20,7 @@
       base0E = "d3869b";
       base0F = "d65d0e";
     };
-    image = ./wallpapers/wall2.png;
+    # image = ./wallpapers/wall2.png;
     fonts = {
       serif = {
         package = pkgs.cantarell-fonts;
