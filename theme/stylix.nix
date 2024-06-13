@@ -52,14 +52,15 @@
         name = "Noto Color Emoji";
       };
     };
-  };
 
-  opacity = {
-    applications = 1.0;
-    terminal = 1.0;
-    desktop = 1.0;
-    popups = 1.0;
-  };
 
-  polarity = "dark"; # "light" or "either"
+    opacity = {
+      applications = 1.0;
+      terminal = 1.0;
+      desktop = 1.0;
+      popups = 1.0;
+    };
+
+    polarity = "dark"; # "light" or "either"
+  };
 } 
