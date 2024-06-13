@@ -52,6 +52,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    BROWSER = "firefox";
     TERMINAL = "foot";
     NIXOS_OZONE_WL = "1"; #TODO spotify doesn't work with this i think
     GDK_BACKEND = "wayland,x11,*";

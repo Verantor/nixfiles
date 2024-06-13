@@ -10,6 +10,7 @@
     vesktop
     bottles
     firefox
+    floorp
     jellyfin-mpv-shim
     anki-bin
     mullvad-vpn
