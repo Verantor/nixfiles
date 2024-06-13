@@ -4,6 +4,7 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+    localNetworkGameTransfers.openFirewall = true;
     # package = pkgs.steam.override {
     #   extraPkgs = pkgs:
     #     with pkgs; [
@@ -57,15 +58,17 @@
 
   environment.systemPackages = with pkgs; [
     protonup-qt
-    (lutris.override {
-      extraLibraries = pkgs: [
-        # List library dependencies here
-        jansson
-      ];
-      extraPkgs = pkgs: [
-        # List package dependencies here
-        jansson
-      ];
-    })
+    lutris
+
+    # (lutris.override {
+    #   extraLibraries = pkgs: [
+    #     # List library dependencies here
+    #     jansson
+    #   ];
+    #   extraPkgs = pkgs: [
+    #     # List package dependencies here
+    #     jansson
+    #   ];
+    # })
   ];
 }

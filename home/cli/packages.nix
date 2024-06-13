@@ -45,7 +45,7 @@
       simplified_ui = true;
       default_layout = "default";
       ui.pane_frames.rounded_corners = true;
-      theme = "tokyonight_storm";
+      # theme = "tokyonight_storm";
       themes.tokyonight_storm = {
         fg = "#c0caf5";
         bg = "#292e42";
