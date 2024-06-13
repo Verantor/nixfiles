@@ -95,6 +95,7 @@
       openrgb = ./system/openrgb.nix;
       #overlays = ./system/overlays.nix;
       borg = ./system/borg.nix;
+      theme = ./theme/stylix.nix;
       hw = inputs.nixos-hardware.nixosModules;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
@@ -158,6 +159,7 @@
               #flatpak
               nixDB
               stylix
+              theme
               { inherit home-manager; } #
             ]
             ++ shared;
