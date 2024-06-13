@@ -5,7 +5,7 @@
 }: {
   programs.wofi = {
     enable = true;
-    style = import ./style.nix;
+    # style = import ./style.nix;
     settings = {
       hide_scroll = true;
       show = "drun";
@@ -29,12 +29,12 @@
       insensitive = false;
     };
   };
-  programs.rofi = {
-    enable = true;
-    location = "center";
-    package = pkgs.rofi-wayland-unwrapped;
-    terminal = "foot";
-  };
+  # programs.rofi = {
+  #   enable = true;
+  #   location = "center";
+  #   package = pkgs.rofi-wayland-unwrapped;
+  #   terminal = "foot";
+  # };
   programs.fuzzel = {
     enable = true;
     settings = {

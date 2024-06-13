@@ -41,11 +41,10 @@
         package = pkgs.cantarell-fonts;
         name = "Caranarell Sans";
       };
-
-      # monospace = {
-      #   package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-      #   name = "JetBrainsMono Nerd Font Mono";
-      # };
+      monospace = {
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        name = "JetBrainsMono Nerd Font Mono";
+      };
 
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

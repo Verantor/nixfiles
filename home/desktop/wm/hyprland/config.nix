@@ -50,8 +50,8 @@ in
           border_size = 2;
           layout = "dwindle";
           # active border color
-          "col.active_border" = "rgb(${accent})";
-          "col.inactive_border" = "rgb(${surface0})";
+          # "col.active_border" = "rgb(${accent})";
+          # "col.inactive_border" = "rgb(${surface0})";
           resize_on_border = true;
           # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
           apply_sens_to_raw = 0;
@@ -79,7 +79,7 @@ in
           drop_shadow = "yes";
           shadow_range = 4;
           shadow_render_power = 5;
-          "col.shadow" = "rgba(292c3cee)";
+          # "col.shadow" = "rgba(292c3cee)";
         };
 
         misc = {

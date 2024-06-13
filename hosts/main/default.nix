@@ -117,11 +117,7 @@
   #     HSA_OVERRIDE_GFX_VERSION = "10.3.0 HCC_AMDGPU_TARGET=gfx1030";
   #   };
   # };
-  # services.aria2 = {
-  #   enable = true;
-  #   downloadDir = "/home/ver/Downloads";
-  #   rpcSecretFile = config.sops.secrets.longPassword.path;
-  # };
+
 
   environment.systemPackages = with pkgs; [
     fish
