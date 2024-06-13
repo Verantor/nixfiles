@@ -51,7 +51,6 @@
         name = "Noto Color Emoji";
       };
     };
-    targets.mangohud.enable = false;
 
     opacity = {
       applications = 1.0;
