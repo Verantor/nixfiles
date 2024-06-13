@@ -25,6 +25,13 @@
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
     fonts = {
+      sizes = {
+        applications = 12;
+        terminal = 15;
+        desktop = 10;
+        popups = 10;
+      };
+
       serif = {
         package = pkgs.cantarell-fonts;
         name = "Caranarell Serif";
@@ -45,14 +52,6 @@
         name = "Noto Color Emoji";
       };
     };
-  };
-
-
-  fonts.sizes = {
-    applications = 12;
-    terminal = 15;
-    desktop = 10;
-    popups = 10;
   };
 
   opacity = {
