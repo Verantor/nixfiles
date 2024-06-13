@@ -54,11 +54,11 @@
 
     opacity = {
       applications = 1.0;
-      terminal = 1.0;
-      desktop = 1.0;
-      popups = 1.0;
+      terminal = 0.5;
+      desktop = 0.3;
+      popups = 0.8;
     };
 
     polarity = "dark"; # "light" or "either"
   };
-} 
+}
