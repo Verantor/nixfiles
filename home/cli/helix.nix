@@ -5,7 +5,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "tokyonight";
+      # theme = "tokyonight";
       keys.normal = {
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
