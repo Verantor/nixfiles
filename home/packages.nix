@@ -55,7 +55,7 @@
     winetricks
     zathura
     nicotine-plus
-    handbrake
+    # handbrake
 
     logseq
 
