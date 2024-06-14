@@ -1,9 +1,7 @@
 { pkgs
 , lib
 , ...
-}:
-
-{
+}: {
   programs.waybar = {
     enable = true;
     style = import ./style.nix;
@@ -108,7 +106,6 @@
           "show-passive-items" = true;
         };
         privacy = {
-
           "icon-spacing" = 4;
           "icon-size" = 10;
           "transition-duration" = 200;
@@ -180,11 +177,10 @@
           "on-click" = "audio_changer.py";
           "on-scroll-up" = "pamixer -i 5";
           "on-scroll-down" = "pamixer -d 5";
-          "on-click-middle" = "pavucontrol";
+          "on-click-middle" = "pwvucontrol";
           "scroll-step" = 5;
         };
       };
-
     };
   };
 }
