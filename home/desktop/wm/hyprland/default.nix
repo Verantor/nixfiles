@@ -8,7 +8,7 @@
     #with inputs.hyprcontrib.packages.${pkgs.system};
     [
       hyprnome #TODO do config
-
+      pwvucontrol
       playerctl
       libnotify
       wf-recorder
