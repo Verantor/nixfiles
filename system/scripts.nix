@@ -21,7 +21,7 @@
       notify-send -e "NixOS Update OK!" --icon=software-update-availableb
     '')
     (writeShellScriptBin "nixof" ''
-      sudo nixos-rebuild switch --offline --upgrade --flake .#main |& nom
+      sudo nixos-rebuild switch --offline --upgrade --flake .#main
     '')
     (writeShellScriptBin "waybar-kde-connect.sh" ''
       get_status() {
