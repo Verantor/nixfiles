@@ -46,6 +46,7 @@ in
 
         "${modshift},P, exec, hyprshot -m window" # screenshot focused window
         "${modshift},R, exec, hyprshot -m region" # screenshot focused region
+        "${modshift},R, exec, hyprshot -m region --raw | swappy -f -"
 
         "${mod},1, exec, hyprnome --previous"
         "${mod},2, exec, hyprnome"
