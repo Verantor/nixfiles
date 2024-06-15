@@ -28,7 +28,6 @@ in
   wayland.windowManager.hyprland.settings = {
     bind =
       [
-
         "${mod},SPACE,exec,fuzzel" #-show drun
         "${mod},T,exec,foot"
         "${mod},C,killactive"
@@ -44,6 +43,9 @@ in
         "${modshift},G,changegroupactive," # switch within the active group
         "${mod},V,togglefloating," # toggle floating for the focused window
         "${modshift},F,fullscreen," # fullscreen focused window
+
+        "${modshift},P, exec, hyprshot -m window" # screenshot focused window
+        "${modshift},R, exec, hyprshot -m region" # screenshot focused region
 
         # workspace controls
         "${modshift},L,movetoworkspace,+1" # move focused window to the next ws

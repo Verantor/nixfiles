@@ -14,7 +14,8 @@
       wf-recorder
       pamixer
       slurp
-      #hyprshot
+      hypridle
+      hyprshot
       hyprpicker
       waypaper
       swappy
