@@ -6,82 +6,62 @@
 }:
 
 {
-  programs.hyprlock = with theme.colors; {
-    package = pkgs.hyprlock;
+  programs.hyprlock = {
     enable = true;
-    general = {
-      disable_loading_bar = false;
-      hide_cursor = false;
-      no_fade_in = false;
+    settings = {
+      general = {
+        disable_loading_bar = true;
+        grace = 300;
+        hide_cursor = true;
+        no_fade_in = false;
+      };
+
+      background = [
+        {
+          path = "screenshot";
+          blur_passes = 3;
+          blur_size = 8;
+        }
+      ];
+
+      input-field = [
+        {
+          size = "200, 50";
+          position = "0, -80";
+          monitor = "";
+          dots_center = true;
+          fade_on_empty = false;
+          font_color = "rgb(202, 211, 245)";
+          inner_color = "rgb(91, 96, 120)";
+          outer_color = "rgb(24, 25, 38)";
+          outline_thickness = 5;
+          placeholder_text = ''<span font_family="${theme.font}" foreground="#f2d5cf">Password...</span>'';
+          shadow_passes = 2;
+        }
+      ];
     };
 
-    backgrounds = [
-      {
-        monitor = "";
-        path = "${theme.wallpaper}/wall2.png";
-        blur_passes = 3;
-        blur_size = 7;
-        noise = 0.0117;
-        contrast = 0.8916;
-        brightness = 0.8172;
-        vibrancy = 0.1696;
-        vibrancy_darkness = 0.0;
-      }
-    ];
-
-    input-fields = [
-      {
-        monitor = "DP-2";
-
-        size = {
-          width = 300;
-          height = 50;
-        };
-        halign = "center";
-        valign = "center";
-        outline_thickness = 2;
-
-        outer_color = "rgb(${accent})";
-        inner_color = "rgb(${base})";
-        font_color = "rgb(${text})";
-
-        fade_on_empty = false;
-        #"font_family" = "JetBrains Mono Nerd Font Mono";
-        placeholder_text = ''<i><span font_family="${font_family}" foreground="##${subtext1}">Input Password...</span></i>'';
-
-        dots_spacing = 0.3;
-        dots_center = true;
-      }
-    ];
-
-    labels = [
-      {
-        monitor = "";
-        text = "$TIME";
-        color = "rgba(${base}bf)";
-        #color = rgba(255, 255, 255, 0.6);
-        font_size = 120;
-        "font_family" = "JetBrains Mono Nerd Font Mono ExtraBold";
-        position = {
-          x = 0;
-          y = -300;
-        };
-        halign = "center";
-        valign = "top";
-      }
-    ];
   };
   services.hypridle = {
     enable = true;
-    beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
-    lockCmd = lib.getExe config.programs.hyprlock.package;
+    settings = {
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "hyprlock";
+      };
 
-    listeners = [
-      {
-        timeout = 330;
-        #on-timeout = "notify-send 'You are idle!'";
-        #on-resume = "notify-send 'Welcome back!'";
-      }
-    ];
+      listener = [
+        {
+          timeout = 900;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 1200;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
   };
 }
