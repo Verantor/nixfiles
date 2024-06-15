@@ -69,12 +69,12 @@ in
         ",XF86AudioPause,exec,playerctl play-pause"
         ",XF86AudioNext,exec,playerctl next"
         ",XF86AudioPrev,exec,playerctl previous"
-      ]
-        # ++ workspaces;
+      ];
+    # ++ workspaces;
 
-        bindm = [
-    "${mod},mouse:272,movewindow"
-    "${mod},mouse:273,resizewindow"
+    bindm = [
+      "${mod},mouse:272,movewindow"
+      "${mod},mouse:273,resizewindow"
     ];
 
     binde = [
