@@ -7,22 +7,22 @@ let
   modshift = "${mod}SHIFT";
 
   # binds $mod + [shift +] {1..10} to [move to] workspace {1..10} (stolen from fufie)
-  workspaces = builtins.concatLists (builtins.genList
-    (
-      x:
-      let
-        ws =
-          let
-            c = (x + 1) / 10;
-          in
-          builtins.toString (x + 1 - (c * 10));
-      in
-      [
-        "${mod}, ${ws}, workspace, ${toString (x + 1)}"
-        "${mod} SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-      ]
-    )
-    10);
+  # workspaces = builtins.concatLists (builtins.genList
+  #   (
+  #     x:
+  #     let
+  #       ws =
+  #         let
+  #           c = (x + 1) / 10;
+  #         in
+  #         builtins.toString (x + 1 - (c * 10));
+  #     in
+  #     [
+  #       "${mod}, ${ws}, workspace, ${toString (x + 1)}"
+  #       "${mod} SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+  #     ]
+  #   )
+  #   10);
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -47,6 +47,12 @@ in
         "${modshift},P, exec, hyprshot -m window" # screenshot focused window
         "${modshift},R, exec, hyprshot -m region" # screenshot focused region
 
+        "${mod},1, exec, hyprnome --previous"
+        "${mod},2, exec, hyprnome"
+        "${modshift},1, exec, hyprnome --previous --move"
+        "${modshift},2, exec, hyprnome  --move"
+
+
         # workspace controls
         "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
         "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
@@ -64,11 +70,11 @@ in
         ",XF86AudioNext,exec,playerctl next"
         ",XF86AudioPrev,exec,playerctl previous"
       ]
-      ++ workspaces;
+        # ++ workspaces;
 
-    bindm = [
-      "${mod},mouse:272,movewindow"
-      "${mod},mouse:273,resizewindow"
+        bindm = [
+    "${mod},mouse:272,movewindow"
+    "${mod},mouse:273,resizewindow"
     ];
 
     binde = [
