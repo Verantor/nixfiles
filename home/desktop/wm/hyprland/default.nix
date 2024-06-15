@@ -16,6 +16,7 @@
       slurp
       hypridle
       hyprshot
+      satty
       hyprpicker
       waypaper
       swappy
