@@ -17,7 +17,7 @@
         alpha = "yes";
         osc = "no";
       };
-      scripts = with pkgs.mpvScripts; [ mpris thumbnail sponsorblock ];
+      scripts = with pkgs.mpvScripts; [ mpris sponsorblock ];
     };
 
     obs-studio = {

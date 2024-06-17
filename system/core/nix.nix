@@ -1,4 +1,7 @@
-{ inputs, outputs, ... }: {
+{ inputs
+, outputs
+, ...
+}: {
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
@@ -16,9 +19,9 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 1w";
+      options = "--delete-older-than 7d";
     };
-    #It is also possible to automatically run garbage collection whenever there is not enough space left.[cf. 5] For example, to free up to 1GiB whenever there is less than 100MiB left: 
+    #It is also possible to automatically run garbage collection whenever there is not enough space left.[cf. 5] For example, to free up to 1GiB whenever there is less than 100MiB left:
     extraOptions = ''
       min-free = ${toString (100 * 1024 * 1024)}
       max-free = ${toString (1024 * 1024 * 1024)}
@@ -40,9 +43,7 @@
         "nixpkgs-unfree.cachix.org-1:hqvoInulhbV4nJ9yJOEr+4wxhDV4xq2d1DK7S6Nj6rs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
-
     };
-
   };
   # system.autoUpgrade = {
   #   enable = true;
@@ -55,7 +56,4 @@
   #   dates = "09:00";
   #   randomizedDelaySec = "45min";
   # };
-
-
-
 }
