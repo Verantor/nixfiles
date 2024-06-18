@@ -5,7 +5,6 @@
 let
   mod = "SUPER";
   modshift = "${mod}SHIFT";
-
   # binds $mod + [shift +] {1..10} to [move to] workspace {1..10} (stolen from fufie)
   # workspaces = builtins.concatLists (builtins.genList
   #   (
@@ -26,51 +25,49 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
-    bind =
-      [
-        "${mod},SPACE,exec,fuzzel" #-show drun
-        "${mod},T,exec,foot"
-        "${mod},C,killactive"
-        "${mod},P,pseudo"
-        "${mod},E,exec,nautilus"
-        "${mod},F,exec,firefox"
-        "${mod},H,movefocus,l"
-        "${mod},L,movefocus,r"
-        "${mod},K,movefocus,u"
-        "${mod},J,movefocus,d"
+    bind = [
+      "${mod},SPACE,exec,fuzzel" #-show drun
+      "${mod},T,exec,foot"
+      "${mod},C,killactive"
+      "${mod},P,pseudo"
+      "${mod},E,exec,nautilus"
+      "${mod},F,exec,floorp"
+      "${mod},H,movefocus,l"
+      "${mod},L,movefocus,r"
+      "${mod},K,movefocus,u"
+      "${mod},J,movefocus,d"
 
-        "${mod},G,togglegroup," # group focused window
-        "${modshift},G,changegroupactive," # switch within the active group
-        "${mod},V,togglefloating," # toggle floating for the focused window
-        "${modshift},F,fullscreen," # fullscreen focused window
+      "${mod},G,togglegroup," # group focused window
+      "${modshift},G,changegroupactive," # switch within the active group
+      "${mod},V,togglefloating," # toggle floating for the focused window
+      "${modshift},F,fullscreen," # fullscreen focused window
 
-        "${modshift},P, exec, hyprshot -m window" # screenshot focused window
-        "${modshift},R, exec, hyprshot -m region" # screenshot focused region
-        "${modshift},E, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
+      "${modshift},P, exec, hyprshot -m window" # screenshot focused window
+      "${modshift},R, exec, hyprshot -m region" # screenshot focused region
+      "${modshift},E, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
 
-        "${mod},1, exec, hyprnome --previous"
-        "${mod},2, exec, hyprnome"
-        "${modshift},1, exec, hyprnome --previous --move"
-        "${modshift},2, exec, hyprnome  --move"
+      "${mod},1, exec, hyprnome --previous"
+      "${mod},2, exec, hyprnome"
+      "${modshift},1, exec, hyprnome --previous --move"
+      "${modshift},2, exec, hyprnome  --move"
 
+      # workspace controls
+      "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
+      "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
+      "${mod},mouse_down,workspace,e+1" # move to the next ws
+      "${mod},mouse_up,workspace,e-1" # move to the previous ws
 
-        # workspace controls
-        "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
-        "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
-        "${mod},mouse_down,workspace,e+1" # move to the next ws
-        "${mod},mouse_up,workspace,e-1" # move to the previous ws
-
-        "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
-        "${mod},ESC,exec,hyprlock"
-        # ",XF86AudioRaiseVolume,exec,pamixer -i 5"
-        # ",XF86AudioLowerVolume,exec,pamixer -d 5"
-        # ",XF86AudioMicMute,exec,pamixer --default-source -m"
-        # ",XF86AudioMute,exec,pamixer -t"
-        # ",XF87AudioPlay,exec,playerctl play-pause"
-        # ",XF86AudioPause,exec,playerctl play-pause"
-        # ",XF86AudioNext,exec,playerctl next"
-        # ",XF86AudioPrev,exec,playerctl previous"
-      ];
+      "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+      "${mod},ESC,exec,hyprlock"
+      # ",XF86AudioRaiseVolume,exec,pamixer -i 5"
+      # ",XF86AudioLowerVolume,exec,pamixer -d 5"
+      # ",XF86AudioMicMute,exec,pamixer --default-source -m"
+      # ",XF86AudioMute,exec,pamixer -t"
+      # ",XF87AudioPlay,exec,playerctl play-pause"
+      # ",XF86AudioPause,exec,playerctl play-pause"
+      # ",XF86AudioNext,exec,playerctl next"
+      # ",XF86AudioPrev,exec,playerctl previous"
+    ];
     # ++ workspaces;
 
     bindm = [

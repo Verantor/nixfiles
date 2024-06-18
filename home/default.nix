@@ -39,7 +39,6 @@
   home.homeDirectory = lib.mkForce "/home/ver";
 
   home.packages = with pkgs; [
-
   ];
 
   home.file = { };
@@ -52,7 +51,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "firefox";
+    BROWSER = "floorp";
     TERMINAL = "foot";
     NIXOS_OZONE_WL = "1"; #TODO spotify doesn't work with this i think
     GDK_BACKEND = "wayland,x11,*";
