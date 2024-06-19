@@ -9,6 +9,9 @@
 
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron"
+      ];
     }; #
   };
 
