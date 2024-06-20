@@ -30,7 +30,7 @@
     halloy
     ianny
     libnotify
-    obsidian
+    # obsidian
     qbittorrent-qt5
     exiftool
     digikam
