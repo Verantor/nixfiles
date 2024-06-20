@@ -95,11 +95,14 @@
       stylix = inputs.stylix.nixosModules.stylix;
       shared = [ core sops ];
 
-      config.permittedInsecurePackages = [
-        "electron"
-      ];
-
-
+      pkgs = import nixpkgs {
+        inherit systems;
+        # UNFREE IS WORWING
+        config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "openssl-1.1.1w"
+        ];
+      };
       home-manager = {
         useUserPackages = true;
         #useGlobalPkgs = true;
@@ -133,6 +136,7 @@
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          inherit pkgs;
           modules =
             [
               { networking.hostName = "main"; }
