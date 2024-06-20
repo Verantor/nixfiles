@@ -7,6 +7,12 @@ let
       config.allowUnfree = true;
     };
   };
+  overlays = with inputs; [
+    # ...
+    (final: prev: {
+      zjstatus = zjstatus.packages.${prev.system}.default;
+    })
+  ];
 in
 {
   # This one brings our custom packages from the 'pkgs' directory
