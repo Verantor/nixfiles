@@ -122,6 +122,7 @@
     git
     nixpkgs-fmt
     virt-manager
+    powertop
     wine
     vulkan-tools
     just
