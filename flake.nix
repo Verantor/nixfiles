@@ -95,6 +95,11 @@
       stylix = inputs.stylix.nixosModules.stylix;
       shared = [ core sops ];
 
+      config.permittedInsecurePackages = [
+        "electron"
+      ];
+
+
       home-manager = {
         useUserPackages = true;
         #useGlobalPkgs = true;

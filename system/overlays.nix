@@ -5,6 +5,9 @@ let
     stable = import inputs.nixpkgs-stable {
       system = final.system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron"
+      ];
     };
   };
   overlays = with inputs; [
@@ -32,6 +35,9 @@ in
     stable = import inputs.nixpkgs-stable {
       system = final.system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron"
+      ];
     };
   };
 }
