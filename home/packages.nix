@@ -57,7 +57,7 @@
     nicotine-plus
     # handbrake
 
-    logseq
+    # logseq
 
     zed-editor
 

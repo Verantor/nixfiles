@@ -34,8 +34,6 @@
   #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   # };
 
-
-
   services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 
@@ -118,7 +116,6 @@
   #   };
   # };
 
-
   environment.systemPackages = with pkgs; [
     fish
     nushell
@@ -163,30 +160,29 @@
     comma
 
     (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions;
-        [
-          jnoortheen.nix-ide
-          skellock.just
-          enkia.tokyo-night
-          usernamehw.errorlens
-          rust-lang.rust-analyzer
-          arrterian.nix-env-selector
-          github.copilot
-          gruntfuggly.todo-tree
-          charliermarsh.ruff
-          ms-python.python
-          dart-code.flutter
-          vscodevim.vim
-          golang.go
-        ]
-        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "zmk-tools";
-            publisher = "spadin";
-            version = "1.4.0";
-            sha256 = "7faeee39d7d94c674818d550b8bb85e9278566a2aa06fe39e4620b8f7e9b672f";
-          }
-        ];
+      vscodeExtensions = with vscode-extensions; [
+        jnoortheen.nix-ide
+        skellock.just
+        enkia.tokyo-night
+        usernamehw.errorlens
+        rust-lang.rust-analyzer
+        arrterian.nix-env-selector
+        github.copilot
+        gruntfuggly.todo-tree
+        charliermarsh.ruff
+        ms-python.python
+        dart-code.flutter
+        vscodevim.vim
+        golang.go
+      ];
+      # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      #   {
+      #     name = "zmk-tools";
+      #     publisher = "spadin";
+      #     version = "1.4.0";
+      #     sha256 = "7faeee39d7d94c674818d550b8bb85e9278566a2aa06fe39e4620b8f7e9b672f";
+      #   }
+      # ];
     })
   ];
 }
