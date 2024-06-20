@@ -10,12 +10,7 @@ let
       ];
     };
   };
-  overlays = with inputs; [
-    # ...
-    (final: prev: {
-      zjstatus = zjstatus.packages.${prev.system}.default;
-    })
-  ];
+
 in
 {
   # This one brings our custom packages from the 'pkgs' directory
@@ -28,7 +23,12 @@ in
   #   # ...
   #   # });
   # };
-
+  overlays = with inputs; [
+    # ...
+    (final: prev: {
+      zjstatus = zjstatus.packages.${prev.system}.default;
+    })
+  ];
   # When applied, the stable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.stable'
   stable-packages = final: _prev: {
