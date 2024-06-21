@@ -159,7 +159,7 @@
     fuse-overlayfs
     sops #TODO find better place for this like sops.nix
     comma
-
+    davinci-resolve
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
