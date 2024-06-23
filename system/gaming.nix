@@ -26,7 +26,7 @@
   #Enable Gamescope
   programs.gamescope = {
     enable = true;
-    capSysNice = true; #TODO when this is fixed, remove this line
+    capSysNice = false; #TODO when this is fixed, remove this line
     # args = [ "--prefer-vk-device 1002:73ff" ];
     # env = {
     #   "__GLX_VENDOR_LIBRARY_NAME" = "amd";
