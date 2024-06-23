@@ -6,7 +6,7 @@
   programs = {
     bash.promptInit = ''eval "$(${pkgs.starship}/bin/starship init bash)"'';
   };
-#TODO add fish support
+  #TODO add fish support
   environment.systemPackages = with pkgs; [
     git
     starship # having starship here means pkgs.startship will be stored during build and not during promptInit
