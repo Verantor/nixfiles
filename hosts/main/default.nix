@@ -8,7 +8,6 @@
     ./regreet.nix
     ./programs.nix
     ./nautilus.nix
-    # ./maccel.nix
   ];
   virtualisation.containers.enable = true;
 
@@ -35,7 +34,7 @@
   #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   # };
 
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 
   # nix = {
@@ -127,7 +126,6 @@
     wine
     vulkan-tools
     just
-    gnome.nautilus
     lshw
     cargo
     rustc
@@ -143,16 +141,14 @@
     gimp
     ffmpegthumbnailer
     #thud
-    gnome.eog
     nufraw-thumbnailer
     libheif
     gnome-epub-thumbnailer
     jamesdsp
-    gnome.dconf-editor # Edit gnome's dconf
     #super-slicer
     alvr
-    piper-tts
-    nvd
+    # piper-tts
+    nvd #nixversiondiff
     glib
     glibc
     dwarfs
@@ -162,7 +158,7 @@
     fuse-overlayfs
     sops #TODO find better place for this like sops.nix
     comma
-    davinci-resolve
+    # davinci-resolve
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide

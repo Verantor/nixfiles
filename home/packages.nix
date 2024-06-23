@@ -79,6 +79,10 @@
     # gnome.nautilus-python
     # nautilus-open-any-terminal
     gnome.sushi
+    gnome.nautilus
+
+    gnome.dconf-editor # Edit gnome's dconf
+    gnome.eog
   ];
 
   manual.html.enable = false;

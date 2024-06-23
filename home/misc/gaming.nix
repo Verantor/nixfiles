@@ -7,6 +7,5 @@
     enable = true;
     enableSessionWide = false;
   };
-  stylix.targets.mangohud.enable = false;
-  stylix.targets.waybar.enable = false;
+
 }

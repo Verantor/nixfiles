@@ -4,7 +4,7 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
-    localNetworkGameTransfers.openFirewall = true;
+    # localNetworkGameTransfers.openFirewall = true;
     # extest.enable = true;
     # protontricks.enable = true;
     # package = pkgs.steam.override {

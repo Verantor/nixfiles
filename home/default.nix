@@ -22,9 +22,9 @@
     ];
     config = {
       allowUnfree = true;
-      ermittedInsecurePackages = [
-        "electron"
-      ];
+      # ermittedInsecurePackages = [
+      #   "electron"
+      # ];
 
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
