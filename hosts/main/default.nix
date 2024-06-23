@@ -8,7 +8,7 @@
     ./regreet.nix
     ./programs.nix
     ./nautilus.nix
-    ./maccel.nix
+    # ./maccel.nix
   ];
   virtualisation.containers.enable = true;
 
