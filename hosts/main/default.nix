@@ -138,6 +138,7 @@
     #lxqt.lxqt-policykit
     dua
     gnumake
+    linuxHeaders
     gimp
     ffmpegthumbnailer
     #thud
