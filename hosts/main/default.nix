@@ -137,6 +137,7 @@
     protonvpn-cli_2
     #lxqt.lxqt-policykit
     dua
+    gnumake
     gimp
     ffmpegthumbnailer
     #thud

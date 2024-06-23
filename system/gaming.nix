@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+
+  #RADV_PERFTEST=sam,nggc,gpl VKD3D_CONFIG=dxr
+
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
@@ -66,7 +69,6 @@
       };
     };
   };
-  #programs.steam.package = pkgs.steam.override { privateTmp = false; };
 
   environment.systemPackages = with pkgs; [
     protonup-qt
