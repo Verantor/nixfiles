@@ -1,5 +1,4 @@
-{ inputs
-, outputs
+{ outputs
 , ...
 }: {
   nixpkgs = {

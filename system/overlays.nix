@@ -25,7 +25,7 @@ in
   # };
   overlays = with inputs; [
     # ...
-    (final: prev: {
+    (_final: prev: {
       zjstatus = zjstatus.packages.${prev.system}.default;
     })
   ];

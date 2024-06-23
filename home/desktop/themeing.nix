@@ -1,6 +1,5 @@
 { pkgs
 , config
-, theme
 , ...
 }: {
   qt.enable = true;

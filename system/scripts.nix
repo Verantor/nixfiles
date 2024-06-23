@@ -1,5 +1,4 @@
 { pkgs
-, theme
 , ...
 }: {
   environment.systemPackages = with pkgs; [

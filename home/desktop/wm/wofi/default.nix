@@ -1,7 +1,4 @@
-{ pkgs
-, lib
-, theme
-, ...
+{ ...
 }: {
   programs.wofi = {
     enable = true;

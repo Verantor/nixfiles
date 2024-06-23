@@ -65,8 +65,6 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-stable
-    , home-manager
     , # , nix-flatpak
       # , spicetify-nix
       ...
@@ -87,9 +85,7 @@
       #overlays = ./system/overlays.nix;
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
-      hw = inputs.nixos-hardware.nixosModules;
       hmModule = inputs.home-manager.nixosModules.home-manager;
-      lanzaboote = inputs.lanzaboote.nixosModules.lanzaboote;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
@@ -109,14 +105,6 @@
           _module.args.theme = import ./theme;
         };
       };
-      systems = [
-        "aarch64-linux"
-        #"i686-linux"
-        "x86_64-linux"
-        #"aarch64-darwin"
-        #"x86_64-darwin"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     #rec for recursion
     {
