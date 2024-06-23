@@ -25,35 +25,35 @@
     extraPackages = with pkgs; [
       vaapiVdpau
       libvdpau-va-gl
-      rocmPackages.clr.icd
-      rocm-opencl-icd
-      amdvlk
+      # rocmPackages.clr.icd
+      # rocm-opencl-icd
+      # amdvlk
     ];
     extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk
+      # driversi686Linux.amdvlk
     ];
   };
-  hardware.opengl = {
-    # Mesa
-    enable = true;
-
-    # Vulkan
-    # driSupport = true;
-    # driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      vaapiVdpau
-      libvdpau-va-gl
-      rocmPackages.clr.icd
-      rocm-opencl-icd
-      amdvlk
-    ];
-    extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk
-    ];
-  };
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  # hardware.opengl = {
+  #   # Mesa
+  #   enable = true;
+  #
+  #   # Vulkan
+  #   # driSupport = true;
+  #   # driSupport32Bit = true;
+  #   extraPackages = with pkgs; [
+  #     vaapiVdpau
+  #     libvdpau-va-gl
+  #     rocmPackages.clr.icd
+  #     rocm-opencl-icd
+  #     amdvlk
+  #   ];
+  #   extraPackages32 = with pkgs; [
+  #     driversi686Linux.amdvlk
+  #   ];
+  # };
+  # systemd.tmpfiles.rules = [
+  #   "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  # ];
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
     		if ((action.id == "org.corectrl.helper.init" ||
