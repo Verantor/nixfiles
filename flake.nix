@@ -85,12 +85,12 @@
       #overlays = ./system/overlays.nix;
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
+      keyboard = ./system/keyboard.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
       shared = [ core sops ];
-
 
       home-manager = {
         useUserPackages = true;
@@ -140,6 +140,7 @@
               nixDB
               stylix
               theme
+              keyboard
               { inherit home-manager; } #
             ]
             ++ shared;
