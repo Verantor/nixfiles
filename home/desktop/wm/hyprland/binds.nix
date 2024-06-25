@@ -56,6 +56,7 @@ in
       "${mod},mouse_up,workspace,e-1" # move to the previous ws
 
       "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+    "${mod}, D, exec, selectCommands"
       "${mod},ESC,exec,hyprlock"
       # ",XF86AudioRaiseVolume,exec,pamixer -i 5"
       # ",XF86AudioLowerVolume,exec,pamixer -d 5"
