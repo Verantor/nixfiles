@@ -46,8 +46,9 @@
       "maxsize 1 1,class:^(xwaylandvideobridge)$"
       "noblur,class:^(xwaylandvideobridge)$"
 
-
       "immediate, class:^(cs2)$"
+
+      "windowrulev2 = noanim, class:^(fuzzel)$"
     ];
     windowrule = [
       "float, fuzzel"
