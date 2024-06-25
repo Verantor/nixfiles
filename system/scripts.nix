@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "nixrb" ''
       nixpkgs-fmt .
@@ -75,6 +73,29 @@
     # )
     (
       writeShellScriptBin "pvpnPortforwarding" (builtins.readFile ../scripts/pvpnPortforwarding.sh)
+    )
+    (
+      writeShellScriptBin "selectCommands" ''
+        # Path to the file containing the commands
+        COMMANDS_FILE="${../scripts/commands.txt}"
+
+        # Check if the commands file exists
+        if [[ ! -f "$COMMANDS_FILE" ]]; then
+          echo "Commands file not found: $COMMANDS_FILE"
+          exit 1
+        fi
+
+        # Use rofi in dmenu mode to select a command
+        selected_command=$(cat "$COMMANDS_FILE" | fuzzel -d -p "Select a command")
+
+        # Check if a command was selected
+        if [[ -n "$selected_command" ]]; then
+          # Execute the selected command
+          eval "$selected_command"
+        else
+          echo "No command selected"
+        fi
+      ''
     )
   ];
 }
