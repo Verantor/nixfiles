@@ -48,7 +48,7 @@
 
       "immediate, class:^(cs2)$"
 
-      "windowrulev2 = noanim, class:^(fuzzel)$"
+      "noanim, class:^(fuzzel)$"
     ];
     windowrule = [
       "float, fuzzel"
