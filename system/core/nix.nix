@@ -12,7 +12,12 @@
       ];
     }; #
   };
-
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+    flake = "/home/user/my-nixos-config";
+  };
   system.stateVersion = "23.11"; # Did you read the comment?
   nix = {
     optimise.automatic = true;
