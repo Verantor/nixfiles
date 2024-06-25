@@ -4,18 +4,18 @@
       nixpkgs-fmt .
       git diff -U0 '*.nix'
       sudo echo "NixOS Rebuilding..."
-      sudo nixos-rebuild switch --flake .#main |& nom
+      sudo FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff"
       git commit -am "NixOS Rebuilt"
       notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
     '')
     (writeShellScriptBin "nixup" ''
-      nixpkgs-fmt .
-      git diff -U0 '*.nix'
-      sudo nix flake update
-      sudo echo "NixOS Updating..."
-      sudo nixos-rebuild switch --upgrade --flake .#main |& nom
-      git commit -am "NixOS Update"
-      notify-send -e "NixOS Update OK!" --icon=software-update-availableb
+       nixpkgs-fmt .
+       git diff -U0 '*.nix'
+       sudo nix flake update
+       sudo echo "NixOS Updating..."
+      sudo FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff" -u
+       git commit -am "NixOS Update"
+       notify-send -e "NixOS Update OK!" --icon=software-update-availableb
     '')
     (writeShellScriptBin "nixof" ''
       sudo nixos-rebuild switch --offline --upgrade --flake .#main
@@ -97,6 +97,5 @@
         fi
       ''
     )
-
   ];
 }
