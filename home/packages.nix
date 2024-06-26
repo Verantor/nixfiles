@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     networkmanagerapplet
     vesktop
@@ -41,7 +39,7 @@
     overskride
     solaar
     papirus-icon-theme
-
+    colmap
     kdePackages.qttools
 
     spotify-player

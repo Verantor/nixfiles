@@ -1,21 +1,26 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "nixrb" ''
-      nixpkgs-fmt .
-      git diff -U0 '*.nix'
-      sudo echo "NixOS Rebuilding..."
-      sudo FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff"
-      git commit -am "NixOS Rebuilt"
-      notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+      pushd ~/.dotfiles
+            nixpkgs-fmt .
+            git diff -U0 '*.nix'
+            sudo echo "NixOS Rebuilding..."
+             FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff"
+            git commit -am "NixOS Rebuilt"
+            notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+      popd
     '')
     (writeShellScriptBin "nixup" ''
-       nixpkgs-fmt .
-       git diff -U0 '*.nix'
-       sudo nix flake update
-       sudo echo "NixOS Updating..."
-      sudo FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff" -u
-       git commit -am "NixOS Update"
-       notify-send -e "NixOS Update OK!" --icon=software-update-availableb
+
+      pushd ~/.dotfiles
+             nixpkgs-fmt .
+             git diff -U0 '*.nix'
+             sudo nix flake update
+             sudo echo "NixOS Updating..."
+            FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff" -u
+             git commit -am "NixOS Update"
+             notify-send -e "NixOS Update OK!" --icon=software-update-available
+            popd
     '')
     (writeShellScriptBin "nixof" ''
       sudo nixos-rebuild switch --offline --upgrade --flake .#main
