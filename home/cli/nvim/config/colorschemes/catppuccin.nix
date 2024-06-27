@@ -5,13 +5,13 @@
       settings = {
         background = {
           light = "macchiato";
-          dark = "mocha";
+          dark = "latte";
         };
-        flavour = "mocha"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
+        flavour = "latte"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
         disable_bold = false;
         disable_italic = false;
         disable_underline = false;
-        transparent_background = true;
+        transparent_background = false;
         term_colors = true;
         integrations = {
           cmp = true;

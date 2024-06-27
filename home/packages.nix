@@ -39,7 +39,6 @@
     overskride
     solaar
     papirus-icon-theme
-    colmap
     kdePackages.qttools
 
     spotify-player
