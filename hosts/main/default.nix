@@ -167,6 +167,7 @@ in
     deadnix
     razergenie
     # davinci-resolve
+    evhz
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
