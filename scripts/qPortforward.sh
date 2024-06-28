@@ -5,7 +5,7 @@ mapped_port=$(echo "$log_text" | grep -oP 'Mapped public port \K[0-9]+')
 public_port=$mapped_port
 
 
-qbittorrent --torrenting-port=$public_port
+qbittorrent --torrenting-port=$public_port & 
 
 while true; do
   date now
