@@ -27,7 +27,7 @@ in
     # PS5 DualSense controller over bluetooth hidraw
     KERNEL=="hidraw*", KERNELS=="*054C:0CE6*", MODE="0660", TAG+="uaccess"
   '';
-
+  hardware.openrazer.enable = true;
   # boot.plymouth = {
   #   enable = true;
   #   themePackages = [
