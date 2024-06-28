@@ -122,7 +122,7 @@ in
   # };
 
   environment.systemPackages = with pkgs; [
-    ./cli.nix
+    # ./cli.nix
     fish
     nushell
     git
