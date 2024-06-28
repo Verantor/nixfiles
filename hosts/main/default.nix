@@ -165,6 +165,7 @@ in
     sops #TODO find better place for this like sops.nix
     comma
     deadnix
+    razergenie
     # davinci-resolve
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
