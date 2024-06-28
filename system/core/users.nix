@@ -1,6 +1,4 @@
-{ config
-, ...
-}: {
+{ config, ... }: {
   services.openssh = {
     enable = true;
     openFirewall = true;
@@ -26,6 +24,7 @@
           "networkmanager"
           "nix"
           "adbusers"
+          "openrazer"
         ];
         uid = 1000;
         openssh.authorizedKeys.keys = [

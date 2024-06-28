@@ -166,6 +166,8 @@ in
     comma
     deadnix
     razergenie
+    openrazer-daemon
+    polychromatic
     # davinci-resolve
     evhz
     (vscode-with-extensions.override {
