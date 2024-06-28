@@ -5,7 +5,7 @@
             nixpkgs-fmt .
             git diff -U0 '*.nix'
             sudo echo "NixOS Rebuilding..."
-             FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff"
+             FLAKE=~/.dotfiles/ nh os switch -D "nvd diff"
             git commit -am "NixOS Rebuilt"
             notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
       popd
@@ -17,7 +17,7 @@
              git diff -U0 '*.nix'
              sudo nix flake update
              sudo echo "NixOS Updating..."
-            FLAKE=~/.dotfiles/flake.nix nh os switch -D "nvd diff" -u
+            FLAKE=~/.dotfiles/ nh os switch -D "nvd diff" -u
              git commit -am "NixOS Update"
              notify-send -e "NixOS Update OK!" --icon=software-update-available
             popd
@@ -77,7 +77,7 @@
     #   ''
     # )
     (
-      writeShellScriptBin "pvpnPortforwarding" (builtins.readFile ../scripts/pvpnPortforwarding.sh)
+      writeShellScriptBin "qPortforward" (builtins.readFile ../scripts/qPortforward.sh)
     )
     (
       writeShellScriptBin "selectCommands" ''
