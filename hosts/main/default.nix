@@ -1,7 +1,13 @@
 { pkgs
 , inputs
+, config
 , ...
-}: {
+}:
+let
+  maccelModule = config.boot.kernelPackages.callPackage ./maccelModule.nix { };
+in
+{
+  boot.extraModulePackages = [ maccelModule ];
   imports = [
     ./hardware-configuration.nix
     ./regreet.nix
@@ -116,6 +122,7 @@
   # };
 
   environment.systemPackages = with pkgs; [
+    ./cli.nix
     fish
     nushell
     git
