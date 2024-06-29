@@ -31,11 +31,9 @@
       "center, class:^(Vtk)$"
       "size 900 500, class:^(Vtk)$"
 
-
       # throw sharing indicators away
       "workspace special silent, title:^(Firefox — Sharing Indicator)$"
       "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
-
 
       #"workspace 4, title:^(.*(Disc|WebC)ord.*)$"
       #"workspace 2, class:^(firefox)$"
@@ -49,6 +47,9 @@
       "immediate, class:^(cs2)$"
 
       "noanim, class:^(fuzzel)$"
+      "move cursor,class:REAPER,floating:1"
+      "nofocus,class:REAPER,title:^(menu)$"
+      "nofocus,class:REAPER,title:^$"
     ];
     windowrule = [
       "float, fuzzel"
