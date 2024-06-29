@@ -43,7 +43,7 @@
 
     spotify-player
     spotify
-
+    reaper
     helvum
     winetricks
     zathura
