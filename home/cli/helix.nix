@@ -198,7 +198,8 @@
     shellcheck
     lldb
     gopls
-    statix
+    nixpkgs-lint
+    # statix
     rust-analyzer
     clang-tools
     nodejs

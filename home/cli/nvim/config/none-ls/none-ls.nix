@@ -23,15 +23,21 @@
         statix.enable = true;
       };
       diagnostics = {
-        checkstyle = {
+        deadnix = {
           enable = true;
         };
+        # checkstyle = {
+        #   enable = true;
+        # };
         statix = {
           enable = true;
         };
       };
       formatting = {
         alejandra = {
+          enable = true;
+        };
+        gofmt = {
           enable = true;
         };
         prettier = {
@@ -42,12 +48,12 @@
             }
           '';
         };
-        google_java_format = {
-          enable = true;
-        };
-        stylua = {
-          enable = true;
-        };
+        # google_java_format = {
+        #   enable = true;
+        # };
+        # stylua = {
+        #   enable = true;
+        # };
         black = {
           enable = true;
           withArgs = ''
