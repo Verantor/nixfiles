@@ -139,6 +139,7 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
+    interactiveOnly = true;
     # custom settings
     settings = {
       add_newline = false;

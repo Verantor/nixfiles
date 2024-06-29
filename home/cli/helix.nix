@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }: {
   programs.helix = {
     enable = true;
     settings = {
@@ -23,7 +21,6 @@
       };
       keys.insert = {
         "C-x" = "completion";
-
       };
       keys.select = {
         "%" = "match_brackets";
@@ -48,7 +45,6 @@
         };
 
         lsp = {
-
           enable = true;
           auto-signature-help = true;
           display-signature-help-docs = true;
@@ -85,8 +81,6 @@
           normal = "block";
           select = "block";
         };
-
-
       };
     };
     languages = {
@@ -114,11 +108,16 @@
           formatter.command = "nixpkgs-fmt";
         }
         {
-
           name = "python";
           scope = "source.python";
-          indent = { tab-width = 4; unit = " "; };
-          formatter = { command = "black"; args = [ "-" "-q" ]; };
+          indent = {
+            tab-width = 4;
+            unit = " ";
+          };
+          formatter = {
+            command = "black";
+            args = [ "-" "-q" ];
+          };
           roots = [ "pyproject.toml" "pyrightconfig.json" "Poetry.lock" ];
           language-servers = [ "python-ruff" "pyright" ];
           auto-format = true;
@@ -172,7 +171,6 @@
         pyright.config = {
           lint = true;
           inlayHint.enable = true;
-
         };
         python-ruff = {
           command = "ruff-lsp";
@@ -200,6 +198,7 @@
     shellcheck
     lldb
     gopls
+    statix
     rust-analyzer
     clang-tools
     nodejs
