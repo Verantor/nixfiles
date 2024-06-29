@@ -199,7 +199,7 @@
     lldb
     gopls
     nixpkgs-lint
-    # statix
+    statix
     rust-analyzer
     clang-tools
     nodejs
