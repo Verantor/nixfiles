@@ -2,7 +2,13 @@
 , lib
 , pkgs
 , ...
-}: {
+}:
+let
+  hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
+    exec-once = ${pkgs.greetd.regreet}/bin/regreet; hyprctl dispatch exit
+  '';
+in
+{
   environment.systemPackages = with pkgs; [
     greetd.regreet
   ];
@@ -10,14 +16,14 @@
   services.greetd = {
     enable = true;
     settings = {
-      # default_session = {
-      #   command = "${lib.getExe config.programs.hyprland.package}";
-      #   user = "ver";
-      # };
-      initial_session = {
-        command = "${lib.getExe config.programs.hyprland.package} --config /home/ver/.config/greetd/hyprland.conf";
-        user = "greeter";
+      default_session = {
+        command = "${lib.getExe config.programs.hyprland.package} --config ${hyprlandConfig}";
+        # user = "ver";
       };
+      # initial_session = {
+      #   command = "${lib.getExe config.programs.hyprland.package} --config /home/ver/.config/greetd/hyprland.conf";
+      #   user = "greeter";
+      # };
     };
   };
 
