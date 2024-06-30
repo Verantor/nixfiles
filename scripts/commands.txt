@@ -1,6 +1,9 @@
 hyprpicker -a
 cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
+foot bash -c "btop"
+foot bash -c "nvtop"
 select-wall
 foot bash -c "cd ~/.dotfiles && nixrb"
 foot bash -c "cd ~/.dotfiles && nixup"
 foot bash -c "pvpnPortforwarding"
+
