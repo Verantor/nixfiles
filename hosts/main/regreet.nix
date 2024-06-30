@@ -15,7 +15,7 @@
       };
     };
   };
-  xdg.configFile."greetd/hyprland.conf" = {
+  home.file.".config/greetd/hyprland.conf" = {
     enable = true;
     text = ''
       exec-once = regreet; hyprctl dispatch exit
