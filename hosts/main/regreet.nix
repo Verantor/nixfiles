@@ -4,7 +4,7 @@
 , ...
 }: {
   environment.systemPackages = with pkgs; [
-    regreet
+    greetd.regreet
   ];
 
   services.greetd = {
