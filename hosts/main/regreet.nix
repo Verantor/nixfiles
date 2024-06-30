@@ -15,19 +15,12 @@
       };
     };
   };
-  # home.file.".config/greetd/hyprland.conf" = {
-  #   enable = true;
-  #   text = ''
-  #     exec-once = regreet; hyprctl dispatch exit
-  #   '';
-  # };
-  home.file = {
-    ".config/greetd/hyprland.conf" = {
-      text = ''your config here '';
-      executable = false;
-    };
+  home.file.".config/greetd/hyprland.conf" = {
+    enable = true;
+    text = ''
+      exec-once = regreet; hyprctl dispatch exit
+    '';
   };
-
   # programs.regreet = {
   #   cageArgs = [ "-s" "-m" "last" ];
   #   enable = true;
