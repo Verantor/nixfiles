@@ -2,6 +2,10 @@
 , lib
 , ...
 }: {
+  environment.systemPackages = with pkgs; [
+    regreet
+  ];
+
   services.greetd = {
     enable = true;
     settings = {
@@ -15,12 +19,7 @@
       };
     };
   };
-  home.file.".config/greetd/hyprland.conf" = {
-    enable = true;
-    text = ''
-      exec-once = regreet; hyprctl dispatch exit
-    '';
-  };
+
   # programs.regreet = {
   #   cageArgs = [ "-s" "-m" "last" ];
   #   enable = true;
