@@ -1,16 +1,27 @@
-{ ... }: {
-  # environment.systemPackages = with pkgs; [
-  #   greetd.tuigreet
-  # ];
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland --remember --remember-session --user-menu --asterisks";
-  #       user = "greeter";
-  #     };
-  #   };
-  # };
+{ config
+, lib
+, ...
+}: {
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${lib.getExe config.programs.hyprland.package}";
+        user = "ver";
+      };
+      initial_session = {
+        command = "${lib.getExe config.programs.hyprland.package} --config /home/ver/.config/greetd/hyprland.conf";
+        user = "greeter";
+      };
+    };
+  };
+  home.file.".config/greetd/hyprland.conf" = {
+    enable = true;
+    text = ''
+      exec-once = regreet; hyprctl dispatch exit
+    '';
+  };
+
   # programs.regreet = {
   #   cageArgs = [ "-s" "-m" "last" ];
   #   enable = true;
@@ -42,5 +53,4 @@
   #     };
   #   };
   # };
-
 }
