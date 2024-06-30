@@ -10,10 +10,10 @@
   services.greetd = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${lib.getExe config.programs.hyprland.package}";
-        user = "ver";
-      };
+      # default_session = {
+      #   command = "${lib.getExe config.programs.hyprland.package}";
+      #   user = "ver";
+      # };
       initial_session = {
         command = "${lib.getExe config.programs.hyprland.package} --config /home/ver/.config/greetd/hyprland.conf";
         user = "greeter";
