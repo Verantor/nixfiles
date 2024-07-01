@@ -15,12 +15,12 @@
     ./cli
     ./packages.nix
   ];
-  home.file.".config/greetd/hyprland.conf" = {
-    enable = true;
-    text = ''
-      exec-once = regreet; hyprctl dispatch exit
-    '';
-  };
+  # home.file.".config/greetd/hyprland.conf" = {
+  #   enable = true;
+  #   text = ''
+  #     exec-once = regreet; hyprctl dispatch exit
+  #   '';
+  # };
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages

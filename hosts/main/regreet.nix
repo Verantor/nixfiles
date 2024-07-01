@@ -18,12 +18,15 @@ let
   '';
 
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
+    exec-once = swww-deamon
+    exec-once = swww img ${../../theme/wallpapers/leaves-wall.png}
     exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
   '';
 in
 {
   environment.systemPackages = with pkgs; [
     greetd.regreet
+    swww
   ];
 
   services.greetd = {
