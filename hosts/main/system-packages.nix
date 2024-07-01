@@ -9,7 +9,7 @@
     nixpkgs-fmt
     virt-manager
     powertop
-    wine
+    # wine
     winetricks
     wineWowPackages.stable
     wineWowPackages.waylandFull
