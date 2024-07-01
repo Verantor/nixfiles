@@ -197,6 +197,7 @@
     # some other lsp related packages / dev tools
     shellcheck
     lldb
+    prettierd
     gopls
     nixpkgs-lint
     statix
