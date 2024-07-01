@@ -142,18 +142,13 @@ in
     glib
     glibc
     dwarfs
-    aria2
     f3d
     nixos-generators
     fuse-overlayfs
     sops #TODO find better place for this like sops.nix
     comma
     deadnix
-    razergenie
-    openrazer-daemon
-    polychromatic
     # davinci-resolve
-    evhz
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
