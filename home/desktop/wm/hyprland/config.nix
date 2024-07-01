@@ -1,10 +1,11 @@
-{
-  config,
-  theme,
-  ...
-}: let
+{ config
+, theme
+, ...
+}:
+let
   pointer = config.home.pointerCursor;
-in {
+in
+{
   wayland.windowManager.hyprland = with theme.colors; {
     settings = {
       exec-once = [
