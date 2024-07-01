@@ -199,6 +199,7 @@
     lldb
     prettierd
     gopls
+    nodePackages.prettier
     nixpkgs-lint
     statix
     rust-analyzer
