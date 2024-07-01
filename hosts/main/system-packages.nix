@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-{
+{ pkgs
+, inputs
+, ...
+}: {
   environment.systemPackages = with pkgs; [
     fish
     nushell
@@ -8,6 +10,9 @@
     virt-manager
     powertop
     wine
+    winetricks
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
     vulkan-tools
     just
     lshw
