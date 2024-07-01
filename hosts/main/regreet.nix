@@ -4,8 +4,21 @@
 , ...
 }:
 let
+  regreetConfig = pkgs.writeText "regreet-config" ''
+    [background]
+    path = "${../../theme/wallpapers/leaves-wall.png}"
+     fit = "Cover"
+    [GTK]
+    # Whether to use the dark theme
+    application_prefer_dark_theme = true
+
+    [appearance]
+    # The message that initially displays on startup
+    greeting_msg = "Welcome back!"
+  '';
+
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
-    exec-once = ${pkgs.greetd.regreet}/bin/regreet; hyprctl dispatch exit
+    exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
   '';
 in
 {

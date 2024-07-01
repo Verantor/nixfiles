@@ -1,6 +1,4 @@
-{ outputs
-, ...
-}: {
+{ outputs, ... }: {
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
@@ -23,7 +21,7 @@
     optimise.automatic = true;
     optimise.dates = [ "18:00" ]; # Optional; allows customizing optimisation schedule
     gc = {
-      automatic = true;
+      automatic = false; #nh aka nix helper is enabled
       dates = "weekly";
       options = "--delete-older-than 7d";
     };

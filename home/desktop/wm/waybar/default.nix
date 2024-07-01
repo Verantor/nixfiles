@@ -1,8 +1,7 @@
-{ ...
-}: {
+{ ... }: {
   programs.waybar = {
     enable = true;
-    style = import ./style.nix;
+    style = import ./style.css;
     settings = {
       mainBar = {
         layer = "top";
@@ -15,7 +14,7 @@
         ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
-          #"mpris"
+          "mpris"
           "tray"
           "pulseaudio"
           #"network"
@@ -37,15 +36,15 @@
           };
         };
         "hyprland/window" = {
-          # "format" = "{icon} {title}";
-          "max-length" = 200;
+          "format" = "{icon} {title}";
+          "max-length" = 50;
           "separate-outputs" = true;
           # icon = true;
         };
         "custom/search" = {
-          format = "";
+          format = " ";
           tooltip = false;
-          on-click = "rofi -show drun";
+          on-click = "fuzzel";
         };
         "custom/wallpaper" = {
           format = " 󰸉  ";
@@ -53,13 +52,6 @@
           on-click = "select-wall.sh";
         };
 
-        # "custom/weather" = {
-        #   format = "{}";
-        #   tooltip = true;
-        #   interval = 3600;
-        #   exec = "waybar-wttr";
-        #   return-type = "json";
-        # };
         "custom/lock" = {
           tooltip = false;
           on-click = "sh -c '(sleep 0.5s; hyprlock)' & disown";
@@ -71,11 +63,11 @@
             "stopped" = "󰓛";
           };
           "player-icons" = {
-            "default" = "󰎆";
+            "default" = "▶";
             "kdeconnect" = "";
             "spotify" = "󰓇";
             "firefox" = "󰈹";
-            "firefox-devedition" = "󰈹";
+            "floorp" = "󰈹";
           };
           "dynamic-order" = [
             "title"
@@ -96,7 +88,7 @@
           "album-len" = 20;
           "dynamic-len" = 50;
           "format" = "{player_icon} {dynamic}";
-          "format-paused" = "{status_icon} {dynamic}";
+          "format-paused" = "{status_icon} <i>{dynamic}</i>";
         };
         tray = {
           "icon-size" = 25;
