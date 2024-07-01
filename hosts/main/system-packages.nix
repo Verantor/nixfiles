@@ -46,6 +46,7 @@
         rust-lang.rust-analyzer
         arrterian.nix-env-selector
         github.copilot
+        github.copilot-chat
         gruntfuggly.todo-tree
         charliermarsh.ruff
         ms-python.python
