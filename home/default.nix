@@ -38,7 +38,7 @@
   manual.json.enable = false;
 
   #
-  home.sessionVariables = { };
+
 
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -108,11 +108,6 @@
     #rec for recursion
     {
       overlays = import ./system/overlays.nix { inherit inputs; };
-      # imports = [
-      #   {
-      #     config._module.args._inputs = inputs // { inherit (inputs) self; };
-      #   }
-      # ];
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

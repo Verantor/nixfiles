@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     networkmanagerapplet
     vesktop
-    # bottles
+    bottles
     firefox
     floorp
     jellyfin-mpv-shim
