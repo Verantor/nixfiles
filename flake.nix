@@ -63,9 +63,7 @@
   outputs =
     { self
     , nixpkgs
-    , # , nix-flatpak
-      # , spicetify-nix
-      ...
+    , ...
     } @ inputs:
     let
       inherit (self) outputs;

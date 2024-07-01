@@ -128,10 +128,10 @@
        }}
     '';
   };
-  # programs.carapace = {
-  #   enableFishIntegration = true;
-  #   enable = true;
-  # };
+  programs.carapace = {
+    enableNushellIntegration = true;
+    enable = true;
+  };
   programs.fzf = {
     enable = true;
     #enableFishIntegration = true;

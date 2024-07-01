@@ -35,6 +35,7 @@
       home = config.home.homeDirectory;
     in
     [
+      "file://${home}/Games"
       "file://${home}/Documents"
       "file://${home}/Music"
       "file://${home}/Pictures"
