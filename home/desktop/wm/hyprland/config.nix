@@ -1,16 +1,15 @@
-{ config
-, theme
-, ...
-}:
-let
-  pointer = config.home.pointerCursor;
-in
 {
+  config,
+  theme,
+  ...
+}: let
+  pointer = config.home.pointerCursor;
+in {
   wayland.windowManager.hyprland = with theme.colors; {
     settings = {
       exec-once = [
-        "swww-daemon"
-        "swww img ${theme.wallpaper}/leaves-wall.png"
+        # "swww-daemon"
+        # "swww img ${theme.wallpaper}/leaves-wall.png"
         "waybar"
         "hypridle"
         #"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
