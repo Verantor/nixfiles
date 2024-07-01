@@ -12,7 +12,7 @@ in
     ./hardware-configuration.nix
     ./regreet.nix
     ./programs.nix
-    ./nautilus.nix
+    ./services.nix
   ];
   virtualisation.containers.enable = true;
   chaotic.nyx.cache.enable = true;
@@ -27,8 +27,7 @@ in
     # PS5 DualSense controller over bluetooth hidraw
     KERNEL=="hidraw*", KERNELS=="*054C:0CE6*", MODE="0660", TAG+="uaccess"
   '';
-  # hardware.openrazer.enable = true;
-  # boot.plymouth = {
+   # boot.plymouth = {
   #   enable = true;
   #   themePackages = [
   #     (pkgs.catppuccin-plymouth.override {
@@ -39,7 +38,6 @@ in
   #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   # };
 
-  # services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 
   # nix = {

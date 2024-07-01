@@ -5,24 +5,22 @@
     bottles
     firefox
     floorp
-    jellyfin-mpv-shim
     anki-bin
-    mullvad-vpn
     blender-hip
     freecad
     libreoffice-fresh
     goverlay
-    supersonic-wayland
+    # supersonic-wayland
     #adafruit-nrfutil
     utillinux
     usbutils
     xwaylandvideobridge
-    lapce
+    # lapce
     darktable
     unrar
     wireguard-tools
     halloy
-    ianny
+    # ianny
     libnotify
     obsidian
     qbittorrent-qt5
@@ -41,11 +39,12 @@
     papirus-icon-theme
     kdePackages.qttools
 
-    spotify-player
+    # spotify-player
     spotify
     reaper
     helvum
     winetricks
+    protontricks
     zathura
     nicotine-plus
     # handbrake
@@ -65,7 +64,7 @@
     wl-screenrec
     xdg-utils
     libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.lightly
+    # libsForQt5.lightly
     qt6Packages.qt6ct
 
     # turtle
@@ -78,7 +77,5 @@
     gnome.eog
   ];
 
-  manual.html.enable = false;
-  manual.manpages.enable = false;
-  manual.json.enable = false;
+
 }
