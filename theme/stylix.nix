@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   stylix = {
     enable = true;
-    image = ./wallpapers/wall2.png;
+    # image = ./wallpapers/wall2.png;
 
     base16Scheme = {
       base00 = "1d2021"; # ----
