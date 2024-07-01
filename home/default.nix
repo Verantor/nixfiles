@@ -15,26 +15,8 @@
     ./cli
     ./packages.nix
   ];
-  # home.file.".config/greetd/hyprland.conf" = {
-  #   enable = true;
-  #   text = ''
-  #     exec-once = regreet; hyprctl dispatch exit
-  #   '';
-  # };
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.stable-packages
-    ];
-    config = {
-      allowUnfree = true;
-      # ermittedInsecurePackages = [
-      #   "electron"
-      # ];
 
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
+
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.username = "ver";
@@ -50,7 +32,7 @@
   home.packages = with pkgs; [
   ];
 
-  home.file = { };
+  # home.file = { };
   manual.html.enable = false;
   manual.manpages.enable = false;
   manual.json.enable = false;

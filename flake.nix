@@ -93,7 +93,7 @@
 
       home-manager = {
         useUserPackages = true;
-        #useGlobalPkgs = true;
+        useGlobalPkgs = true;
         extraSpecialArgs = {
           inherit inputs;
           inherit self;

@@ -14,17 +14,16 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 3";
-    flake = "/home/user/my-nixos-config";
+    flake = "/home/ver/.dotfiles";
   };
-  system.stateVersion = "23.11"; # Did you read the comment?
   nix = {
     optimise.automatic = true;
     optimise.dates = [ "18:00" ]; # Optional; allows customizing optimisation schedule
-    gc = {
-      automatic = false; #nh aka nix helper is enabled
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    # gc = {
+    #   automatic = false; #nh aka nix helper is enabled
+    #   dates = "weekly";
+    #   options = "--delete-older-than 7d";
+    # };
     #It is also possible to automatically run garbage collection whenever there is not enough space left.[cf. 5] For example, to free up to 1GiB whenever there is less than 100MiB left:
     extraOptions = ''
       min-free = ${toString (100 * 1024 * 1024)}
@@ -49,6 +48,8 @@
       ];
     };
   };
+  system.stateVersion = "23.11"; # Did you read the comment?
+
   # system.autoUpgrade = {
   #   enable = true;
   #   flake = inputs.self.outPath;
