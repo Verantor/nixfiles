@@ -27,7 +27,7 @@ in
     # PS5 DualSense controller over bluetooth hidraw
     KERNEL=="hidraw*", KERNELS=="*054C:0CE6*", MODE="0660", TAG+="uaccess"
   '';
-   # boot.plymouth = {
+  # boot.plymouth = {
   #   enable = true;
   #   themePackages = [
   #     (pkgs.catppuccin-plymouth.override {
@@ -83,7 +83,7 @@ in
   security.sudo.extraConfig = "Defaults pwfeedback";
   programs.dconf.enable = true;
 
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   #TODO clean up and move to separate file
   users.users.ver.shell = pkgs.fish;
   users.users.ver.useDefaultShell = true;
@@ -98,26 +98,13 @@ in
 
   # services.power-profiles-daemon.enable = true;
 
-  # LAN discovery
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-  };
-
   security.pam.services.login.enableGnomeKeyring = true;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   #TODO clean up and move to separate file
 
-  # services.ollama = {
-  #   enable = true;
-  #   #package = pkgs.stable.ollama;
-  #   acceleration = "rocm";
-  #   environmentVariables = {
-  #     HSA_OVERRIDE_GFX_VERSION = "10.3.0 HCC_AMDGPU_TARGET=gfx1030";
-  #   };
-  # };
+
 
   environment.systemPackages = with pkgs; [
     # ./cli.nix
