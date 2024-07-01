@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+
+  home.packages = with pkgs; [
+    jamesdsp
+  ];
+
   programs = {
     mpv = {
       enable = true;

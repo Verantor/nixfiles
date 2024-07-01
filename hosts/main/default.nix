@@ -135,7 +135,6 @@ in
     nufraw-thumbnailer
     libheif
     gnome-epub-thumbnailer
-    jamesdsp
     #super-slicer
     alvr
     # piper-tts
