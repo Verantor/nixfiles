@@ -1,6 +1,10 @@
 { pkgs, ... }: {
   plugins.neotest = {
     enable = true;
+    settings = {
+      output.open_on_run = true;
+      status.virtual_text = true;
+    };
     adapters = {
       python = {
         enable = true;
