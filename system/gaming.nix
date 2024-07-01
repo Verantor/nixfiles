@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   #RADV_PERFTEST=sam,nggc,gpl VKD3D_CONFIG=dxr
+  # chaotic.mesa-git.enable = true;
 
+  # nixpkgs.config.allowUnfree
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;

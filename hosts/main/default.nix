@@ -4,10 +4,10 @@
 , ...
 }:
 let
-  maccelModule = config.boot.kernelPackages.callPackage ./maccelModule.nix { };
+  # maccelModule = config.boot.kernelPackages.callPackage ./maccelModule.nix { };
 in
 {
-  boot.extraModulePackages = [ maccelModule ];
+  # boot.extraModulePackages = [ maccelModule ];
   imports = [
     ./hardware-configuration.nix
     ./regreet.nix
@@ -15,7 +15,7 @@ in
     ./nautilus.nix
   ];
   virtualisation.containers.enable = true;
-
+  chaotic.nyx.cache.enable = true;
   services.udev.extraRules = ''
     # Motherboard buggy when sleeeeep
     ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
@@ -85,8 +85,7 @@ in
   security.sudo.extraConfig = "Defaults pwfeedback";
   programs.dconf.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen; #
-
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
   #TODO clean up and move to separate file
   users.users.ver.shell = pkgs.fish;
   users.users.ver.useDefaultShell = true;
