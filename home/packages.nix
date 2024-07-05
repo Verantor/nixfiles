@@ -72,9 +72,9 @@
     # gnome.nautilus-python
     # nautilus-open-any-terminal
     sushi
-    gnome.nautilus
+    nautilus
 
-    gnome.dconf-editor # Edit gnome's dconf
-    gnome.eog
+    dconf-editor # Edit gnome's dconf
+    eog
   ];
 }
