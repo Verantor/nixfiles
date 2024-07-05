@@ -24,7 +24,7 @@
       '';
       search = {
         default = "Google";
-        privatDefault = "DuckDuckGo";
+        privateDefault = "DuckDuckGo";
         engines = {
           "Nix Packages" = {
             urls = [
