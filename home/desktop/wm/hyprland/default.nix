@@ -27,7 +27,7 @@
       baobab # Disk usage analyser
       fd # Find alternative TODO move to cli
       file-roller # Archive file manager
-      gnome.gnome-calculator # Calculator
+      gnome-calculator # Calculator
       gnome.gnome-disk-utility # Disks manager
       gnome.nautilus # File manager
       # (writeShellScriptBin
