@@ -20,7 +20,7 @@ in
         #"xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store" #Stores only text data
         "udiskie &"
-        { command = lib.getExe' pkgs.swayosd "swayosd-server"; }
+        "${swayosd}"
         "wl-paste --type image --watch cliphist store" #Stores only image data
         # set cursor for HL itself
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
