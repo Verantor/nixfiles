@@ -28,8 +28,8 @@
       fd # Find alternative TODO move to cli
       file-roller # Archive file manager
       gnome-calculator # Calculator
-      gnome.gnome-disk-utility # Disks manager
-      gnome.nautilus # File manager
+      gnome-disk-utility # Disks manager
+      nautilus # File manager
       # (writeShellScriptBin
       #   "pauseshot"
       #   ''
