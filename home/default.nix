@@ -16,8 +16,6 @@
     ./packages.nix
   ];
 
-
-
   home.stateVersion = "23.11"; # Please read the comment before changing.
   home.username = "ver";
 
@@ -39,10 +37,9 @@
 
   #
 
-
   home.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "floorp";
+    BROWSER = "firefox";
     TERMINAL = "foot";
     NIXOS_OZONE_WL = "1"; #TODO spotify doesn't work with this i think
     GDK_BACKEND = "wayland,x11,*";

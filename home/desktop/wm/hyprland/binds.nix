@@ -28,7 +28,7 @@ in
       "${mod},C,killactive"
       "${mod},P,pseudo"
       "${mod},E,exec,nautilus"
-      "${mod},F,exec,floorp"
+      "${mod},F,exec,firefox"
       "${mod},H,movefocus,l"
       "${mod},L,movefocus,r"
       "${mod},K,movefocus,u"
