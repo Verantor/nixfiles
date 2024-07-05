@@ -41,7 +41,8 @@
 
     # spotify-player
     spotify
-    reaper
+    # reaper
+    # vcv-rack
     helvum
     winetricks
     protontricks
@@ -76,6 +77,4 @@
     gnome.dconf-editor # Edit gnome's dconf
     gnome.eog
   ];
-
-
 }
