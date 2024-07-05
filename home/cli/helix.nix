@@ -160,10 +160,10 @@
           };
         };
 
-        vscode-css-language-server = {
-          command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
-          args = [ "--stdio" ];
-        };
+        # vscode-css-language-server = {
+        #   command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
+        #   args = [ "--stdio" ];
+        # };
         pyright = {
           command = "pyright-langserver";
           args = [ "--stdio" ];
