@@ -1,6 +1,7 @@
 { config
 , theme
 , lib
+, pkgs
 , ...
 }:
 let
