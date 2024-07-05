@@ -83,8 +83,8 @@ in
 
       ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
       ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
-      ",XF86AudioRaiseVolume, exec, swayosd-client --input-volume raise"
-      ",XF86AudioLowerVolume, exec, swayosd-client --input-volume lower"
+      ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+      ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
     ];
     # binds that are locked, a.k.a will activate even while an input inhibitor is active
     bindl = [
