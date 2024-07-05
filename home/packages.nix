@@ -71,7 +71,7 @@
     # turtle
     # gnome.nautilus-python
     # nautilus-open-any-terminal
-    gnome.sushi
+    sushi
     gnome.nautilus
 
     gnome.dconf-editor # Edit gnome's dconf
