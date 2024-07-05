@@ -6,5 +6,6 @@
     ./dunst.nix
     ./wofi
     ./wlogout
+    ./swayosd.nix
   ];
 }
