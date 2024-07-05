@@ -58,7 +58,7 @@
 
     gnome.gnome-software
 
-    gnome.geary
+    geary
     loupe
     qt6.qtwayland
     qt5.qtwayland
