@@ -1,5 +1,4 @@
-{ ...
-}:
+{ ... }:
 let
   mod = "SUPER";
   modshift = "${mod}SHIFT";
@@ -73,6 +72,7 @@ in
       "${mod},mouse:272,movewindow"
       "${mod},mouse:273,resizewindow"
     ];
+    #TODO add sway osd commands
 
     binde = [
       # volume controls
