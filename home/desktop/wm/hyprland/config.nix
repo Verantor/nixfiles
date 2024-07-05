@@ -6,7 +6,6 @@
 }:
 let
   pointer = config.home.pointerCursor;
-  swayosd = lib.getExe' pkgs.swayosd "swayosd-client";
 in
 {
   wayland.windowManager.hyprland = with theme.colors; {
@@ -21,7 +20,7 @@ in
         #"xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store" #Stores only text data
         "udiskie &"
-        "${swayosd}"
+        "swayosd-server"
         "wl-paste --type image --watch cliphist store" #Stores only image data
         # set cursor for HL itself
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"

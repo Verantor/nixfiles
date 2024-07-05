@@ -76,10 +76,15 @@ in
 
     binde = [
       # volume controls
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%+ "
-      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%-"
-      ",XF86AudioMute, exec,  wpctl set-mute @DEFAULT_SINK@ toggle "
-      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle "
+      # ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%+ "
+      # ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%-"
+      # ",XF86AudioMute, exec,  wpctl set-mute @DEFAULT_SINK@ toggle "
+      # ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle "
+
+      ",XF86AudioMute, exec, swayosd --output-volume mute-toggle"
+      ",XF86AudioMicMute, exec, swayosd --input-volume mute-toggle"
+      ",XF86AudioRaiseVolume, exec, swayosd --input-volume raise"
+      ",XF86AudioLowerVolume, exec, swayosd --input-volume lower"
     ];
     # binds that are locked, a.k.a will activate even while an input inhibitor is active
     bindl = [
