@@ -19,7 +19,7 @@ let
 
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
     misc {
-    force_default_wallpaper = 0;
+    force_default_wallpaper =1
     }
     exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
   '';
