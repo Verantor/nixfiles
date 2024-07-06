@@ -56,7 +56,7 @@
   #   size = 32;
   # };
 
-
   stylix.targets.mangohud.enable = false;
   stylix.targets.waybar.enable = false;
+  sylix.targets.hyprpaper.enable = false;
 }
