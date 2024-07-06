@@ -56,15 +56,4 @@
   #   name = "Bibata-Modern-Ice";
   #   size = 32;
   # };
-  home-manager.sharedModules = [
-    {
-      stylix = {
-        targets = {
-          mangohud.enable = false;
-          waybar.enable = false;
-          hyprpaper.enable = lib.mkForce false;
-        };
-      };
-    }
-  ];
 }

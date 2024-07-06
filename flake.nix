@@ -63,6 +63,7 @@
   outputs =
     { self
     , nixpkgs
+    , lib
     , ...
     } @ inputs:
     let
@@ -97,6 +98,18 @@
           inherit self;
           inherit outputs;
         };
+        home-manager.sharedModules = [
+          {
+            stylix = {
+              targets = {
+                mangohud.enable = false;
+                waybar.enable = false;
+                hyprpaper.enable = lib.mkForce false;
+              };
+            };
+          }
+        ];
+
         users.ver = {
           imports = [ ./home ];
           _module.args.theme = import ./theme;
