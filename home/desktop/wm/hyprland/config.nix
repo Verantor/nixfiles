@@ -1,18 +1,13 @@
-{ config
-, theme
-, lib
-, pkgs
-, ...
-}:
+{ config, ... }:
 let
   pointer = config.home.pointerCursor;
 in
 {
-  wayland.windowManager.hyprland = with theme.colors; {
+  wayland.windowManager.hyprland = {
     settings = {
       exec-once = [
-        # "swww-daemon"
-        # "swww img ${theme.wallpaper}/leaves-wall.png"
+        "swww-daemon"
+        "swww img ${../../../../theme/wallpapers/leaves-wall.png}"
         "waybar"
         "hypridle"
 
