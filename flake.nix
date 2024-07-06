@@ -104,6 +104,7 @@
                 mangohud.enable = false;
                 waybar.enable = false;
                 hyprpaper.enable = false;
+                hyprland.enable = false;
               };
             };
           }
