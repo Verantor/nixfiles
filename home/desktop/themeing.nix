@@ -55,8 +55,11 @@
   #   name = "Bibata-Modern-Ice";
   #   size = 32;
   # };
-
-  stylix.targets.mangohud.enable = false;
-  stylix.targets.waybar.enable = false;
-  sylix.targets.hyprpaper.enable = false;
+  stylix = {
+    targets = {
+      mangohud.enable = false;
+      waybar.enable = false;
+      hyprpaper.enable = false;
+    };
+  };
 }
