@@ -97,7 +97,7 @@
           inherit self;
           inherit outputs;
         };
-        home-manager.sharedModules = [
+        sharedModules = [
           {
             stylix = {
               targets = {
