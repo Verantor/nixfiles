@@ -1,5 +1,6 @@
 { pkgs
 , config
+, lib
 , ...
 }: {
   qt.enable = true;
@@ -59,7 +60,7 @@
     targets = {
       mangohud.enable = false;
       waybar.enable = false;
-      hyprpaper.enable = false;
+      hyprpaper.enable = lib.mkForce false;
     };
   };
 }
