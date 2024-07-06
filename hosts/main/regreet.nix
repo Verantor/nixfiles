@@ -18,8 +18,9 @@ let
   '';
 
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
-    exec-once = swww-deamon
-    exec-once = swww img ${../../theme/wallpapers/leaves-wall.png}
+    misc {
+    force_default_wallpaper = 0;
+    }
     exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
   '';
 in
