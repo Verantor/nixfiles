@@ -63,7 +63,6 @@
   outputs =
     { self
     , nixpkgs
-    , lib
     , ...
     } @ inputs:
     let
