@@ -18,10 +18,10 @@
         profile = "gpu-hq";
         save-position-on-quit = "yes";
         background = "#00000000";
-        # alpha = "yes";
+        alpha = "yes";
         osc = "no";
       };
-      scripts = with pkgs.mpvScripts; [ mpris ];
+      scripts = with pkgs.mpvScripts; [ mpris uosc evafast thumbfast ];
     };
 
     obs-studio = {
