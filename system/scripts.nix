@@ -26,9 +26,8 @@
       sudo nixos-rebuild switch --offline --upgrade --flake .#main
     '')
     (writeShellScriptBin "disk-usage" ''
-      sudo su
       cd /
-      ${pkgs.gdu}/bin/gdu
+      sudo ${pkgs.gdu}/bin/gdu
     '')
     # (writeShellScriptBin "waybar-kde-connect.sh" ''
     #   get_status() {
