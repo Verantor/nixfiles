@@ -42,7 +42,7 @@
     # spotify-player
     spotify
     # reaper
-    # vcv-rack
+    vcv-rack
     helvum
     winetricks
     protontricks
