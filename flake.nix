@@ -82,6 +82,7 @@
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
       keyboard = ./system/keyboard.nix;
+      server = ./system/server.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
@@ -147,6 +148,7 @@
               theme
               keyboard
               chaotic
+              server
               { inherit home-manager; } #
             ]
             ++ shared;
