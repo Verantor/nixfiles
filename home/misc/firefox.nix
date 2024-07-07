@@ -23,6 +23,7 @@
         @import "firefox-gnome-theme/theme/colors/dark.css";
       '';
       search = {
+        force = true;
         default = "Google";
         privateDefault = "DuckDuckGo";
         engines = {
