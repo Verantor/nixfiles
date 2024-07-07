@@ -78,5 +78,7 @@
     eog
 
     handbrake
+
+    goldwarden
   ];
 }
