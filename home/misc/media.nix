@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-
   home.packages = with pkgs; [
     jamesdsp
   ];
@@ -19,7 +18,7 @@
         profile = "gpu-hq";
         save-position-on-quit = "yes";
         background = "#00000000";
-        alpha = "yes";
+        # alpha = "yes";
         osc = "no";
       };
       scripts = with pkgs.mpvScripts; [ mpris ];
