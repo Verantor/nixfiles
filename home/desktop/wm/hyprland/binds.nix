@@ -42,7 +42,7 @@ in
       "${modshift},P, exec, hyprshot -m window" # screenshot focused window
       "${modshift},R, exec, hyprshot -m region" # screenshot focused region
       "${modshift},E, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
-
+      "${modshift}, G, exec, gamemode-hyprland"
       "${mod},1, exec, hyprnome --previous"
       "${mod},2, exec, hyprnome"
       "${modshift},1, exec, hyprnome --previous --move"
