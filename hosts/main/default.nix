@@ -3,7 +3,6 @@
 , config
 , ...
 }:
-
 let
   # Uncomment to include the maccelModule if needed
   # maccelModule = config.boot.kernelPackages.callPackage ./maccelModule.nix { };
@@ -86,7 +85,7 @@ in
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
