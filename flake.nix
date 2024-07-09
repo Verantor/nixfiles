@@ -23,15 +23,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
-    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    # hyprpicker = {
+    #   url = "github:hyprwm/hyprpicker";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # hyprland = {
+    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 

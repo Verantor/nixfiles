@@ -15,12 +15,20 @@ let
     [appearance]
     # The message that initially displays on startup
     greeting_msg = "Welcome back!"
+    [commands]
+    # The command used to reboot the system
+    reboot = [ "systemctl", "reboot" ]
+
+    # The command used to shut down the system
+    poweroff = [ "systemctl", "poweroff" ]
   '';
 
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
     misc {
     force_default_wallpaper =1
     }
+    monitor=DP-2,1920x1080@144,0x0,1
+    monitor=,preferred,auto,1,mirror,DP-2
     exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
   '';
 in
