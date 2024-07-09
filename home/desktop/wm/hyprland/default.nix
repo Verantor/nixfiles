@@ -52,7 +52,7 @@
     xwayland.enable = true;
     plugins = [
     ];
-    package = inputs.hyprland.packages.${pkgs.system}.default;
+    # package = inputs.hyprland.packages.${pkgs.system}.default;
     systemd = {
       variables = [ "--all" ];
       extraCommands = [
