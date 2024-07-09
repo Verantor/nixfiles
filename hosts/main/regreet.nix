@@ -27,6 +27,7 @@ let
     misc {
     force_default_wallpaper =1
     }
+    bind=SUPER, RETURN, exec, ${getExe pkgs.foot}
     monitor=DP-2,1920x1080@144,0x0,1
     monitor=,preferred,auto,1,mirror,DP-2
     exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
@@ -35,8 +36,12 @@ in
 {
   environment.systemPackages = with pkgs; [
     greetd.regreet
-    swww
+    # swww
   ];
+  security.pam.services.greetd = {
+    enableGnomeKeyring = true;
+    gnupg.enable = true;
+  };
 
   services.greetd = {
     enable = true;
