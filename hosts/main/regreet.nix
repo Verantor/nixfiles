@@ -14,10 +14,10 @@ let
 
     theme_name = "adw-gtk3"
     # Cursor theme name
-    cursor_theme_name = "Adwaita"
+    cursor_theme_name = "Bibata-Modern-Ice"
 
     # Font name and size
-    font_name = "Cantarell 16"
+    font_name = "JetBrainsMono 16"
 
     # Icon theme name
     icon_theme_name = "Adwaita"
@@ -47,6 +47,8 @@ in
 {
   environment.systemPackages = with pkgs; [
     greetd.regreet
+    adw-gtk3
+    bibata-cursors
     # swww
   ];
   security.pam.services.greetd = {
