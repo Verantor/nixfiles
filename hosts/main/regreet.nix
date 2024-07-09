@@ -12,6 +12,16 @@ let
     # Whether to use the dark theme
     application_prefer_dark_theme = true
 
+    theme_name = "adw-gtk3"
+    # Cursor theme name
+    cursor_theme_name = "Adwaita"
+
+    # Font name and size
+    font_name = "Cantarell 16"
+
+    # Icon theme name
+    icon_theme_name = "Adwaita"
+
     [appearance]
     # The message that initially displays on startup
     greeting_msg = "Welcome back!"
@@ -21,6 +31,7 @@ let
 
     # The command used to shut down the system
     poweroff = [ "systemctl", "poweroff" ]
+
   '';
 
   hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
