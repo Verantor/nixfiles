@@ -105,7 +105,7 @@
     };
   };
   programs.nushell = {
-    enable = true;
+    enable = false;
     shellAliases = {
       lss = "eza";
       cdd = "z";
@@ -140,7 +140,7 @@
   };
   programs.carapace = {
     enableNushellIntegration = true;
-    enable = true;
+    enable = false;
   };
   programs.fzf = {
     enable = true;
