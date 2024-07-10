@@ -1,8 +1,4 @@
-{ theme
-, ...
-}:
-
-{
+{ theme, ... }: {
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -32,12 +28,43 @@
           inner_color = "rgb(91, 96, 120)";
           outer_color = "rgb(24, 25, 38)";
           outline_thickness = 5;
-          placeholder_text = ''<span font_family="${theme.font}" foreground="##f2d5cf">Password...</span>'';
+          placeholder_text = ''<span font_family="${theme.font}" foreground="#f2d5cf">Password...</span>'';
           shadow_passes = 2;
         }
       ];
-    };
+      label = [
+        # Failure attempts
+        {
+          text = "$ATTEMPTS[]";
+          color = "#C01C28";
+          font_size = 20;
 
+          halign = "center";
+          valign = "center";
+          position = "0, 85";
+        }
+        # Time
+        {
+          text = "cmd[update:200] date +'%r'";
+          color = "#f2d5cf";
+          font_size = 30;
+
+          halign = "center";
+          valign = "center";
+          position = "0, 0";
+        }
+        # Date
+        {
+          text = "cmd[update:1000] date +'%a, %x'";
+          color = "#f2d5cf";
+          font_size = 20;
+
+          halign = "center";
+          valign = "center";
+          position = "0, -50";
+        }
+      ];
+    };
   };
   services.hypridle = {
     enable = true;
