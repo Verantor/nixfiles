@@ -42,6 +42,7 @@
     sops
     comma
     deadnix
+    nix-fast-build
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
