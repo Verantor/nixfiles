@@ -34,14 +34,16 @@
     # };
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
-
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixvim = {
     #   url = "github:nix-community/nixvim";
     #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
@@ -123,6 +125,7 @@
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
           modules =
             [
               { networking.hostName = "main"; }

@@ -31,7 +31,7 @@
     nufraw-thumbnailer
     libheif
     gnome-epub-thumbnailer
-    alvr
+    # alvr
     nvd
     glib
     glibc

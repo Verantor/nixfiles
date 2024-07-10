@@ -4,7 +4,7 @@
     vesktop
     bottles
     firefox
-    floorp
+    # floorp
     anki-bin
     # blender-hip
     # freecad
@@ -35,14 +35,14 @@
     psst
     imhex
     overskride
-    solaar
+    # solaar
     papirus-icon-theme
     kdePackages.qttools
     k3b
     # spotify-player
     spotify
     # reaper
-    vcv-rack
+    # vcv-rack
     helvum
     winetricks
     protontricks
