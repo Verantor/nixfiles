@@ -1,16 +1,26 @@
-{ pkgs, ... }: {
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
-  environment.systemPackages = with pkgs; [
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-    radeon-profile
-    nvtopPackages.amd
-  ];
-  environment.variables = {
-    AMD_VULKAN_ICD = "RADV";
-    RADV_VIDEO_DECODE = "1";
+{pkgs, ...}: {
+  services.xserver.videoDrivers = ["amdgpu"];
+  environment = {
+    systemPackages = with pkgs; [
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-tools
+      radeon-profile
+      nvtopPackages.amd
+      lact
+    ];
+    variables = {
+      AMD_VULKAN_ICD = "RADV";
+      RADV_VIDEO_DECODE = "1";
+    };
+  };
+  systemd.services.lactd = {
+    description = "AMDGPU Control Daemon";
+    enable = true;
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    wantedBy = ["multi-user.target"];
   };
   programs.corectrl = {
     enable = true;
@@ -26,7 +36,7 @@
       vaapiVdpau
       libvdpau-va-gl
       rocmPackages.clr.icd
-      rocm-opencl-icd
+      # rocm-opencl-icd
       # amdvlk
     ];
     extraPackages32 = with pkgs; [
@@ -51,8 +61,17 @@
   #     driversi686Linux.amdvlk
   #   ];
   # };
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  systemd.tmpfiles.rules = let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with pkgs.rocmPackages; [
+        rocblas
+        hipblas
+        clr
+      ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
