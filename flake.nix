@@ -22,20 +22,17 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
-    # xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    # hyprpicker = {
-    #   url = "github:hyprwm/hyprpicker";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # hyprland = {
-    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:nixos/nixos-hardware";
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -80,16 +77,15 @@
       networking = ./system/core/networking.nix;
       polkit = ./system/polkit.nix;
       openrgb = ./system/openrgb.nix;
-      #overlays = ./system/overlays.nix;
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
       keyboard = ./system/keyboard.nix;
       server = ./system/server.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
-      #flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
+      flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
-      chaotic = inputs.chaotic.nixosModules.default; # OUR DEFAULT MODULE
+      chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
       home-manager = {
@@ -145,13 +141,13 @@
               polkit
               borg
               openrgb
-              #flatpak
               nixDB
               stylix
               theme
               keyboard
               chaotic
               server
+              flatpak
               { inherit home-manager; } #
             ]
             ++ shared;

@@ -73,6 +73,7 @@
     # nautilus-open-any-terminal
     sushi
     nautilus
+    papers
 
     dconf-editor # Edit gnome's dconf
     eog

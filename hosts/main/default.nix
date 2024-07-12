@@ -19,6 +19,7 @@ in
     ./users.nix
     ./fonts.nix
     ./system-packages.nix
+    ./flatpak.nix
   ];
 
   virtualisation.containers.enable = true;
