@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  services.xserver.videoDrivers = ["amdgpu"];
+{ pkgs, ... }: {
+  services.xserver.videoDrivers = [ "amdgpu" ];
   environment = {
     systemPackages = with pkgs; [
       vulkan-loader
@@ -20,7 +20,7 @@
     serviceConfig = {
       ExecStart = "${pkgs.lact}/bin/lact daemon";
     };
-    wantedBy = ["multi-user.target"];
+    wantedBy = [ "multi-user.target" ];
   };
   programs.corectrl = {
     enable = true;
@@ -36,7 +36,7 @@
       vaapiVdpau
       libvdpau-va-gl
       rocmPackages.clr.icd
-      # rocm-opencl-icd
+      rocm-opencl-icd
       # amdvlk
     ];
     extraPackages32 = with pkgs; [
@@ -61,18 +61,20 @@
   #     driversi686Linux.amdvlk
   #   ];
   # };
-  systemd.tmpfiles.rules = let
-    rocmEnv = pkgs.symlinkJoin {
-      name = "rocm-combined";
-      paths = with pkgs.rocmPackages; [
-        rocblas
-        hipblas
-        clr
-      ];
-    };
-  in [
-    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-  ];
+  systemd.tmpfiles.rules =
+    let
+      rocmEnv = pkgs.symlinkJoin {
+        name = "rocm-combined";
+        paths = with pkgs.rocmPackages; [
+          rocblas
+          hipblas
+          clr
+        ];
+      };
+    in
+    [
+      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+    ];
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
     		if ((action.id == "org.corectrl.helper.init" ||

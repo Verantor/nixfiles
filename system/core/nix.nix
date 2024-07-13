@@ -1,12 +1,16 @@
-{ outputs, ... }: {
+{ outputs
+, pkgs
+, ...
+}: {
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
     ];
     config = {
       allowUnfree = true;
+      # allowBroken = true;
       permittedInsecurePackages = [
-        "electron"
+        # "electron"
       ];
     }; #
   };
@@ -17,6 +21,7 @@
     flake = "/home/ver/.dotfiles";
   };
   nix = {
+    package = pkgs.lix;
     optimise.automatic = true;
     optimise.dates = [ "18:00" ]; # Optional; allows customizing optimisation schedule
     # gc = {

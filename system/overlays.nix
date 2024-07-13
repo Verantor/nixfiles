@@ -1,16 +1,16 @@
 # This file defines overlays
 { inputs, ... }:
-let
-  stable-packages = final: _prev: {
-    stable = import inputs.nixpkgs-stable {
-      system = final.system;
-      config.allowUnfree = true;
-      config.permittedInsecurePackages = [
-        "electron"
-      ];
-    };
-  };
-in
+# let
+#   stable-packages = final: _prev: {
+#     stable = import inputs.nixpkgs-stable {
+#       system = final.system;
+#       config.allowUnfree = true;
+#       config.permittedInsecurePackages = [
+#         "electron"
+#       ];
+#     };
+#   };
+# in
 {
   # This one brings our custom packages from the 'pkgs' directory
 
