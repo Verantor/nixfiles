@@ -35,8 +35,8 @@
     extraPackages = with pkgs; [
       vaapiVdpau
       libvdpau-va-gl
-      rocmPackages.clr.icd
-      rocm-opencl-icd
+      # rocmPackages.clr.icd
+      # rocm-opencl-icd
       # amdvlk
     ];
     extraPackages32 = with pkgs; [
@@ -61,20 +61,20 @@
   #     driversi686Linux.amdvlk
   #   ];
   # };
-  systemd.tmpfiles.rules =
-    let
-      rocmEnv = pkgs.symlinkJoin {
-        name = "rocm-combined";
-        paths = with pkgs.rocmPackages; [
-          rocblas
-          hipblas
-          clr
-        ];
-      };
-    in
-    [
-      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-    ];
+  # systemd.tmpfiles.rules =
+  #   let
+  #     rocmEnv = pkgs.symlinkJoin {
+  #       name = "rocm-combined";
+  #       paths = with pkgs.rocmPackages; [
+  #         rocblas
+  #         hipblas
+  #         clr
+  #       ];
+  #     };
+  #   in
+  #   [
+  #     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  #   ];
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
     		if ((action.id == "org.corectrl.helper.init" ||
