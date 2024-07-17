@@ -6,7 +6,7 @@
     firefox
     # floorp
     anki-bin
-    # blender-hip
+    blender-hip
     # freecad
     libreoffice-fresh
     goverlay
