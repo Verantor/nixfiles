@@ -17,45 +17,44 @@
     style.name = lib.mkForce "adwaita-dark";
 
     # package to use
-    style.package = with pkgs; lib.mkForce;
-    [adwaita-qt adwaita-qt6];
-    };
-    gtk = {
-      enable = true;
+    style.package = with pkgs;    [ adwaita-qt adwaita-qt6 ];
+  };
+  gtk = {
+    enable = true;
 
-      # gtk.cursorTheme.package = pkgs.bibata-cursors;
-      # gtk.cursorTheme.name = "Bibata-Modern-Ice";
+    # gtk.cursorTheme.package = pkgs.bibata-cursors;
+    # gtk.cursorTheme.name = "Bibata-Modern-Ice";
 
-      # gtk.theme.package = pkgs.adw-gtk3;
-      # gtk.theme.name = "adw-gtk3-dark";
+    # gtk.theme.package = pkgs.adw-gtk3;
+    # gtk.theme.name = "adw-gtk3-dark";
 
-      iconTheme.package = pkgs.papirus-icon-theme;
-      iconTheme.name = "Papirus-Dark";
-      #
-      gtk3.bookmarks =
-        let
-          home = config.home.homeDirectory;
-        in
-        [
-          "file://${home}/Games"
-          "file://${home}/Documents"
-          "file://${home}/Music"
-          "file://${home}/Pictures"
-          "file://${home}/Videos"
-          "file://${home}/Downloads"
-          "file://${home}/Desktop"
-          "file://${home}/Work"
-          "file://${home}/Projects"
-          "file://${home}/Vault"
-          "file://${home}/School"
-          "file://${home}/.dotfiles Config"
-        ];
-    };
-    # home.pointerCursor = {
-    #   gtk.enable = true;
-    #   x11.enable = true;
-    #   package = pkgs.bibata-cursors;
-    #   name = "Bibata-Modern-Ice";
-    #   size = 32;
-    # };
-  }
+    iconTheme.package = pkgs.papirus-icon-theme;
+    iconTheme.name = "Papirus-Dark";
+    #
+    gtk3.bookmarks =
+      let
+        home = config.home.homeDirectory;
+      in
+      [
+        "file://${home}/Games"
+        "file://${home}/Documents"
+        "file://${home}/Music"
+        "file://${home}/Pictures"
+        "file://${home}/Videos"
+        "file://${home}/Downloads"
+        "file://${home}/Desktop"
+        "file://${home}/Work"
+        "file://${home}/Projects"
+        "file://${home}/Vault"
+        "file://${home}/School"
+        "file://${home}/.dotfiles Config"
+      ];
+  };
+  # home.pointerCursor = {
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  #   package = pkgs.bibata-cursors;
+  #   name = "Bibata-Modern-Ice";
+  #   size = 32;
+  # };
+}
