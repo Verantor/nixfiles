@@ -1,5 +1,8 @@
 { ...
 }: {
+  home.packages = with pkgs; [
+    walker
+  ];
   programs.wofi = {
     enable = true;
     # style = import ./style.nix;
@@ -37,7 +40,7 @@
     settings = {
       main = {
         # font = "${theme.font}";
-        terminal = "foot"; #${pkgs.kitty}/bin/kitty
+        terminal = "${pkgs.foot}/bin/foot";
         layer = "overlay";
         width = 60;
         line-height = 50;
@@ -55,6 +58,8 @@
       # };
     };
   };
+
+};
 }
 
 
