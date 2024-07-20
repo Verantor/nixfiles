@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     libsForQt5.qt5.qtwayland
-    # kdePackages.qtwayland
+    kdePackages.qtwayland
   ];
   qt = {
     enable = true;
@@ -17,7 +17,7 @@
     style.name = lib.mkForce "adwaita-dark";
 
     # package to use
-    # style.package = with pkgs; [ adwaita-qt adwaita-qt6 ];
+    style.package = with pkgs; [ adwaita-qt adwaita-qt6 ];
   };
   gtk = {
     enable = true;

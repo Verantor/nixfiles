@@ -60,8 +60,8 @@
 
     geary
     loupe
-    # qt6.qtwayland
-    # qt5.qtwayland
+    qt6.qtwayland
+    qt5.qtwayland
     wl-screenrec
     xdg-utils
     # libsForQt5.qtstyleplugin-kvantum
