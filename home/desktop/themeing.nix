@@ -11,7 +11,7 @@
     enable = true;
 
     # platform theme "gtk" or "gnome"
-    platformTheme.name = "qtct";
+    platformTheme.name = lib.mkForce "qtct";
 
     # name of the qt theme
     style.name = "adwaita-dark";
