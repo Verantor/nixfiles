@@ -11,10 +11,10 @@
     enable = true;
 
     # platform theme "gtk" or "gnome"
-    platformTheme.name = lib.mkForce "qtct";
+    platformTheme.name = "qtct";
 
     # name of the qt theme
-    style.name = lib.mkForce "adwaita-dark";
+    style.name = "adwaita-dark";
 
     # package to use
     style.package = with pkgs; [ adwaita-qt adwaita-qt6 ];
