@@ -27,8 +27,9 @@
       NIXOS_OZONE_WL = "1"; #TODO spotify doesn't work with this i think
       GDK_BACKEND = "wayland,x11,*";
       QT_QPA_PLATFORM = "wayland;xcb";
-      #SDL_VIDEODRIVER = "wayland"; #TODO Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
-      CLUTTER_BACKEND = "wayland";
+      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct"
+        #SDL_VIDEODRIVER = "wayland"; #TODO Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+        CLUTTER_BACKEND = "wayland";
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
       XDG_SESSION_DESKTOP = "Hyprland";
