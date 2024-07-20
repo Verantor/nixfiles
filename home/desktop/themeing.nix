@@ -17,7 +17,8 @@
     style.name = lib.mkForce "adwaita-dark";
 
     # package to use
-    style.package = w lib.mkForce with pkgs;
+    style.package = lib.mkForce;
+    with pkgs;
     [adwaita-qt adwaita-qt6];
     };
     gtk = {
