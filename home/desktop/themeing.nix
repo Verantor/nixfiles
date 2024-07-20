@@ -17,7 +17,7 @@
     style.name = "breeze";
 
     # package to use
-    style.package = pkgs.breeze;
+    style.package = pkgs.kdePackages.breeze;
   };
   gtk = {
     enable = true;
