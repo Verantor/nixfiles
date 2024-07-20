@@ -14,10 +14,10 @@
     platformTheme.name = "qtct";
 
     # name of the qt theme
-    style.name = "adwaita-dark";
+    style.name = "breeze";
 
     # package to use
-    style.package = with pkgs; [ adwaita-qt adwaita-qt6 ];
+    style.package = pkgs.breeze;
   };
   gtk = {
     enable = true;
