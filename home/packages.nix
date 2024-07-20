@@ -37,7 +37,7 @@
     overskride
     # solaar
     papirus-icon-theme
-    kdePackages.qttools
+    # kdePackages.qttools
     k3b
     # spotify-player
     spotify
@@ -60,13 +60,13 @@
 
     geary
     loupe
-    qt6.qtwayland
-    qt5.qtwayland
+    # qt6.qtwayland
+    # qt5.qtwayland
     wl-screenrec
     xdg-utils
-    libsForQt5.qtstyleplugin-kvantum
+    # libsForQt5.qtstyleplugin-kvantum
     # libsForQt5.lightly
-    qt6Packages.qt6ct
+    # qt6Packages.qt6ct
 
     # turtle
     # gnome.nautilus-python

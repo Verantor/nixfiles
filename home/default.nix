@@ -36,10 +36,10 @@
     };
   };
 
-  services.kdeconnect = {
-    enable = true;
-    package = pkgs.kdePackages.kdeconnect-kde;
-  };
+  # services.kdeconnect = {
+  #   enable = true;
+  #   package = pkgs.kdePackages.kdeconnect-kde;
+  # };
   manual = {
     # home.file = { };
     html.enable = false;
