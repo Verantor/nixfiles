@@ -4,8 +4,8 @@
 , ...
 }: {
   home.packages = with pkgs; [
-    libsForQt5.qt5.qtwayland
-    kdePackages.qtwayland
+    # libsForQt5.qt5.qtwayland
+    # kdePackages.qtwayland
   ];
   qt = {
     enable = true;
