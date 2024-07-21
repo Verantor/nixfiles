@@ -13,6 +13,7 @@
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    inputs.walker.url = "github:abenz1267/walker";
     nixvim = {
       url = "github:nix-community/nixvim";
       # url = "git+file:///Users/khaneliman/Documents/github/nixvim";

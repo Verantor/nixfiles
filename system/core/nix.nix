@@ -44,6 +44,7 @@
         "https://nix-community.cachix.org"
         "https://nixpkgs-unfree.cachix.org"
         "https://ai.cachix.org"
+        "https://walker.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -52,6 +53,7 @@
         "nixpkgs-unfree.cachix.org-1:hqvoInulhbV4nJ9yJOEr+4wxhDV4xq2d1DK7S6Nj6rs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
+        "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
       ];
     };
   };
