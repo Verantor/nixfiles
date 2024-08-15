@@ -81,5 +81,7 @@
     handbrake
 
     goldwarden
+
+    mixxx
   ];
 }
