@@ -83,6 +83,6 @@
     goldwarden
 
     mixxx
-    spotdl
+    zotify
   ];
 }
