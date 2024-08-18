@@ -93,7 +93,7 @@ in
   security.sudo.extraConfig = "Defaults pwfeedback";
   programs.dconf.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Emulated systems
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
