@@ -6,7 +6,6 @@
 , ...
 }: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
     inputs.nix-index-database.hmModules.nix-index
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     # inputs.walker.homeManagerModules.walker
