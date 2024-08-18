@@ -17,19 +17,15 @@
           end
         end
     '';
-
     sources = {
       code_actions = {
         gitsigns.enable = true;
         statix.enable = true;
       };
       diagnostics = {
-        deadnix = {
+        checkstyle = {
           enable = true;
         };
-        # checkstyle = {
-        #   enable = true;
-        # };
         statix = {
           enable = true;
         };
@@ -38,26 +34,23 @@
         alejandra = {
           enable = true;
         };
-        gofmt = {
-          enable = true;
-        };
         prettier = {
           enable = true;
-          settings = ''
+          withArgs = ''
             {
               extra_args = { "--no-semi", "--single-quote" },
             }
           '';
         };
-        # google_java_format = {
-        #   enable = true;
-        # };
-        # stylua = {
-        #   enable = true;
-        # };
+        google_java_format = {
+          enable = true;
+        };
+        stylua = {
+          enable = true;
+        };
         black = {
           enable = true;
-          settings = ''
+          withArgs = ''
             {
               extra_args = { "--fast" },
             }
