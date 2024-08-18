@@ -110,12 +110,7 @@
     #rec for recursion
     {
       overlays = import ./system/overlays.nix { inherit inputs; };
-      overlays.additions = final: _prev: {
-        nixvim = nixvim-config.packages.${_prev.system}.default;
 
-        # Or use the lite version
-        # nixvim = nixvim-config.packages.${_prev.system}.lite;
-      };
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
