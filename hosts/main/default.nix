@@ -86,7 +86,7 @@ in
     enable = true;
     eula = true;
     package = pkgs.unstable.minecraft-server;
-    #jvmOpts = "-Xms4092M -Xmx4092M -XX:+UseG1GC -XX:+CMSIncrementalPacing -XX:+CMSClassUnloadingEnabled -XX:ParallelGCThreads=2 -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10";
+    jvmOpts = "-Xms8184M -Xmx8184M -XX:+UseG1GC -XX:+CMSIncrementalPacing -XX:+CMSClassUnloadingEnabled -XX:ParallelGCThreads=2 -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10";
   };
   programs.hyprland = {
     enable = true;
