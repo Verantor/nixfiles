@@ -10,7 +10,7 @@
       packages = [
         "io.bassi.Amberol"
         "dev.bragefuglseth.Keypunch"
-        "org.freecadweb.FreeCAD"
+        # "org.freecadweb.FreeCAD"
         "org.gnome.gitlab.YaLTeR.Identity"
         "org.localsend.localsend_app"
         "org.nickvision.tubeconverter"

@@ -7,7 +7,8 @@
     # floorp
     anki-bin
     blender-hip
-    # freecad
+    freecad
+    kicad
     libreoffice-fresh
     goverlay
     # supersonic-wayland
