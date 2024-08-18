@@ -8,7 +8,6 @@
     anki-bin
     blender-hip
     freecad
-    kicad
     libreoffice-fresh
     goverlay
     # supersonic-wayland
