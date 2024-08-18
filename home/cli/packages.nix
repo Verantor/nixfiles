@@ -3,13 +3,6 @@
 , inputs
 , ...
 }:
-let
-  neovimconfig = import ./nvim;
-  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
-    inherit pkgs;
-    module = neovimconfig;
-  };
-in
 {
   home.packages = with pkgs; [
     nix-output-monitor
@@ -39,7 +32,7 @@ in
     android-studio
     ffmpeg
     ripgrep
-    nvim
+
   ];
 
   programs.tmux = {
