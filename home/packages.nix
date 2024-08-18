@@ -75,7 +75,7 @@
     gnome.nautilus
     papers
 
-    dconf-editor # Edit gnome's dconf
+    gnome.dconf-editor # Edit gnome's dconf
     eog
 
     handbrake
