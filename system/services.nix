@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   # sound.enable = true;
 
   services.minecraft-server = {
     enable = true;
     eula = true;
+    package = unstable.minecraft-server;
     #jvmOpts = "-Xms4092M -Xmx4092M -XX:+UseG1GC -XX:+CMSIncrementalPacing -XX:+CMSClassUnloadingEnabled -XX:ParallelGCThreads=2 -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10";
   };
 
