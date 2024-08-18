@@ -83,6 +83,5 @@
     goldwarden
 
     mixxx
-    zotify
   ];
 }
