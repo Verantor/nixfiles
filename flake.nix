@@ -43,6 +43,8 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim-config.url = "github:nicolas-goudry/nixvim-config";
+
 
   };
   # nixConfig = {
