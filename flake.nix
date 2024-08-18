@@ -4,7 +4,7 @@
   inputs = {
     #nix-flatpak.url = "github:gmodena/nix-flatpak/";
     #?rev=fa466badd86e776cbd8e042d85cbfeeccf7e8869
-    nixpkgs.url = "github:nixos/nixpkgs/unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager";
