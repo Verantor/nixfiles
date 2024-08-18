@@ -76,7 +76,7 @@
     papers
 
     gnome.dconf-editor # Edit gnome's dconf
-    eog
+    gnome.eog
 
     handbrake
 
