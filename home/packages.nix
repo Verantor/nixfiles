@@ -29,7 +29,7 @@
     evince
     thud
     gnome-epub-thumbnailer
-    totem
+    gnome.totem
     libheif
     tenacity
     psst
