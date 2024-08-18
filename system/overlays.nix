@@ -14,14 +14,15 @@
   overlays = with inputs; [
     # ...
   ];
-  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
-  # be accessible through 'pkgs.unstable'
+
   additions = final: _prev: {
     nixvim = inputs.nixvim-config.packages.${_prev.system}.default;
 
     # Or use the lite version
     # nixvim = nixvim-config.packages.${_prev.system}.lite;
   };
+  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
+  # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;

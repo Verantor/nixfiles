@@ -32,7 +32,7 @@
     android-studio
     ffmpeg
     ripgrep
-    nixvim
+
   ];
 
   programs.tmux = {

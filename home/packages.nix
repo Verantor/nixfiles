@@ -83,5 +83,7 @@
     goldwarden
 
     mixxx
+
+    r2modman
   ];
 }
