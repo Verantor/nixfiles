@@ -8,7 +8,7 @@
     # gamescopeSession.enable = true;
     # localNetworkGameTransfers.openFirewall = true;
     extest.enable = true;
-    protontricks.enable = true;
+    #protontricks.enable = true;
     package = pkgs.steam;
     # package = pkgs.steam.override {
     #   extraPkgs = pkgs:
