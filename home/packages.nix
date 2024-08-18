@@ -71,7 +71,7 @@
     # turtle
     # gnome.nautilus-python
     # nautilus-open-any-terminal
-    sushi
+    gnome.sushi
     nautilus
     papers
 
