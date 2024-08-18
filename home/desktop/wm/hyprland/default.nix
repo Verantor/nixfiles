@@ -26,7 +26,7 @@
       udiskie
       baobab # Disk usage analyser
       fd # Find alternative TODO move to cli
-      file-roller # Archive file manager
+      gnome.file-roller # Archive file manager
       gnome-calculator # Calculator
       gnome-disk-utility # Disks manager
       nautilus # File manager
