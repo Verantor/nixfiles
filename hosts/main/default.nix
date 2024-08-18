@@ -23,7 +23,6 @@ in
   ];
 
   virtualisation.containers.enable = true;
-  chaotic.nyx.cache.enable = true;
 
   services.udev.extraRules = ''
     # Motherboard buggy when sleep
