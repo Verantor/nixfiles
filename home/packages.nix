@@ -85,5 +85,7 @@
     mixxx
 
     r2modman
+
+    easyeffects
   ];
 }
