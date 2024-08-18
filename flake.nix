@@ -145,7 +145,7 @@
               stylix
               theme
               keyboard
-              chaotic
+              #chaotic
               server
               flatpak
               { inherit home-manager; } #
