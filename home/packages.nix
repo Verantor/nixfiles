@@ -72,7 +72,7 @@
     # gnome.nautilus-python
     # nautilus-open-any-terminal
     gnome.sushi
-    nautilus
+    gnome.nautilus
     papers
 
     dconf-editor # Edit gnome's dconf
