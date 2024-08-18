@@ -30,6 +30,7 @@
     android-studio
     ffmpeg
     ripgrep
+
   ];
 
   programs.tmux = {

@@ -15,10 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # walker.url = "github:abenz1267/walker";
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,13 +38,8 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    #   # url = "github:nix-community/nixvim/nixos-23.05";
+    inputs.nixvim-config.url = "github:nicolas-goudry/nixvim-config";
 
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
   # nixConfig = {
   #   substituters = [
@@ -118,6 +110,12 @@
     #rec for recursion
     {
       overlays = import ./system/overlays.nix { inherit inputs; };
+      overlays.additions = final: _prev: {
+        nixvim = nixvim-config.packages.${_prev.system}.default;
+
+        # Or use the lite version
+        # nixvim = nixvim-config.packages.${_prev.system}.lite;
+      };
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
