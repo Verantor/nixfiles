@@ -54,7 +54,7 @@
 
     zed-editor
 
-    stable.super-slicer-beta
+    super-slicer-beta
 
     gnome.gnome-software
 
