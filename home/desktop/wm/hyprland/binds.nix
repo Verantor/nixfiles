@@ -47,7 +47,7 @@ in
       "${mod},2, exec, hyprnome"
       "${modshift},1, exec, hyprnome --previous --move"
       "${modshift},2, exec, hyprnome  --move"
-
+      "${modshift},W,exec, pkill waybar && hyprctl dispatch exec waybar"
       # workspace controls
       "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
       "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
@@ -57,6 +57,7 @@ in
       "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
       "${mod}, D, exec, selectCommands"
       "${mod},ESC,exec,hyprlock"
+
       # ",XF86AudioRaiseVolume,exec,pamixer -i 5"
       # ",XF86AudioLowerVolume,exec,pamixer -d 5"
       # ",XF86AudioMicMute,exec,pamixer --default-source -m"
