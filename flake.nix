@@ -45,7 +45,7 @@
     };
     nixvim-config.url = "github:nicolas-goudry/nixvim-config";
 
-
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
   # nixConfig = {
   #   substituters = [
@@ -83,6 +83,7 @@
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
+      nix-minecraft = inputs.nix-minecraft.nixosModules.minecraft-servers;
       #chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
@@ -144,6 +145,7 @@
               #chaotic
               server
               flatpak
+              nix-minecraft
               { inherit home-manager; } #
             ]
             ++ shared;

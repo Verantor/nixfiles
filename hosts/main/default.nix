@@ -82,12 +82,7 @@ in
   #     common.default = "*";
   #   };
   # };
-  services.minecraft-server = {
-    enable = true;
-    eula = true;
-    package = pkgs.unstable.minecraft-server;
-    jvmOpts = "-Xms8184M -Xmx8184M";
-  };
+
   programs.hyprland = {
     enable = true;
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;

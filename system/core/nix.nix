@@ -1,10 +1,12 @@
 { outputs
 , pkgs
+, inputs
 , ...
 }: {
   nixpkgs = {
     overlays = [
       outputs.overlays.unstable-packages
+      inputs.nix-minecraft.overlay
     ];
     config = {
       allowUnfree = true;
