@@ -15,7 +15,7 @@ in
       openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
       symlinks = {
-        "mods" = "${modpack}/";
+        "mods" = "${modpack}";
       };
       #restart = "always";
       serverProperties = {
