@@ -1,9 +1,9 @@
 { inputs, pkgs, ... }:
 let
-  # modpack = pkgs.fetchPackwizModpack {
-  #   url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/0.1.1/pack.toml";
-  #   packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
-  # };
+  modpack = pkgs.fetchPackwizModpack {
+    url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/1.0.2/pack.toml";
+    packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
+  };
 in
 {
   environment.systemPackages = with pkgs; [
@@ -21,7 +21,7 @@ in
       openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
       symlinks = {
-        #  "mods" = "${modpack}/*";
+        "mods" = "${modpack}/mods";
       };
       #restart = "always";
       serverProperties = {
