@@ -5,7 +5,7 @@ in
 {
   services.minecraft-servers.servers.modded-minecraft-server = {
     enable = true;
-    autoStart = false;
+    autoStart = true;
     eula = true;
     openFirewall = true;
     package = pkgs.fabricServers.fabric-1_21_1;
