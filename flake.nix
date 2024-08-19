@@ -84,7 +84,6 @@
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
-      nix-minecraft = inputs.nix-minecraft.nixosModules.minecraft-servers;
       #chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
@@ -146,7 +145,6 @@
               #chaotic
               server
               flatpak
-              nix-minecraft
               minecraftServer
               { inherit home-manager; } #
             ]

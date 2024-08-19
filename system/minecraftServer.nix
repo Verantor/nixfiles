@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   modpack = /srv/minecraft;
 in
 {
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers.servers.modded-minecraft-server = {
     enable = true;
     autoStart = true;
