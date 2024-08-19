@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
   modpack = pkgs.fetchPackwizModpack {
-    url = "https://raw.githubusercontent.com/Verantor/Modpack-Odd-Fabric-21/main/index.toml";
+    url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/blob/main/pack.toml";
     packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
   };
 in
