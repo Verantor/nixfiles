@@ -2,7 +2,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     url = "https://raw.githubusercontent.com/Verantor/Modpack-Odd-Fabric-21/v1.0.0/pack.toml";
-    packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
+    packHash = "sha256-40934113bbb230bd1afa0352cba52e810a4f4d76620eaf8ac9d30b56e96c39b6=";
   };
 in
 {
