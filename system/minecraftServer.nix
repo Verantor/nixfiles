@@ -27,12 +27,12 @@ in
         motd = "swans in mein arsch";
         white-list = false;
         enable-rcon = false;
-        jvmOpts = "-Xmx4G -Xms8G";
+        jvmOpts = "-Xms8184M -Xmx8184M";
       };
     };
   };
 
-  #connent to server with: tmux -S /run/minecraft/servername.sock attach
+  #connent to server with: tmux -S /run/minecraft/modded-minecraft-server.sock attach
   #start with systemctl start minecraft-server-servername
 
 
