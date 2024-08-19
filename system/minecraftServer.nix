@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
-# let
-#   modpack = /home/ver/modpack;
-# in
+let
+  modpack = /home/ver/modpack;
+in
 {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
@@ -14,9 +14,9 @@
       autoStart = true;
       openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
-      # symlinks = {
-      #   "mods" = "${modpack}/";
-      # };
+      symlinks = {
+        "mods" = "${modpack}/";
+      };
       #restart = "always";
       serverProperties = {
         server-port = 25565;
