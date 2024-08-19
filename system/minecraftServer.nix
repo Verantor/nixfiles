@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  modpack = /srv/minecraft/modpack;
+  modpack = /home/ver/modpack;
 in
 {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
