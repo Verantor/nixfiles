@@ -79,6 +79,7 @@
       theme = ./theme/stylix.nix;
       keyboard = ./system/keyboard.nix;
       server = ./system/server.nix;
+      minecraftServer = ./system/minecraftServer.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
@@ -146,6 +147,7 @@
               server
               flatpak
               nix-minecraft
+              minecraftServer
               { inherit home-manager; } #
             ]
             ++ shared;
