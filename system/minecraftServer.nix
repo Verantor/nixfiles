@@ -23,7 +23,7 @@ in
       symlinks = {
         "mods" = "${modpack}/mods";
       };
-      #restart = "always";
+      restart = "no";
       serverProperties = {
         server-port = 25565;
         seed = 123456789;
