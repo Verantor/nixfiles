@@ -17,8 +17,8 @@ in
 
     servers.modded-minecraft-server = {
       enable = true;
-      autoStart = true;
-      openFirewall = true;
+      #autoStart = true;
+      #openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
       symlinks = {
         "mods" = "${modpack}/mods";
