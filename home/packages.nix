@@ -56,8 +56,7 @@
 
     super-slicer-beta
 
-    gnome-software
-
+    gnome.gnome-software
     geary
     loupe
     # qt6.qtwayland
