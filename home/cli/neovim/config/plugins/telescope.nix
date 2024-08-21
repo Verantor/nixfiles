@@ -7,13 +7,30 @@
       };
     };
     keymaps = {
-      "<C-p>" = {
-        action = "git_files";
+      "<leader>ff" = {
+        action = "find_files";
         options = {
-          desc = "Telescope Git Files";
+          desc = "Telescope Find Files";
         };
       };
-      "<leader>fg" = "live_grep";
+      "<leader>fg" = {
+        action = "live_grep";
+        options = {
+          desc = "Telescope Live Grep";
+        };
+      };
+      "<leader>fb" = {
+        action = "buffers";
+        options = {
+          desc = "Telescope Buffers";
+        };
+      };
+      "<leader>fh" = {
+        action = "help_tags";
+        options = {
+          desc = "Telescope Help Tags";
+        };
+      };
     };
   };
 }
