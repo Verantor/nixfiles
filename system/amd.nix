@@ -29,11 +29,11 @@
       enable = true;
     };
   };
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
     #enable32Bit = true;
-    #driSupport = true;
-    #driSupport32Bit = true;
+    driSupport = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       vaapiVdpau
       libvdpau-va-gl
