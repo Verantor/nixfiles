@@ -29,7 +29,7 @@
     evince
     thud
     gnome-epub-thumbnailer
-    gnome.totem
+    totem
     libheif
     tenacity
     psst
@@ -56,9 +56,9 @@
 
     super-slicer-beta
 
-    gnome.gnome-software
+    gnome-software
 
-    gnome.geary
+    geary
     loupe
     # qt6.qtwayland
     # qt5.qtwayland
@@ -69,14 +69,14 @@
     # qt6Packages.qt6ct
 
     # turtle
-    # gnome.nautilus-python
+    # nautilus-python
     # nautilus-open-any-terminal
-    gnome.sushi
-    gnome.nautilus
+    sushi
+    nautilus
     papers
 
-    gnome.dconf-editor # Edit gnome's dconf
-    gnome.eog
+    dconf-editor # Edit gnome's dconf
+    eog
 
     handbrake
 

@@ -26,10 +26,10 @@
       udiskie
       baobab # Disk usage analyser
       fd # Find alternative TODO move to cli
-      gnome.file-roller # Archive file manager
-      gnome.gnome-calculator # Calculator
-      gnome.gnome-disk-utility # Disks manager
-      gnome.nautilus # File manager
+      file-roller # Archive file manager
+      gnome-calculator # Calculator
+      gnome-disk-utility # Disks manager
+      nautilus # File manager
       (writeShellScriptBin "gamemode-hyprland" ''
         HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
         if [ "$HYPRGAMEMODE" = 1 ] ; then
