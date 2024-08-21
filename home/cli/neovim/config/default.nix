@@ -105,6 +105,20 @@
         desc = "keep cursor centered";
       };
     }
+    {
+      key = "<leader>mj";
+      action = ":m .+1<CR>==";
+      options = {
+        desc = "Move line down";
+      };
+    }
+    {
+      key = "<leader>mk";
+      action = ":m .-2<CR>==";
+      options = {
+        desc = "Move line up";
+      };
+    }
 
   ];
 }
