@@ -27,12 +27,21 @@
     keymaps = {
       addFile = "<leader>a";
       toggleQuickMenu = "<C-e>";
-      navFile = {
-        "1" = "<C-j>";
-        "2" = "<C-k>";
-        "3" = "<C-l>";
-        "4" = "<C-m>";
+      navNext = "<leader>nn";
+      navPrev = "<leader>np";
+      tmuxGotoTerminal = {
+        "1" = "<C-1>";
+        "2" = "<C-2>";
       };
     };
   };
+  keymaps = [{
+    mode = "n";
+    key = "<leader>fm";
+    action = "<cmd>:Telescope harpoon marks<cr>";
+    options = {
+      silent = true;
+      desc = "[F]ind Harpoon [M]arks";
+    };
+  }];
 }
