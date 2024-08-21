@@ -15,7 +15,7 @@
   keymaps = [
     {
       key = "<leader>e";
-      action = ":Neotree";
+      action = "<Cmd>Neotree toggle<CR>";
       options = {
         desc = "Open NeoTree";
       };
