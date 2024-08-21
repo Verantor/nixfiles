@@ -20,12 +20,7 @@
         desc = "Open NeoTree";
       };
     }
-    {
-      key = "<leader>f";
-      options = {
-        desc = "Telescope";
-      };
-    }
+
 
 
   ];

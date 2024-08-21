@@ -30,7 +30,14 @@
           ]
         ];
       };
+      spec = [
+        {
+          __unkeyed-1 = "<leader>f";
+          group = "Telescope";
+        }
 
+
+      ];
       win = {
         border = "single";
       };
