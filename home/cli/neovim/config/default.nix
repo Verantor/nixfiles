@@ -6,9 +6,8 @@
   performance = {
     byteCompileLua.enable = true;
   };
-
-  viAlias = true;
-  vimAlias = true;
-
+  colorschemes.kanagawa = {
+    enable = true;
+  };
   luaLoader.enable = true;
 }
