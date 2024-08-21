@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs }: {
   plugins.spectre = {
     enable = true;
     plugins.spectre.findPackage = pkgs.rg;
