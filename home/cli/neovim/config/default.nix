@@ -14,10 +14,17 @@
   clipboard.providers.wl-copy.enable = true;
   keymaps = [
     {
-      key = "<leader>e";
+      key = "<leader>ee";
       action = "<Cmd>Neotree toggle<CR>";
       options = {
         desc = "Open NeoTree";
+      };
+    }
+    {
+      key = "<leader>en";
+      action = "<Cmd>new ";
+      options = {
+        desc = "New File";
       };
     }
   ];
