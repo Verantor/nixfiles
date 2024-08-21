@@ -51,28 +51,28 @@
     }
     {
       key = "<leader>yf";
-      action = ":%y<cr>";
+      action = "<cmd>%y<cr>";
       options = {
         desc = "yank current file to the clipboard buffer";
       };
     }
     {
       key = "<leader>df";
-      action = ":%d_<cr>";
+      action = "<cmd>%d_<cr>";
       options = {
         desc = "delete file content to black hole register";
       };
     }
     {
       key = "<leader>w";
-      action = ":w<CR>";
+      action = "<cmd>w<CR>";
       options = {
         desc = "Quick save";
       };
     }
     {
       key = "<leader>cx";
-      action = ":!chmod +x %<cr>";
+      action = "<cmd>!chmod +x %<cr>";
       options = {
         desc = "make file executable";
       };
@@ -107,14 +107,14 @@
     }
     {
       key = "<leader>mj";
-      action = ":m .+1<CR>==";
+      action = "<cmd>m .+1<CR>==";
       options = {
         desc = "Move line down";
       };
     }
     {
       key = "<leader>mk";
-      action = ":m .-2<CR>==";
+      action = "<cmd>m .-2<CR>==";
       options = {
         desc = "Move line up";
       };
