@@ -47,7 +47,7 @@
               shortcut = "q";
             };
             type = "button";
-            val = " Quit Neovim";
+            val = "󰅙 Quit Neovim";
           }
         ];
       }
