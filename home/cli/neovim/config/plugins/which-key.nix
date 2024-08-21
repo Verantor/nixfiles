@@ -4,8 +4,8 @@
     settings = {
       delay = 200;
       expand = 1;
-      notify = false;
-      preset = false;
+      notify = true;
+      preset = "modern";
       replace = {
         desc = [
           [
