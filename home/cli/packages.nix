@@ -29,7 +29,7 @@
     netscanner
     dua
     lazygit
-    android-studio
+    #android-studio
     ffmpeg
     ripgrep
 
