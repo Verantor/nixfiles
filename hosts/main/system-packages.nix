@@ -43,6 +43,7 @@
     comma
     deadnix
     nix-fast-build
+    distrobox
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
