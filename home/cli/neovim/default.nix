@@ -5,7 +5,7 @@
 let
   unstable = inputs.nixpkgs-unstable;
   neovimconfig = import ./config;
-  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+  nvim = inputs.nixvim.legacyPackages.makeNixvimWithModule {
     inherit unstable;
     module = neovimconfig;
   };
