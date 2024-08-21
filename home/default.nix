@@ -5,13 +5,7 @@
 , pkgs
 , ...
 }:
-let
-  neovimconfig = import ./cli/nvim;
-  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
-    inherit pkgs;
-    module = neovimconfig;
-  };
-in
+
 {
   imports = [
     inputs.nix-index-database.hmModules.nix-index

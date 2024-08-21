@@ -5,6 +5,7 @@
   #   enable = true;
   #   extraConfig = import ./kitty.nix;
   # };
+  programs.nixvim = { };
   programs.foot = {
     enable = true;
     # settings =

@@ -3,5 +3,6 @@
     ./helix.nix
     ./packages.nix
     ./terminal
+    ./neovim
   ];
 }

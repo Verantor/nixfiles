@@ -28,7 +28,7 @@ in
         server-port = 25565;
         seed = 123456789;
         difficulty = 3;
-        gamemode = 1;
+        gamemode = 0;
         max-players = 10;
         motd = "swans in mein arsch";
         white-list = false;
