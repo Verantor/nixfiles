@@ -1,7 +1,7 @@
 {
   # Import all your configuration modules here
   imports = [ ./plugins ];
-  programs.nixvim = {
+  nixvim = {
     enable = true;
     defaultEditor = true;
 
