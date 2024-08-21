@@ -15,7 +15,7 @@
   keymaps = [
     {
       key = "<leader>e";
-      action = "Neotree";
+      action = ":Neotree";
       options = {
         desc = "Open NeoTree";
       };
