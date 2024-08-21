@@ -80,8 +80,8 @@
       keyboard = ./system/keyboard.nix;
       server = ./system/server.nix;
       minecraftServer = ./system/minecraftServer.nix;
-      virt = ./system/virt.nix
-        hmModule = inputs.home-manager.nixosModules.home-manager;
+      virt = ./system/virt.nix;
+      hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylix = inputs.stylix.nixosModules.stylix;
