@@ -9,7 +9,7 @@
     gnomeExtensions.blur-my-shell
     valent
     #adw-gtk3
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.pano
   ];

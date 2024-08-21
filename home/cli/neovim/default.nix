@@ -3,10 +3,9 @@
 , ...
 }:
 let
-  unstable = inputs.nixpkgs-unstable;
   neovimconfig = import ./config;
   nvim = inputs.nixvim.legacyPackages.makeNixvimWithModule {
-    inherit unstable;
+    inherit pkgs;
     module = neovimconfig;
   };
 in
