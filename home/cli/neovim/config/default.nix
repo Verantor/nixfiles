@@ -12,13 +12,13 @@
   };
   luaLoader.enable = true;
   clipboard.providers.wl-copy.enable = true;
-  keymaps = [
-  {
-    action = "<cmd>make<CR>";
-    key = "<C-m>";
-    options = {
-      silent = true;
+  keymaps = {
+    "<leader>e" = {
+      action = "Neotree";
+      options = {
+        desc = "Open NeoTree";
+      };
     };
-  }
-];
+
+  };
 }
