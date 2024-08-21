@@ -56,7 +56,7 @@
         separator = ""; # ➜
       };
       win = {
-        border = "none";
+        border = "single";
       };
     };
   };
