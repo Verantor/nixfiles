@@ -21,11 +21,12 @@
       };
     }
     {
-      key = "<leader>en";
-      action = "<Cmd>new ";
+      key = "<leader>f";
       options = {
-        desc = "New File";
+        desc = "Telescope";
       };
     }
+
+
   ];
 }
