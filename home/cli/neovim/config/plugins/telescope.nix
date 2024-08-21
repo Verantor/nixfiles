@@ -7,6 +7,11 @@
       };
     };
     keymaps = {
+      "<leader>f" = {
+        options = {
+          desc = "Telescope";
+        };
+      };
       "<leader>ff" = {
         action = "find_files";
         options = {
