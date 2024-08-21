@@ -34,8 +34,77 @@
         desc = "Open NeoTree";
       };
     }
+    {
+      key = "<leader>ss";
+      action = ":s/\\v";
+      options = {
+        desc = "search and replace on line";
+      };
+    }
 
-
+    {
+      key = "<leader>SS";
+      action = ":%s/\\v";
+      options = {
+        desc = "search and replace in file";
+      };
+    }
+    {
+      key = "<leader>yf";
+      action = ":%y<cr>";
+      options = {
+        desc = "yank current file to the clipboard buffer";
+      };
+    }
+    {
+      key = "<leader>df";
+      action = ":%d_<cr>";
+      options = {
+        desc = "delete file content to black hole register";
+      };
+    }
+    {
+      key = "<leader>w";
+      action = ":w<CR>";
+      options = {
+        desc = "Quick save";
+      };
+    }
+    {
+      key = "<leader>cx";
+      action = ":!chmod +x %<cr>";
+      options = {
+        desc = "make file executable";
+      };
+    }
+    {
+      key = "<C-u>";
+      action = "<C-u>zz";
+      options = {
+        desc = "scroll up and center";
+      };
+    }
+    {
+      key = "<C-d>";
+      action = "<C-d>zz";
+      options = {
+        desc = "scroll down and center";
+      };
+    }
+    {
+      key = "n";
+      action = "nzzzv";
+      options = {
+        desc = "keep cursor centered";
+      };
+    }
+    {
+      key = "N";
+      action = "Nzzzv";
+      options = {
+        desc = "keep cursor centered";
+      };
+    }
 
   ];
 }
