@@ -50,11 +50,11 @@
 
 
       ];
-          icons = {
-      breadcrumb = "»";
-      group = "+";
-      separator = ""; # ➜
-    };
+      icons = {
+        breadcrumb = "»";
+        group = "+";
+        separator = ""; # ➜
+      };
       win = {
         border = "none";
       };
