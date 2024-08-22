@@ -1,6 +1,6 @@
 {
   plugins.undotree = {
     enable = true;
-    settings = { };
+    # settings = { };
   };
 }
