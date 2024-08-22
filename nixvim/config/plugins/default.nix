@@ -9,7 +9,6 @@
     "conform-nvim.nix"
     "copilot-lua.nix"
     "default.nix"
-    "fail.nix"
     "flash.nix"
     "friendly-snippets.nix"
     "harpoon.nix"
