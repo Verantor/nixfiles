@@ -1,6 +1,5 @@
 # This file defines overlays
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   # This one brings our custom packages from the 'pkgs' directory
 
   # This one contains whatever you want to overlay
@@ -13,7 +12,9 @@
   # };
   overlays = with inputs; [
     # ...
-
+    (final: prev: {
+      neovim = inputs.self.packages.${final.system}.nixvim;
+    })
   ];
 
   # When applied, the stable nixpkgs set (declared in the flake inputs) will

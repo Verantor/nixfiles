@@ -46,6 +46,11 @@
     nixvim-config.url = "github:nicolas-goudry/nixvim-config";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+    nixvimConfig = {
+      url = "path:./pkgs/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =

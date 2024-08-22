@@ -1,5 +1,0 @@
-{
-  plugins.barbecue = {
-    enable = true;
-  };
-}
