@@ -1,16 +1,42 @@
 {
   # Import all your configuration modules here
-  imports = [ ./plugins ];
+  imports = [
+    "./plugins/alpha.nix"
+    "./plugins/barbecue.nix"
+    "./plugins/bufferline.nix"
+    "./plugins/cmp.nix"
+    "./plugins/commentary.nix"
+    "./plugins/conform-nvim.nix"
+    "./plugins/copilot-lua.nix"
+    "./plugins/default.nix"
+    "./plugins/flash.nix"
+    "./plugins/friendly-snippets.nix"
+    "./plugins/harpoon.nix"
+    "./plugins/illuminate.nix"
+    "./plugins/indent-blankline.nix"
+    "./plugins/lsp.nix"
+    "./plugins/lualine.nix"
+    "./plugins/luasnip.nix"
+    "./plugins/neo-tree.nix"
+    "./plugins/noice.nix"
+    "./plugins/telescope.nix"
+    "./plugins/treesitter.nix"
+    "./plugins/which-key.nix"
+
+
+
+
+  ];
 
   globals.mapleader = " ";
-  #performance = {
-  #  byteCompileLua.enable = true;
-  #};
+  performance = {
+    byteCompileLua.enable = true;
+  };
   colorschemes.kanagawa = {
     enable = true;
 
   };
-  #luaLoader.enable = true;
+  luaLoader.enable = true;
   clipboard.providers.wl-copy.enable = true;
   opts = {
     # Enable relative line numbers
