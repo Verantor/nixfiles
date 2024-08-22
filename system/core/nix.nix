@@ -5,7 +5,6 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
-      outputs.overlays.overlays
     ];
     config = {
       allowUnfree = true;

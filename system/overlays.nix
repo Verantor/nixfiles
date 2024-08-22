@@ -12,9 +12,7 @@
   # };
   overlays = with inputs; [
     # ...
-    (final: prev: {
-      neovim = inputs.self.packages.${final.system}.nixvimConfig;
-    })
+
   ];
 
   # When applied, the stable nixpkgs set (declared in the flake inputs) will

@@ -44,7 +44,7 @@
     deadnix
     nix-fast-build
     distrobox
-    neovim
+    inputs.nixvimConfig.packages.${system}.default
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
