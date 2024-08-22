@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  inherit (pkgs) lib;
+in
 {
   #Importallyourconfigurationmoduleshere
   imports = [

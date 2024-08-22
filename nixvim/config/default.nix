@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # Import all your configuration modules here
   imports = [ ./plugins ];
 
@@ -9,7 +8,6 @@
   };
   colorschemes.kanagawa = {
     enable = true;
-
   };
   luaLoader.enable = true;
   clipboard.providers.wl-copy.enable = true;
@@ -120,6 +118,5 @@
         desc = "Move line up";
       };
     }
-
   ];
 }

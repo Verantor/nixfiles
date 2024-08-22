@@ -1,4 +1,7 @@
-{ inputs, pkgs, ... }:
+{ inputs
+, pkgs
+, ...
+}:
 let
   modpack = pkgs.fetchPackwizModpack {
     url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/1.0.3/pack.toml";
@@ -40,7 +43,6 @@ in
 
   #connent to server with: tmux -S /run/minecraft/modded-minecraft-server.sock attach
   #start with systemctl start minecraft-server-servername
-
 
   #   services.minecraft-server = {
   #   enable = true;

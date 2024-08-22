@@ -7,7 +7,6 @@
       };
     };
     keymaps = {
-
       "<leader>ff" = {
         action = "find_files";
         options = {

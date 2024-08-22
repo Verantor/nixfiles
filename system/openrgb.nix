@@ -12,7 +12,6 @@ in
 {
   services.hardware.openrgb.enable = true;
 
-
   services.udev.packages = [ pkgs.openrgb ];
   boot.kernelModules = [ "i2c-dev" ];
   hardware.i2c.enable = true;
@@ -25,5 +24,4 @@ in
     };
     wantedBy = [ "multi-user.target" ];
   };
-
 }

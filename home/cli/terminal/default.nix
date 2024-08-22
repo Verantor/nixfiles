@@ -1,6 +1,4 @@
-{ ...
-}: {
-
+{ ... }: {
   # programs.kitty = {
   #   enable = true;
   #   extraConfig = import ./kitty.nix;
@@ -42,6 +40,4 @@
     #     };
     #   };
   };
-
 }
-

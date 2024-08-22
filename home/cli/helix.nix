@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-
   home.packages = with pkgs; [
     # some other lsp related packages / dev tools
 
@@ -12,7 +11,6 @@
     rust-analyzer
     clang-tools
     nodejs
-
 
     zig
 

@@ -2,8 +2,7 @@
 , pkgs
 , inputs
 , ...
-}:
-{
+}: {
   home.packages = with pkgs; [
     nix-output-monitor
     btop # replacement of htop/nmon
@@ -32,7 +31,6 @@
     #android-studio
     ffmpeg
     ripgrep
-
   ];
 
   programs.tmux = {

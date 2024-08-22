@@ -12,7 +12,6 @@
     profiles.default = {
       name = "Default";
       settings = {
-
         "browser.pocket.enabled" = false;
         "extensions.pocket.enabled" = false;
 
@@ -37,92 +36,108 @@
         privateDefault = "DuckDuckGo";
         engines = {
           "Nix Packages" = {
-            urls = [{
-              template = "https://search.nixos.org/packages";
-              params = [
-                {
-                  name = "channel";
-                  value = "unstable";
-                }
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@np" ];
           };
 
           "NixOS Options" = {
-            urls = [{
-              template = "https://search.nixos.org/options";
-              params = [
-                {
-                  name = "channel";
-                  value = "unstable";
-                }
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://search.nixos.org/options";
+                params = [
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@no" ];
           };
 
           "NixOS Wiki" = {
-            urls = [{
-              template = "https://nixos.wiki/index.php";
-              params = [{
-                name = "search";
-                value = "{searchTerms}";
-              }];
-            }];
+            urls = [
+              {
+                template = "https://nixos.wiki/index.php";
+                params = [
+                  {
+                    name = "search";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@nw" ];
           };
 
           "Nixpkgs Issues" = {
-            urls = [{
-              template = "https://github.com/NixOS/nixpkgs/issues";
-              params = [{
-                name = "q";
-                value = "{searchTerms}";
-              }];
-            }];
+            urls = [
+              {
+                template = "https://github.com/NixOS/nixpkgs/issues";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@ni" ];
           };
 
           "Nix Code" = {
-            urls = [{
-              template = "https://github.com/search";
-              params = [
-                {
-                  name = "type";
-                  value = "Code";
-                }
-                {
-                  name = "q";
-                  value = "{searchTerms}+language%3ANix";
-                }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://github.com/search";
+                params = [
+                  {
+                    name = "type";
+                    value = "Code";
+                  }
+                  {
+                    name = "q";
+                    value = "{searchTerms}+language%3ANix";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@nc" ];
           };
 
           "Reddit" = {
-            urls = [{
-              template = "https://old.reddit.com/search";
-              params = [
-                {
-                  name = "q";
-                  value = "{searchTerms}";
-                }
-                {
-                  name = "include_over_18";
-                  value = "on";
-                }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://old.reddit.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                  {
+                    name = "include_over_18";
+                    value = "on";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@r" ];
           };
         };

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   fonts.packages = with pkgs; [
     material-icons
     material-design-icons

@@ -7,5 +7,4 @@
   sops.age.keyFile = /home/ver/.config/sops/age/keys.txt;
 
   sops.secrets.userPasswordHashed.neededForUsers = true;
-
 }

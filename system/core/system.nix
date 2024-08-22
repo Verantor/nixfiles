@@ -1,8 +1,4 @@
-{ pkgs
-, ...
-}: {
-
-
+{ pkgs, ... }: {
   programs = {
     bash.promptInit = ''eval "$(${pkgs.starship}/bin/starship init bash)"'';
   };
@@ -54,6 +50,4 @@
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
   ];
-
-
 }

@@ -32,8 +32,4 @@
   #   5353
   # ];
   networking.firewall.enable = false;
-
-
-
-
 }
