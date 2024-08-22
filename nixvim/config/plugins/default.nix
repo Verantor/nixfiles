@@ -21,5 +21,6 @@
     ./telescope.nix
     ./treesitter.nix
     ./which-key.nix
+    ./trouble.nix
   ];
 }
