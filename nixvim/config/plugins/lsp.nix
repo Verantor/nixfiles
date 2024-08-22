@@ -10,8 +10,7 @@
         clangd = { enable = true; };
         nixd = { enable = true; };
         #nil-ls = { enable = true; };
-        # pyright = { enable = true; };
-        pylsp = { enable = true; };
+        pyright = { enable = true; };
         ruff = { enable = true; };
         gopls = { enable = true; };
 
