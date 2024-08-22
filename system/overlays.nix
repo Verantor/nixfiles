@@ -13,7 +13,7 @@
   overlays = with inputs; [
     # ...
     (final: prev: {
-      neovim = inputs.self.packages.${final.system}.nixvim;
+      neovim = inputs.self.packages.${final.system}.nixvimConfig;
     })
   ];
 
