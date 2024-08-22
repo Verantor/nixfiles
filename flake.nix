@@ -48,7 +48,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     nixvimConfig = {
-      url = "path:./pkgs/nixvim";
+      url = "path:./nixvim/flake.nix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
