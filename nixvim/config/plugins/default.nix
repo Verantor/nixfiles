@@ -17,7 +17,6 @@
   #Importallyourconfigurationmoduleshere
   imports = [
     ./alpha.nix
-    ./barbecue.nix
     ./bufferline.nix
     ./cmp.nix
     ./commentary.nix
@@ -38,5 +37,6 @@
     ./which-key.nix
     ./trouble.nix
     ./undotree.nix
+    ./lspsaga.nix
   ];
 }

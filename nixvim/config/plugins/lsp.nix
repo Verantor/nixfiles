@@ -11,9 +11,11 @@
         nixd = { enable = true; };
         #nil-ls = { enable = true; };
         # pyright = { enable = true; };
-        pylyzer = { enable = true; };
+        pylsp = { enable = true; };
         ruff = { enable = true; };
         gopls = { enable = true; };
+
+        marksman = { enable = true; };
         rust-analyzer = {
           enable = true;
           installCargo = true; #TODO maby conflicts with things

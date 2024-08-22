@@ -23,7 +23,7 @@
     shellcheck
 
     nixd
-
+    python-lsp-server
     cargo
     go
     #ruff
