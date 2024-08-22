@@ -1,6 +1,6 @@
 {
   # Import all your configuration modules here
-  imports = [ ./plugins ./plugins/luasnip.nix ];
+  imports = [ ./plugins ];
 
   globals.mapleader = " ";
   performance = {
