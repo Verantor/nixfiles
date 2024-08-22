@@ -1,32 +1,7 @@
+{ pkgs, ... }:
 {
   # Import all your configuration modules here
-  imports = [
-    "./plugins/alpha.nix"
-    "./plugins/barbecue.nix"
-    "./plugins/bufferline.nix"
-    "./plugins/cmp.nix"
-    "./plugins/commentary.nix"
-    "./plugins/conform-nvim.nix"
-    "./plugins/copilot-lua.nix"
-    "./plugins/default.nix"
-    "./plugins/flash.nix"
-    "./plugins/friendly-snippets.nix"
-    "./plugins/harpoon.nix"
-    "./plugins/illuminate.nix"
-    "./plugins/indent-blankline.nix"
-    "./plugins/lsp.nix"
-    "./plugins/lualine.nix"
-    "./plugins/luasnip.nix"
-    "./plugins/neo-tree.nix"
-    "./plugins/noice.nix"
-    "./plugins/telescope.nix"
-    "./plugins/treesitter.nix"
-    "./plugins/which-key.nix"
-
-
-
-
-  ];
+  imports = [ ./plugins ];
 
   globals.mapleader = " ";
   performance = {
