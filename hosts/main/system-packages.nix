@@ -44,6 +44,7 @@
     deadnix
     nix-fast-build
     distrobox
+    nvim
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
