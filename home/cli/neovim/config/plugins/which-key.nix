@@ -47,8 +47,10 @@
           __unkeyed-1 = "<leader>n";
           group = "Harpoon Navigation";
         }
-
-
+        {
+          __unkeyed-1 = "<leader>c";
+          group = "Conform Formatter";
+        }
       ];
       icons = {
         breadcrumb = "»";
