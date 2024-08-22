@@ -10,7 +10,8 @@
         clangd = { enable = true; };
         nixd = { enable = true; };
         #nil-ls = { enable = true; };
-        pyright = { enable = true; };
+        # pyright = { enable = true; };
+        pylyzer = { enable = true; };
         ruff-lsp = { enable = true; };
         gopls = { enable = true; };
         rust-analyzer = {

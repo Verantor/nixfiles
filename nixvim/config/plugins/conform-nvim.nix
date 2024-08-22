@@ -8,7 +8,7 @@
     notifyOnError = true;
     formattersByFt = {
       # Conform will run multiple formatters sequentially
-      python = [ "black" ];
+      python = [ "ruff" ];
       lua = [ "stylua" ];
       nix = [ "alejandra" ];
       markdown = [ [ "prettierd" "prettier" ] ];

@@ -13,7 +13,7 @@
     nodejs
 
     zig
-
+    pylyzer
     zls
     jre8
     gcc
