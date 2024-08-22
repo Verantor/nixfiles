@@ -25,23 +25,25 @@
       };
     };
     keymaps = {
-      addFile = "<leader>a";
+      addFile = "<leader>ha";
       toggleQuickMenu = "<C-e>";
-      navNext = "<leader>nn";
-      navPrev = "<leader>np";
+      navNext = "<leader>hn";
+      navPrev = "<leader>hp";
       tmuxGotoTerminal = {
         "1" = "<C-1>";
         "2" = "<C-2>";
       };
     };
   };
-  keymaps = [{
-    mode = "n";
-    key = "<leader>fm";
-    action = "<cmd>:Telescope harpoon marks<cr>";
-    options = {
-      silent = true;
-      desc = "[F]ind Harpoon [M]arks";
-    };
-  }];
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>fm";
+      action = "<cmd>:Telescope harpoon marks<cr>";
+      options = {
+        silent = true;
+        desc = "[F]ind Harpoon [M]arks";
+      };
+    }
+  ];
 }
