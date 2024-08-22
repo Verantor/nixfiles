@@ -12,7 +12,7 @@
         #nil-ls = { enable = true; };
         # pyright = { enable = true; };
         pylyzer = { enable = true; };
-        ruff-lsp = { enable = true; };
+        ruff = { enable = true; };
         gopls = { enable = true; };
         rust-analyzer = {
           enable = true;
