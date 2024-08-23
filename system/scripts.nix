@@ -75,11 +75,11 @@
         }
         (builtins.readFile ../scripts/audio_changer.py)
     )
-    # (
-    #   writeShellScriptBin "nixbr" ''
-    #     nixos-rebuild --target-host root@192.168.178.190 switch --flake .#serverPi |& nom
-    #   ''
-    # )
+    (
+      writeShellScriptBin "nixbr" ''
+        nixos-rebuild --target-host root@192.168.178.192 switch --flake .#orca |& nom
+      ''
+    )
     (
       writeShellScriptBin "qPortforward" (builtins.readFile ../scripts/qPortforward.sh)
     )

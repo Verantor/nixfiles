@@ -71,7 +71,6 @@
       openrgb = ./system/openrgb.nix;
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
-      keyboard = ./system/keyboard.nix;
       server = ./system/server.nix;
       minecraftServer = ./system/minecraftServer.nix;
       virt = ./system/virt.nix;
@@ -136,13 +135,27 @@
               nixDB
               stylix
               theme
-              keyboard
               #chaotic
               server
               flatpak
               minecraftServer
               virt
               { inherit home-manager; } #
+            ]
+            ++ shared;
+          specialArgs = { inherit inputs outputs; };
+        };
+        orca = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+
+          modules =
+            [
+              { networking.hostName = "orca"; }
+
+              ./hosts/orca
+              server
+              # minecraftServer
+              # {inherit home-manager;} #
             ]
             ++ shared;
           specialArgs = { inherit inputs outputs; };
