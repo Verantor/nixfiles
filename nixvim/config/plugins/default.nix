@@ -18,7 +18,7 @@
     ./alpha.nix
     ./barbar.nix
     ./cmp.nix
-    ./commentary.nix
+    ./comment.nix
     ./conform-nvim.nix
     ./copilot-lua.nix
     ./flash.nix
@@ -40,5 +40,7 @@
     ./neoscroll.nix
     ./cursorline.nix
     ./nvim-colorizer.nix
+    ./nvim-autopairs.nix
+    ./surround.nix
   ];
 }
