@@ -2,6 +2,7 @@
   globals.mapleader = " ";
   performance = {
     byteCompileLua.enable = true;
+    combinePlugins.enable = true;
   };
   colorschemes.kanagawa = {
     enable = true;
