@@ -73,20 +73,20 @@
         desc = "make file executable";
       };
     }
-    {
-      key = "<C-u>";
-      action = "<C-u>zz";
-      options = {
-        desc = "scroll up and center";
-      };
-    }
-    {
-      key = "<C-d>";
-      action = "<C-d>zz";
-      options = {
-        desc = "scroll down and center";
-      };
-    }
+    # {
+    #   key = "<C-u>";
+    #   action = "<C-u>zz";
+    #   options = {
+    #     desc = "scroll up and center";
+    #   };
+    # }
+    # {
+    #   key = "<C-d>";
+    #   action = "<C-d>zz";
+    #   options = {
+    #     desc = "scroll down and center";
+    #   };
+    # }
     {
       key = "n";
       action = "nzzzv";
