@@ -77,7 +77,7 @@
       hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
-      stylixMod = inputs.stylix.nixosModules;
+      stylixMod = inputs.stylix.nixosModules.stylix;
       #chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
