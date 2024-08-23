@@ -8,23 +8,24 @@
           "quickfix"
         ];
         filetypes = [
-          ""
-          "checkhealth"
-          "help"
           "lspinfo"
           "packer"
+          "checkhealth"
+          "help"
+          "man"
+          "gitcommit"
           "TelescopePrompt"
           "TelescopeResults"
-          "yaml"
+          "''"
         ];
       };
       indent = {
-        char = "│";
+        char = "▎";
       };
       scope = {
-        show_end = false;
+        show_end = true;
         show_exact_scope = true;
-        show_start = false;
+        show_start = true;
       };
     };
   };
