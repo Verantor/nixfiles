@@ -77,7 +77,7 @@
       hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
-      stylix = inputs.stylix.nixosModules;
+      stylixMod = inputs.stylix.nixosModules;
       #chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
@@ -133,7 +133,7 @@
               borg
               openrgb
               nixDB
-              stylix
+              stylixMod
               theme
               #chaotic
               server
