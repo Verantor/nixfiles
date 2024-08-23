@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "nixrb" ''
       pushd ~/.dotfiles
@@ -63,21 +63,21 @@
     # '')
     (
       pkgs.writers.writePython3Bin "microphone_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/microphone_changer.py)
+      {
+        flakeIgnore = ["E265" "E225" "E501" "W292" "W293" "E305" "E302"];
+      }
+      (builtins.readFile ../scripts/microphone_changer.py)
     )
     (
       pkgs.writers.writePython3Bin "audio_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/audio_changer.py)
+      {
+        flakeIgnore = ["E265" "E225" "E501" "W292" "W293" "E305" "E302"];
+      }
+      (builtins.readFile ../scripts/audio_changer.py)
     )
     (
       writeShellScriptBin "nixbr" ''
-        nixos-rebuild --target-host root@192.168.178.192 switch --flake .#orca |& nom
+        nixos-rebuild --target-host root@192.168.178.192 switch --flake .#orca  --log-format internal-json -v |& nom --json
       ''
     )
     (
