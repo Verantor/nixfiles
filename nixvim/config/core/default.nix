@@ -67,6 +67,20 @@
       };
     }
     {
+      key = "<leader>q";
+      action = "<cmd>q<CR>";
+      options = {
+        desc = "Quick exit";
+      };
+    }
+    {
+      key = "<leader>Q";
+      action = "<cmd>q!<CR>";
+      options = {
+        desc = "Quick force exit";
+      };
+    }
+    {
       key = "<leader>cx";
       action = "<cmd>!chmod +x %<cr>";
       options = {
