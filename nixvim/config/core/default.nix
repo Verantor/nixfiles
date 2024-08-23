@@ -130,5 +130,12 @@
         desc = "Move line up";
       };
     }
+    {
+      key = "<leader>ca";
+      action = "<Cmd>lua vim.lsp.buf.code_action()<CR>";
+      options = {
+        desc = "Code action";
+      };
+    }
   ];
 }
