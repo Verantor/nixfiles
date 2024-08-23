@@ -37,5 +37,6 @@
     ./trouble.nix
     ./undotree.nix
     ./gitsigns.nix
+    ./neoscroll.nix
   ];
 }
