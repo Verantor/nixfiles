@@ -16,7 +16,7 @@
   #Importallyourconfigurationmoduleshere
   imports = [
     ./alpha.nix
-    ./bufferline.nix
+    ./barbar.nix
     ./cmp.nix
     ./commentary.nix
     ./conform-nvim.nix
@@ -38,5 +38,7 @@
     ./undotree.nix
     ./gitsigns.nix
     ./neoscroll.nix
+    ./cursorline.nix
+    ./nvim-colorizer.nix
   ];
 }
