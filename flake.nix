@@ -136,7 +136,7 @@
               stylixMod
               theme
               #chaotic
-              server
+              # server
               flatpak
               minecraftServer
               virt
