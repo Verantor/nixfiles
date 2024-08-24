@@ -1,56 +1,141 @@
-{ pkgs, ... }:
+{ pkgs
+, lib
+, config
+, ...
+}:
 let
   domain = "katzenklapse.duckdns.org";
 in
 {
-  # services.seafile = {
+  # services.trilium-server = {
   #   enable = true;
-  #   initialAdminPassword = "admin";
-  #   adminEmail = "admin@example.com";
-  #   seafileSettings = {
-  #     fileserver = {
-  #       port = 8082;
-  #       host = "0.0.0.0";
-  #     };
-  #   };
+  #   port = 8080;
+  #   host = "0.0.0.0";
   # };
-  #
-  # environment.etc."immich-typsense-api-key".text = "12318551487654187654";
-  # services.immich = {
-  #   enable = true;
-  #   server.typesense.apiKeyFile = "/etc/immich-typsense-api-key";
-  # };
-  #
-  # services.typesense = {
-  #   enable = true;
-  #   # In a real setup you should generate an api key for immich
-  #   # and not use the admin key!
-  #   apiKeyFile = "/etc/immich-typsense-api-key";
-  #   settings.server.api-address = "127.0.0.1";
-  # };
-  #
-  # services.postgresql = {
-  #   enable = true;
-  #   identMap = ''
-  #     # ArbitraryMapName systemUser DBUser
-  #     superuser_map      root      postgres
-  #     superuser_map      postgres  postgres
-  #     # Let other names login as themselves
-  #     superuser_map      /^(.*)$   \1
-  #   '';
-  #   authentication = pkgs.lib.mkOverride 10 ''
-  #     local sameuser all peer map=superuser_map
-  #   '';
-  #   ensureDatabases = ["immich"];
-  #   ensureUsers = [
-  #     {
-  #       name = "immich";
-  #       ensurePermissions = {
-  #         "DATABASE immich" = "ALL PRIVILEGES";
-  #       };
-  #     }
-  #   ];
-  # };
+  networking.nat.enable = true;
+  networking.nat.externalInterface = "eth0";
+  networking.nat.internalInterfaces = [ "wg0" ];
+  networking.firewall = {
+    enable = lib.mkForce true;
+    allowedUDPPorts = [ 25565 22 ];
+  };
+
+  sops.secrets."wireguardPrivateKey" = { };
+  networking.wireguard.interfaces = {
+    # "wg0" is the network interface name. You can name the interface arbitrarily.
+    wg0 = {
+      # Determines the IP address and subnet of the server's end of the tunnel interface.
+      ips = [ "192.168.100.1/24" ];
+
+      # The port that WireGuard listens to. Must be accessible by the client.
+      listenPort = 25565;
+
+      # This allows the wireguard server to route your traffic to the internet and hence be like a VPN
+      # For this to work you have to set the dnsserver IP of your router (or dnsserver of choice) in your clients
+      postSetup = ''
+        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+      '';
+
+      # This undoes the above command
+      postShutdown = ''
+        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+      '';
+
+      # Path to the private key file.
+      #
+      # Note: The private key can also be included inline via the privateKey option,
+      # but this makes the private key world-readable; thus, using privateKeyFile is
+      # recommended.
+      privateKeyFile = config.sops.secrets."wireguardPrivateKey".path;
+
+      peers = [
+        # List of allowed peers.
+        {
+          # Feel free to give a meaning full name
+          # Public key of the peer (not a file path).
+          publicKey = "nFTWv6klfk1BB0lm21h/a1yUBnvGUzFhuJJDOUH4/1k=";
+          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
+          allowedIPs = [ "192.168.100.2/32" ];
+        }
+        # {
+        #   # John Doe
+        #   publicKey = "{john doe's public key}";
+        #   allowedIPs = ["192.168.100.3/32"];
+        # }
+      ];
+    };
+  };
+
+  # Runtime
+  virtualisation.podman = {
+    enable = true;
+    autoPrune.enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings = {
+      # Required for container networking to be able to use names.
+      dns_enabled = true;
+    };
+  };
+  virtualisation.oci-containers.backend = "podman";
+
+  # Containers
+  virtualisation.oci-containers.containers."memos" = {
+    image = "neosmemo/memos:stable";
+    volumes = [
+      "/home/ver/.memos:/var/opt/memos:rw"
+    ];
+    ports = [
+      "5230:5230/tcp"
+    ];
+    log-driver = "journald";
+    extraOptions = [
+      "--network-alias=memos"
+      "--network=memos_default"
+    ];
+  };
+  systemd.services."podman-memos" = {
+    serviceConfig = {
+      Restart = lib.mkOverride 500 "no";
+    };
+    after = [
+      "podman-network-memos_default.service"
+    ];
+    requires = [
+      "podman-network-memos_default.service"
+    ];
+    partOf = [
+      "podman-compose-memos-root.target"
+    ];
+    wantedBy = [
+      "podman-compose-memos-root.target"
+    ];
+  };
+
+  # Networks
+  systemd.services."podman-network-memos_default" = {
+    path = [ pkgs.podman ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStop = "podman network rm -f memos_default";
+    };
+    script = ''
+      podman network inspect memos_default || podman network create memos_default
+    '';
+    partOf = [ "podman-compose-memos-root.target" ];
+    wantedBy = [ "podman-compose-memos-root.target" ];
+  };
+
+  # Root service
+  # When started, this will automatically create all resources and start
+  # the containers. When stopped, this will teardown all resources.
+  systemd.targets."podman-compose-memos-root" = {
+    unitConfig = {
+      Description = "Root target generated by compose2nix.";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
   # services.vaultwarden = {
   #   enable = true;
   #   environmentFile = "/run/secrets/vaultwarden";
@@ -66,42 +151,5 @@ in
   #     ROCKET_PORT = 8222;
   #     ROCKET_LOG = "critical";
   #   };
-  # };
-  # services.paperless = {
-  #   enable = true;
-  #   dataDir = "/data/paperless/data";
-  #   mediaDir = "/data/paperless/media";
-  #   consumptionDir = "/data/paperless/consume";
-  #   passwordFile = "/run/secrets/paperlessPassword";
-  #   address = "0.0.0.0";
-  #   settings = {
-  #     PAPERLESS_APPS = "allauth.socialaccount.providers.openid_connect";
-  #     PAPERLESS_SOCIAL_AUTO_SIGNUP = "True";
-  #     PAPERLESS_OCR_LANGUAGE = "deu+eng";
-  #     PAPERLESS_ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http";
-  #   };
-  # };
-  # services.samba = {
-  #   enable = true;
-  #   openFirewall = true;
-  #
-  #   shares = {
-  #     audiobooks = {
-  #       path = "/data/audiobooks";
-  #       browseable = "yes";
-  #       "read only" = "no";
-  #       "guest ok" = "no";
-  #       "directory mask" = "0755";
-  #       "create mask" = "0644";
-  #       "force user" = "audiobookshelf";
-  #       "force group" = "audiobookshelf";
-  #     };
-  #   };
-  # };
-  #   services.audiobookshelf = {
-  #   enable = true;
-  #   host = "0.0.0.0";
-  #   openFirewall = true;
-  #   port = 8234;
   # };
 }
