@@ -16,7 +16,7 @@ in
   networking.nat.externalInterface = "eth0";
   networking.nat.internalInterfaces = [ "wg0" ];
   networking.firewall = {
-    enable = lib.mkForce true;
+    enable = lib.mkForce false;
     allowedUDPPorts = [ 25565 22 ];
   };
 
@@ -56,6 +56,8 @@ in
           publicKey = "nFTWv6klfk1BB0lm21h/a1yUBnvGUzFhuJJDOUH4/1k=";
           # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "192.168.100.2/32" ];
+          endpoint = "${domain}:25565";
+          persistentKeepalive = 25;
         }
         # {
         #   # John Doe

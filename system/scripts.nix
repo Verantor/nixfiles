@@ -77,7 +77,7 @@
     )
     (
       writeShellScriptBin "nixbr" ''
-        nixos-rebuild --target-host root@192.168.178.192 switch --flake .#orca  --log-format internal-json -v |& nom --json
+        nixos-rebuild --target-host root@192.168.178.190 switch --flake .#orca  --log-format internal-json -v |& nom --json
       ''
     )
     (
