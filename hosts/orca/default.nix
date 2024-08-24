@@ -15,7 +15,11 @@ in
       generic-extlinux-compatible.enable = true;
     };
   };
-
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    qrencode
+  ];
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
@@ -38,7 +42,6 @@ in
       psk = "@home_psk@";
     };
   };
-  environment.systemPackages = with pkgs; [ vim ];
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "23.11";

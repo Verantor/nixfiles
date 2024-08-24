@@ -1,12 +1,11 @@
-{ pkgs
-, lib
-, config
-, ...
-}:
-let
-  domain = "katzenklapse.duckdns.org";
-in
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  domain = "katzenklapse.duckdns.org";
+in {
   # services.trilium-server = {
   #   enable = true;
   #   port = 8080;
@@ -14,18 +13,19 @@ in
   # };
   networking.nat.enable = true;
   networking.nat.externalInterface = "eth0";
-  networking.nat.internalInterfaces = [ "wg0" ];
+  networking.nat.internalInterfaces = ["wg0"];
+  networking.useNetworkd = true;
   networking.firewall = {
     enable = lib.mkForce false;
-    allowedUDPPorts = [ 25565 22 ];
+    allowedUDPPorts = [25565 22];
   };
 
-  sops.secrets."wireguardPrivateKey" = { };
+  sops.secrets."wireguardPrivateKey" = {};
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
     wg0 = {
       # Determines the IP address and subnet of the server's end of the tunnel interface.
-      ips = [ "192.168.100.1/24" ];
+      ips = ["10.100.0.1/24"];
 
       # The port that WireGuard listens to. Must be accessible by the client.
       listenPort = 25565;
@@ -33,12 +33,12 @@ in
       # This allows the wireguard server to route your traffic to the internet and hence be like a VPN
       # For this to work you have to set the dnsserver IP of your router (or dnsserver of choice) in your clients
       postSetup = ''
-        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
       '';
 
       # This undoes the above command
       postShutdown = ''
-        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
       '';
 
       # Path to the private key file.
@@ -51,23 +51,64 @@ in
       peers = [
         # List of allowed peers.
         {
+          name = "max";
           # Feel free to give a meaning full name
           # Public key of the peer (not a file path).
           publicKey = "nFTWv6klfk1BB0lm21h/a1yUBnvGUzFhuJJDOUH4/1k=";
           # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
-          allowedIPs = [ "192.168.100.2/32" ];
+          # allowedIPs = ["10.100.0.2/32"];
+          allowedIPs = ["10.100.0.2/32"];
           endpoint = "${domain}:25565";
-          persistentKeepalive = 25;
+          # persistentKeepalive = 25;
         }
         # {
         #   # John Doe
         #   publicKey = "{john doe's public key}";
-        #   allowedIPs = ["192.168.100.3/32"];
+        #   allowedIPs = ["10.100.0.3/32"];
         # }
       ];
     };
   };
-
+  services.mealie = {
+    enable = true;
+    port = 9000;
+  };
+  # nixarr = {
+  #   enable = true;
+  #   # These two values are also the default, but you can set them to whatever
+  #   # else you want
+  #   # WARNING: Do _not_ set them to `/home/user/whatever`, it will not work!
+  #   mediaDir = "/data/media";
+  #   stateDir = "/data/media/.state/nixarr";
+  #
+  #   vpn = {
+  #     enable = true;
+  #     # WARNING: This file must _not_ be in the config git directory
+  #     # You can usually get this wireguard file from your VPN provider
+  #     wgConf = "/data/.secret/wg.conf";
+  #   };
+  #
+  #   jellyfin = {
+  #     enable = true;
+  #     # These options set up a nginx HTTPS reverse proxy, so you can access
+  #     # Jellyfin on your domain with HTTPS
+  #   };
+  #
+  #   transmission = {
+  #     enable = true;
+  #     vpn.enable = true;
+  #     peerPort = 50000; # Set this to the port forwarded by your VPN
+  #   };
+  #
+  #   # It is possible for this module to run the *Arrs through a VPN, but it
+  #   # is generally not recommended, as it can cause rate-limiting issues.
+  #   # bazarr.enable = true;
+  #   # lidarr.enable = true;
+  #   prowlarr.enable = true;
+  #   radarr.enable = true;
+  #   # readarr.enable = true;
+  #   sonarr.enable = true;
+  # };
   # services.vaultwarden = {
   #   enable = true;
   #   environmentFile = "/run/secrets/vaultwarden";
