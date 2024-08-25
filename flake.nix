@@ -155,6 +155,7 @@
 
               ./hosts/orca
               server
+              scripts
               # nixarr
               # minecraftServer
               # {inherit home-manager;} #

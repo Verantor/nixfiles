@@ -14,9 +14,9 @@
     number = true;
     relativenumber = true;
     # Set tabs to 2 spaces
-    tabstop = 2;
-    softtabstop = 2;
-    showtabline = 2;
+    tabstop = 4;
+    softtabstop = 4;
+    showtabline = 4;
     expandtab = true;
 
     # Enable auto indenting and set it to spaces
