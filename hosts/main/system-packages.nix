@@ -3,6 +3,7 @@
 , ...
 }: {
   environment.systemPackages = with pkgs; [
+    (import ./../../pkgs/nix-orca.nix)
     fish
     nushell
     git
