@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
+  ### Insert Point
   home.packages = with pkgs; [
     networkmanagerapplet
     vesktop
