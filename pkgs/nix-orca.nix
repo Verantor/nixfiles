@@ -5,7 +5,7 @@
 ,
 }:
 let
-  version = "0.0.3";
+  version = "0.0.4";
 in
 buildGoModule {
   pname = "nix-orca";
@@ -19,6 +19,7 @@ buildGoModule {
   };
 
   vendorHash = "sha256-mN/QjzJ4eGfbW1H92cCKvC0wDhCR6IUes2HCZ5YBdPA";
+  # vendorHash = lib.fakeHash;
   meta = with lib; {
     homepage = "https://github.com/Verantor/nix-orca";
     description = "nix helper scripts";
