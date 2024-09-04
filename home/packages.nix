@@ -91,5 +91,6 @@
     prismlauncher
 
     ladybird
+    kicad
   ];
 }
