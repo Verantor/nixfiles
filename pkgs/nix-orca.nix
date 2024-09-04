@@ -5,11 +5,11 @@
 ,
 }:
 let
-  # version = "0.0.4";
+  version = "0.0.4";
 in
 buildGoModule {
   pname = "nix-orca";
-  # inherit version;
+  inherit version;
 
   src = fetchFromGitHub {
     owner = "Verantor";
