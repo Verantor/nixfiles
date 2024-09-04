@@ -5,17 +5,17 @@
 ,
 }:
 let
-  version = "0.0.4";
+  # version = "0.0.4";
 in
 buildGoModule {
   pname = "nix-orca";
-  inherit version;
+  # inherit version;
 
   src = fetchFromGitHub {
     owner = "Verantor";
     repo = "nix-orca";
-    rev = "v${version}";
-    hash = "sha256-R4sqH4Nx0pQJc3UyuJ3dBd9PSEjyMmlaAlvforUJVH0=";
+    rev = "main";
+    # hash = "sha256-R4sqH4Nx0pQJc3UyuJ3dBd9PSEjyMmlaAlvforUJVH0=";
   };
 
   vendorHash = "sha256-mN/QjzJ4eGfbW1H92cCKvC0wDhCR6IUes2HCZ5YBdPA";
