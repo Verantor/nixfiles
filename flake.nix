@@ -46,7 +46,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     nixvimConfig = {
-      url = "path:./nixvim/";
+      url = "path:/home/ver/.dotfiles/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixarr.url = "github:rasmus-kirk/nixarr";
@@ -115,11 +115,12 @@
         system:
         let
           inherit (nixpkgs) lib;
-          nixosMachines = lib.mapAttrs'
-            (
-              name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel
-            )
-            ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
+          nixosMachines =
+            lib.mapAttrs'
+              (
+                name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel
+              )
+              ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
         in
         nixosMachines
       );
