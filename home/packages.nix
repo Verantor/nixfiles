@@ -91,6 +91,6 @@
     prismlauncher
 
     ladybird
-    kicad
+    stable.kicad
   ];
 }
