@@ -4,7 +4,7 @@
 }: {
   ### Insert Point
   environment.systemPackages = with pkgs; [
-    (callPackage ./../../pkgs/nix-orca.nix { })
+    # (callPackage ./../../pkgs/nix-orca.nix { })
     fish
     nushell
     git

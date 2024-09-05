@@ -7,14 +7,14 @@
       enable = true;
       capabilities = "offsetEncoding =  'utf-16'";
       servers = {
-        clangd = {enable = true;};
+        clangd = { enable = true; };
         # nixd = { enable = true; };
-        nil-ls = {enable = true;};
-        pyright = {enable = true;};
-        ruff = {enable = true;};
-        gopls = {enable = true;};
+        nil-ls = { enable = true; };
+        pyright = { enable = true; };
+        ruff = { enable = true; };
+        gopls = { enable = true; };
 
-        marksman = {enable = true;};
+        marksman = { enable = true; };
         rust-analyzer = {
           enable = true;
           installCargo = true; #TODO maby conflicts with things
