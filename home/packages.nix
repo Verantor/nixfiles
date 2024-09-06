@@ -40,7 +40,6 @@
     papirus-icon-theme
     # kdePackages.qttools
     k3b
-    # spotify-player
     spotify
     # reaper
     # vcv-rack

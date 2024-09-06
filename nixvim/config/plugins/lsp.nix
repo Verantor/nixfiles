@@ -13,6 +13,7 @@
         pyright = { enable = true; };
         ruff = { enable = true; };
         gopls = { enable = true; };
+        golangci-lint-ls = { enable = true; };
 
         marksman = { enable = true; };
         rust-analyzer = {
