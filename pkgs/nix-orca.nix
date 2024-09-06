@@ -15,8 +15,8 @@ buildGoModule {
     owner = "Verantor";
     repo = "nix-orca";
     rev = "v${version}";
-    # hash = "sha256-aezgo05GqzL6jamawqHkJF6Ia6nSoVm5BnLIwTRGgyY=";
-    hash = lib.fakeHash;
+    hash = "sha256-+5Kf9YeEaOn+HUbsKEdbgJTR7S18FSvYQbHoHcx83TE=";
+    # hash = lib.fakeHash;
   };
 
   # vendorHash = "sha256-mN/QjzJ4eGfbW1H92cCKvC0wDhCR6IUes2HCZ5YBdPA";
