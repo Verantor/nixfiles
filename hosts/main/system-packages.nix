@@ -1,10 +1,11 @@
-{ pkgs
-, inputs
-, ...
+{
+  pkgs,
+  inputs,
+  ...
 }: {
   ### Insert Point
   environment.systemPackages = with pkgs; [
-    (callPackage ./../../pkgs/nix-orca.nix { })
+    (callPackage ./../../pkgs/nix-orca.nix {})
     fish
     nushell
     git
@@ -14,7 +15,7 @@
     # wine
     winetricks
     wineWowPackages.stable
-    wineWowPackages.waylandFull
+    # wineWowPackages.waylandFull
     vulkan-tools
     just
     lshw
