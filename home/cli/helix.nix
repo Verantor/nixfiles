@@ -37,5 +37,7 @@
     python311Packages.python-lsp-ruff
     python311Packages.python-lsp-server
     ripgrep
+    golangci-lint
+    golangci-lint-langserver
   ];
 }
