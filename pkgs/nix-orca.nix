@@ -19,8 +19,8 @@ buildGoModule {
     # hash = lib.fakeHash;
   };
 
-  # vendorHash = "sha256-mN/QjzJ4eGfbW1H92cCKvC0wDhCR6IUes2HCZ5YBdPA";
-  vendorHash = lib.fakeHash;
+  vendorHash = "sha256-ImkjeeMnP58F0b/0p1AvPdG7zsl69iX9IEFLXvQgPEg=";
+  # vendorHash = lib.fakeHash;
   meta = with lib; {
     homepage = "https://github.com/Verantor/nix-orca";
     description = "nix helper scripts";
