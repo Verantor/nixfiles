@@ -15,7 +15,7 @@ in
       owner = "Verantor";
       repo = "nix-orca";
       rev = "v${version}";
-      hash = "sha256-B1MHDXowxOCyzdkEWkJsax/38wGmI4Fe7/WPbI37W9Q=";
+      hash = "sha256-2M1/evNbLQ1n6vx1NI4mRqr9Fn9igNShRFSgx3ReNrw=";
       # hash = lib.fakeHash;
     };
     nativeBuildInputs = [pkgs.installShellFiles];
