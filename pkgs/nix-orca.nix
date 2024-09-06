@@ -5,7 +5,7 @@
   buildGoModule,
   pkgs,
 }: let
-  version = "0.0.9";
+  version = "0.1.0";
 in
   buildGoModule {
     pname = "nix-orca";
