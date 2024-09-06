@@ -43,5 +43,6 @@
     ./nvim-autopairs.nix
     ./surround.nix
     ./rainbow-delimiters.nix
+    ./multicursors.nix
   ];
 }

@@ -1,7 +1,10 @@
 {
   plugins.copilot-lua = {
     enable = true;
-    suggestion.enabled = true;
-    panel.enabled = true;
+    suggestion.enabled = false;
+    panel.enabled = false;
+    filetypes = {
+      "*" = true;
+    };
   };
 }
