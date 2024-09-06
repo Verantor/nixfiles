@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   ### Insert Point
   home.packages = with pkgs; [
+spot
     networkmanagerapplet
     vesktop
     bottles
