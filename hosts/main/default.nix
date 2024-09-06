@@ -36,20 +36,8 @@ in
     KERNEL=="hidraw*", KERNELS=="*054C:0CE6*", MODE="0660", TAG+="uaccess"
   '';
 
-  # Uncomment to enable Plymouth boot splash if needed
-  # boot.plymouth = {
-  #   enable = true;
-  #   themePackages = [
-  #     (pkgs.catppuccin-plymouth.override {
-  #       variant = "mocha";
-  #     })
-  #   ];
-  #   theme = "catppuccin-mocha";
-  #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
-  # };
-
   services.flatpak.enable = true;
-
+  systemd.services.NetworkManager-wait-online.enable = false;
   # Uncomment to add extra Nix options if needed
   # nix = {
   #   extraOptions = ''
@@ -70,18 +58,13 @@ in
   # Uncomment to enable Plasma 6 desktop manager if needed
   # services.xserver.desktopManager.plasma6.enable = true;
 
-  # Uncomment to configure xdg portals if needed
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gtk
-  #     # pkgs.xdg-desktop-portal-hyprland
-  #     # inputs.xdg-portal-hyprland.packages.${pkgs.system}.default
-  #   ];
-  #   config = {
-  #     common.default = "*";
-  #   };
-  # };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
 
   programs.hyprland = {
     enable = true;
