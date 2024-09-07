@@ -10,4 +10,8 @@
     };
     folding = false;
   };
+  plugins.treesitter-refactor = {
+    enable = true;
+    smartRename.enable = true;
+  };
 }

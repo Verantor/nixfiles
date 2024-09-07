@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, inputs
-, ...
+{
+  config,
+  pkgs,
+  inputs,
+  ...
 }: {
   home.packages = with pkgs; [
     nix-output-monitor
@@ -69,7 +70,7 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-    options = [ "--cmd c" ];
+    options = ["--cmd c"];
   };
   # programs.eza = {
   #   enable = true;
@@ -78,10 +79,18 @@
   # };
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
-      starship init fish | source
-      set PATH $PATH /home/ver/.local/bin
-    '';
+    interactiveShellInit =
+      /*
+      fish
+      */
+      ''
+        function fish_greeting
+            echo Hello friend!
+            echo The time is (set_color yellow; date +%T; set_color normal) and this machine is called $hostname
+        end
+              starship init fish | source
+              set PATH $PATH /home/ver/.local/bin
+      '';
 
     shellAliases = {
       ls = "lsd";
@@ -174,7 +183,7 @@
     enableFishIntegration = true;
     settings = {
       manager = {
-        ratio = [ 1 3 3 ];
+        ratio = [1 3 3];
         sort_by = "natural";
         sort_reverse = false;
         sort_dir_first = true;
