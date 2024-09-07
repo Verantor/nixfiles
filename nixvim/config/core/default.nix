@@ -26,12 +26,12 @@
           italic = true;
         };
         floats = "dark";
-        functions = {};
+        functions = { };
         keywords = {
           italic = true;
         };
         sidebars = "dark";
-        variables = {};
+        variables = { };
       };
       terminal_colors = true;
       transparent = false;
