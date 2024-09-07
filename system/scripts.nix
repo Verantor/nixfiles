@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "nixrb" ''
       pushd ~/.dotfiles
@@ -29,51 +29,19 @@
       cd /
       sudo ${pkgs.gdu}/bin/gdu
     '')
-    # (writeShellScriptBin "waybar-kde-connect.sh" ''
-    #   get_status() {
-    #       for device in $(qdbus --literal org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices); do
-    #           deviceid=$(echo "$device" | awk -F'["|"]' '{print $2}')
-    #           isreach="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isReachable)"
-    #       if [ "$isreach" = "true" ]
-    #           then
-    #               battery="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid/battery" org.kde.kdeconnect.device.battery.charge)󰏰"
-    #               icon="󰄜"
-    #               devices+="$icon $battery"
-    #               conn+=connected
-    #       else
-    #           devices+="󰥍"
-    #           conn+=disconnected
-    #           fi
-    #       done
-    #       echo -e "$devices\nKDE Connect\n$conn"
-    #   }
-
-    #   option="''${1}"
-    #       case "''${option}" in
-    #           battery) get_status
-    #               ;;
-    #           *) echo "Use with ./custom-kdeconnect.sh battery"
-    #               ;;
-    #       esac
-
-    #   exit 0
-    # '')
-    # (writeShellScriptBin "nixiso" ''
-    #   sudo nixos-generate -f iso --flake ".#serverPi" --system aarch64-linux
-    # '')
     (
       pkgs.writers.writePython3Bin "microphone_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/microphone_changer.py)
+      {
+        flakeIgnore = ["E265" "E225" "E501" "W292" "W293" "E305" "E302"];
+      }
+      (builtins.readFile ../scripts/microphone_changer.py)
     )
     (
       pkgs.writers.writePython3Bin "audio_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/audio_changer.py)
+      {
+        flakeIgnore = ["E265" "E225" "E501" "W292" "W293" "E305" "E302"];
+      }
+      (builtins.readFile ../scripts/audio_changer.py)
     )
     (
       writeShellScriptBin "nixbr" ''
