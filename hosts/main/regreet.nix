@@ -1,9 +1,9 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   regreetConfig = pkgs.writeText "regreet-config" ''
     [background]
     path = "${../../theme/wallpapers/leaves-wall.png}"
@@ -34,17 +34,36 @@ let
 
   '';
 
-  hyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
-    misc {
-    force_default_wallpaper =1
-    }
-    bind=SUPER, RETURN, exec, ${lib.getExe pkgs.foot}
-    monitor=DP-2,1920x1080@144,0x0,1
-    monitor=,preferred,auto,1,mirror,DP-2
-    exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
-  '';
-in
-{
+  hyprlandConfig =
+    pkgs.writeText "greetd-hyprland-config"
+    /*
+    toml
+    */
+    ''
+      misc {
+      force_default_wallpaper =1
+      }
+      animations {
+      enabled=0
+      }
+      decoration {
+      rounding=0
+      drop_shadow=0
+      blur {
+      enabled=0
+      }
+      }
+      general {
+      gaps_in=0
+      gaps_out=0
+      border_size=1
+      }
+      bind=SUPER, RETURN, exec, ${lib.getExe pkgs.foot}
+      monitor=DP-2,1920x1080@144,0x0,1
+      monitor=,preferred,auto,1,mirror,DP-2
+      exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
+    '';
+in {
   environment.systemPackages = with pkgs; [
     greetd.regreet
     adw-gtk3
