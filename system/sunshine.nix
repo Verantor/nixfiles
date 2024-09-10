@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services.sunshine = {
     enable = true;
     autoStart = false;
@@ -16,5 +16,5 @@
   };
 
   services.avahi.publish.userServices = true;
-  boot.kernelModules = ["uinput"];
+  boot.kernelModules = [ "uinput" ];
 }

@@ -12,7 +12,7 @@ _: {
           "hyprland/workspaces"
           "clock"
         ];
-        modules-center = ["hyprland/window"];
+        modules-center = [ "hyprland/window" ];
         modules-right = [
           "mpris"
           "tray"

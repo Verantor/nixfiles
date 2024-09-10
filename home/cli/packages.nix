@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }: {
   home.packages = with pkgs; [
     nix-output-monitor
@@ -70,7 +69,7 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-    options = ["--cmd c"];
+    options = [ "--cmd c" ];
   };
   # programs.eza = {
   #   enable = true;
@@ -183,7 +182,7 @@
     enableFishIntegration = true;
     settings = {
       manager = {
-        ratio = [1 3 3];
+        ratio = [ 1 3 3 ];
         sort_by = "natural";
         sort_reverse = false;
         sort_dir_first = true;
