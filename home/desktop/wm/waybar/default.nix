@@ -12,14 +12,14 @@ _: {
           "hyprland/workspaces"
           "clock"
         ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = ["hyprland/window"];
         modules-right = [
           "mpris"
           "tray"
           "pulseaudio"
-          #"network"
+          "network"
           #"custom/kdeconnect"
-          #"privacy"
+          "privacy"
           #"custom/wallpaper"
           #"custom/lock"
           "custom/power"
@@ -83,10 +83,10 @@ _: {
             "artist"
             "album"
           ];
-          "title-len" = 35;
-          "artist-len" = 25;
-          "album-len" = 20;
-          "dynamic-len" = 50;
+          "title-len" = 10;
+          "artist-len" = 10;
+          "album-len" = 10;
+          "dynamic-len" = 20;
           "format" = "{player_icon} {dynamic}";
           "format-paused" = "{status_icon} <i>{dynamic}</i>";
         };
