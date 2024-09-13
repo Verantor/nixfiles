@@ -13,55 +13,37 @@
         {
           path = "screenshot";
           blur_passes = 3;
-          blur_size = 10;
+          blur_size = 40;
         }
       ];
 
       input-field = [
         {
-          size = "200, 50";
-          position = "0, -80";
           monitor = "";
+          size = "250, 60";
+          outline_thickness = 2;
+          dots_size = 0.2;
+          dots_spacing = 0.2;
           dots_center = true;
+          outer_color = "rgba(0, 0, 0, 0)";
+          inner_color = "rgba(0, 0, 0, 0.5)";
+          font_color = "rgb(200, 200, 200)";
           fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
-          placeholder_text = ''<span font_family="${theme.font}" foreground="##f2d5cf">Password...</span>'';
-          shadow_passes = 2;
+          placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
+          hide_input = false;
+          position = "0, -120";
+          halign = "center";
+          valign = "center";
         }
       ];
       label = [
-        # Failure attempts
         {
-          text = "$ATTEMPTS[]";
-          color = "#C01C28";
-          font_size = 20;
-
-          halign = "center";
+          monitor = "";
+          text = "$TIME";
+          font_size = 120;
+          position = "0, 80";
           valign = "center";
-          position = "0, 85";
-        }
-        # Time
-        {
-          text = "cmd[update:200] date +'%r'";
-          color = "#f2d5cf";
-          font_size = 30;
-
           halign = "center";
-          valign = "center";
-          position = "0, 0";
-        }
-        # Date
-        {
-          text = "cmd[update:1000] date +'%a, %x'";
-          color = "#f2d5cf";
-          font_size = 20;
-
-          halign = "center";
-          valign = "center";
-          position = "0, -50";
         }
       ];
     };
@@ -71,7 +53,7 @@
     settings = {
       general = {
         after_sleep_cmd = "hyprctl dispatch dpms on";
-        ignore_dbus_inhibit = false;
+        ignore_dbus_inhibit = true;
         lock_cmd = "hyprlock";
       };
 
