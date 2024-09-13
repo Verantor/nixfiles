@@ -1,4 +1,5 @@
-_: let
+_:
+let
   mod = "SUPER";
   modshift = "${mod}SHIFT";
   # binds $mod + [shift +] {1..10} to [move to] workspace {1..10} (stolen from fufie)
@@ -18,7 +19,8 @@ _: let
   #     ]
   #   )
   #   10);
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       "${mod},SPACE,exec,anyrun" #-show drun
