@@ -5,7 +5,7 @@
   imports = [
     inputs.nix-index-database.hmModules.nix-index
     inputs.nixvim.homeManagerModules.nixvim
-
+    inputs.hyprland.homeManagerModules.default
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     # inputs.walker.homeManagerModules.walker
     ./misc
