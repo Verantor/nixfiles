@@ -1,9 +1,9 @@
 ''
   * {
     min-height: 0;
-    font-family: Lexend, "JetBrainsMonoNL Nerd Font";
+    font-family: "JetBrainsMonoNL Nerd Font";
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 900;
   }
 
   window#waybar {
