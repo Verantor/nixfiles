@@ -34,19 +34,20 @@ in
       "${mod},K,movefocus,u"
       "${mod},J,movefocus,d"
 
+      "${mod},1, exec, hyprnome --previous"
+      "${mod},2, exec, hyprnome"
+      "${modshift},1, exec, hyprnome --previous --move"
+      "${modshift},2, exec, hyprnome  --move"
+
       "${mod},G,togglegroup," # group focused window
       "${modshift},G,changegroupactive," # switch within the active group
       "${mod},V,togglefloating," # toggle floating for the focused window
       "${modshift},F,fullscreen," # fullscreen focused window
 
-      "${modshift},P, exec, hyprshot -m window" # screenshot focused window
-      "${modshift},R, exec, hyprshot -m region" # screenshot focused region
-      "${modshift},E, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
-      "${modshift}, G, exec, gamemode-hyprland"
-      "${mod},1, exec, hyprnome --previous"
-      "${mod},2, exec, hyprnome"
-      "${modshift},1, exec, hyprnome --previous --move"
-      "${modshift},2, exec, hyprnome  --move"
+      "${mod},R, exec, hyprshot -m window" # screenshot focused window
+      "${modshift},R, exec, hyprpicker -a" # screenshot focused region
+      "${modshift},S, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
+      "${modshift}, O, exec, gamemode-hyprland"
 
       "${mod},tab,hyprexpo:expo, toggle"
       # workspace controls
@@ -57,7 +58,7 @@ in
 
       "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
       "${mod}, D, exec, selectCommands"
-      "${mod},ESC,exec,hyprlock"
+      "${mod},ESCAPE,exec,wlogout"
 
       # ",XF86AudioRaiseVolume,exec,pamixer -i 5"
       # ",XF86AudioLowerVolume,exec,pamixer -d 5"

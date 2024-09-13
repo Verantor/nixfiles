@@ -1,4 +1,5 @@
 hyprpicker -a
+gamemode-hyprland
 cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 foot bash -c "btop"
 foot bash -c "nvtop"
