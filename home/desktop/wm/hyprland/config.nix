@@ -54,7 +54,7 @@ in
         # "col.inactive_border" = "rgb(${surface0})";
         resize_on_border = true;
         # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
-        apply_sens_to_raw = 0;
+        # apply_sens_to_raw = 0;
         allow_tearing = false;
       };
 
