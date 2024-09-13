@@ -73,7 +73,7 @@
       longitude = "21.0";
       temperature = {
         day = 6500;
-        night = 4000;
+        night = 3500;
       };
       systemdTarget = "graphical-session.target";
     };
