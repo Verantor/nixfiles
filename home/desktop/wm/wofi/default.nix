@@ -63,7 +63,7 @@ in
   # };
   home.packages = [
     (pkgs.writeShellScriptBin "anyrun-dmenu" ''
-      anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true
+      anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true --max-entries 15
     '')
   ];
 
