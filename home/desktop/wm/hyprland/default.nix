@@ -72,10 +72,10 @@
       latitude = "52.0";
       longitude = "21.0";
       temperature = {
-        day = 6200;
-        night = 3750;
+        day = 6500;
+        night = 4000;
       };
-      systemdTarget = "hyprland-session.target";
+      systemdTarget = "graphical-session.target";
     };
   };
   # fake a tray to let apps start
