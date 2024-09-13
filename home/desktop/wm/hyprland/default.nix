@@ -1,10 +1,11 @@
-{ pkgs
-, inputs
-, ...
+{
+  pkgs,
+  inputs,
+  ...
 }: {
-  imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
+  imports = [./config.nix ./binds.nix ./rules.nix ./swww.nix];
   home.packages = with pkgs;
-    #with inputs.hyprcontrib.packages.${pkgs.system};
+  #with inputs.hyprcontrib.packages.${pkgs.system};
     [
       hyprnome #TODO do config
       pwvucontrol
@@ -50,15 +51,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
-      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
-    # package = inputs.hyprland.packages.${pkgs.system}.default;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     systemd = {
-      variables = [ "--all" ];
+      variables = ["--all"];
       extraCommands = [
         "systemctl --user stop graphical-session.target"
         "systemctl --user start hyprland-session.target"
