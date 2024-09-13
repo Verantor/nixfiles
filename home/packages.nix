@@ -92,5 +92,6 @@
 
     ladybird
     stable.kicad
+    rpi-imager
   ];
 }
