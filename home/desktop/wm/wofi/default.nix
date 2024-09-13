@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs
+, inputs
+, ...
+}: {
   home.packages = with pkgs; [
     walker
   ];
@@ -57,6 +60,26 @@
       # };
     };
   };
+  programs.anyrun = {
+    enable = true;
+    config = {
+      plugins = [
+        inputs.anyrun.packages.${pkgs.system}.applications
+        # An array of all the plugins you want, which either can be paths to the .so files, or their packages
+      ];
+      x = { fraction = 0.5; };
+      y = { fraction = 0.3; };
+      width = { fraction = 0.3; };
+      hideIcons = false;
+      ignoreExclusiveZones = false;
+      layer = "overlay";
+      hidePluginInfo = false;
+      closeOnClick = false;
+      showResultsImmediately = false;
+      maxEntries = null;
+    };
+  };
+
   # programs.walker = {
   #   enable = true;
   #   runAsService = true;

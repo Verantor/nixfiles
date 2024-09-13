@@ -7,6 +7,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     inputs.hyprland.homeManagerModules.default
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    inputs.anyrun.homeManagerModules.default
     # inputs.walker.homeManagerModules.walker
     ./misc
     ./desktop
