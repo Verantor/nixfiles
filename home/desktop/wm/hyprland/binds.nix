@@ -1,5 +1,4 @@
-_:
-let
+_: let
   mod = "SUPER";
   modshift = "${mod}SHIFT";
   # binds $mod + [shift +] {1..10} to [move to] workspace {1..10} (stolen from fufie)
@@ -19,8 +18,7 @@ let
   #     ]
   #   )
   #   10);
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "${mod},SPACE,exec,anyrun" #-show drun
@@ -43,7 +41,7 @@ in
       "${modshift},G,changegroupactive," # switch within the active group
       "${mod},V,togglefloating," # toggle floating for the focused window
       "${modshift},F,fullscreen," # fullscreen focused window
-
+      "${mod},Z, exec, woomer"
       "${mod},R, exec, hyprshot -m window" # screenshot focused window
       "${modshift},R, exec, hyprpicker -a" # screenshot focused region
       "${modshift},S, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"

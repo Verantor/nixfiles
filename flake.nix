@@ -21,6 +21,7 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    woomer.url = "github:coffeeispower/woomer";
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";

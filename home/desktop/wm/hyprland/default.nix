@@ -6,6 +6,7 @@
   home.packages = with pkgs;
     #with inputs.hyprcontrib.packages.${pkgs.system};
     [
+      inputs.woomer.packages.${system}.default
       hyprnome #TODO do config
       pwvucontrol
       playerctl
