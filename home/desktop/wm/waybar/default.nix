@@ -44,7 +44,7 @@ _: {
         "custom/search" = {
           format = " ";
           tooltip = false;
-          on-click = "fuzzel";
+          on-click = "anyrun";
         };
         "custom/wallpaper" = {
           format = " 󰸉  ";

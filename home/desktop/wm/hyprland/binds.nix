@@ -56,7 +56,7 @@ in
       "${mod},mouse_down,workspace,e+1" # move to the next ws
       "${mod},mouse_up,workspace,e-1" # move to the previous ws
 
-      "${mod}, B, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+      "${mod}, B, exec, cliphist list | anyrun-dmenu | cliphist decode | wl-copy"
       "${mod}, D, exec, selectCommands"
       "${mod},ESCAPE,exec,wlogout"
 

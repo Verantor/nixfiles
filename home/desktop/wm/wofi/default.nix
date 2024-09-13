@@ -1,74 +1,82 @@
 { pkgs
 , inputs
 , ...
-}: {
-  home.packages = with pkgs; [
-    walker
-  ];
-  programs.wofi = {
-    enable = true;
-    # style = import ./style.nix;
-    settings = {
-      hide_scroll = true;
-      show = "drun";
-      width = "30%";
-      lines = "8";
-      line_wrap = "word";
-      term = "foot";
-      allow_markup = true;
-      always_parse_args = false;
-      show_all = true;
-      print_command = true;
-      layer = "overlay";
-      allow_images = true;
-      sort_order = "alphabetical";
-      gtk_dark = true;
-      prompt = "";
-      image_size = 20;
-      display_generic = false;
-      location = "center";
-      key_expand = "Tab";
-      insensitive = false;
-    };
-  };
-  # programs.rofi = {
+}:
+let
+  anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
+in
+{
+  # programs.wofi = {
   #   enable = true;
-  #   location = "center";
-  #   package = pkgs.rofi-wayland-unwrapped;
-  #   terminal = "foot";
+  #   # style = import ./style.nix;
+  #   settings = {
+  #     hide_scroll = true;
+  #     show = "drun";
+  #     width = "30%";
+  #     lines = "8";
+  #     line_wrap = "word";
+  #     term = "foot";
+  #     allow_markup = true;
+  #     always_parse_args = false;
+  #     show_all = true;
+  #     print_command = true;
+  #     layer = "overlay";
+  #     allow_images = true;
+  #     sort_order = "alphabetical";
+  #     gtk_dark = true;
+  #     prompt = "";
+  #     image_size = 20;
+  #     display_generic = false;
+  #     location = "center";
+  #     key_expand = "Tab";
+  #     insensitive = false;
+  #   };
   # };
-  programs.fuzzel = {
-    enable = true;
-    settings = {
-      main = {
-        # font = "${theme.font}";
-        terminal = "${pkgs.foot}/bin/foot";
-        layer = "overlay";
-        width = 60;
-        line-height = 50;
-        lines = 5;
-        fields = "filename,name,generic,keywords";
-      };
-      # colors = {
-      #   background = "1e1e2edd";
-      #   text = "cdd6f4ff";
-      #   match = "f38ba8ff";
-      #   selection = "585b70ff";
-      #   selection-match = "f38ba8ff";
-      #   selection-text = "cdd6f4ff";
-      #   border = "b4befeff";
-      # };
-    };
-  };
+  # # programs.rofi = {
+  # #   enable = true;
+  # #   location = "center";
+  # #   package = pkgs.rofi-wayland-unwrapped;
+  # #   terminal = "foot";
+  # # };
+  # programs.fuzzel = {
+  #   enable = true;
+  #   settings = {
+  #     main = {
+  #       # font = "${theme.font}";
+  #       terminal = "${pkgs.foot}/bin/foot";
+  #       layer = "overlay";
+  #       width = 60;
+  #       line-height = 50;
+  #       lines = 5;
+  #       fields = "filename,name,generic,keywords";
+  #     };
+  #     # colors = {
+  #     #   background = "1e1e2edd";
+  #     #   text = "cdd6f4ff";
+  #     #   match = "f38ba8ff";
+  #     #   selection = "585b70ff";
+  #     #   selection-match = "f38ba8ff";
+  #     #   selection-text = "cdd6f4ff";
+  #     #   border = "b4befeff";
+  #     # };
+  #   };
+  # };
+  home.packages = [
+    (pkgs.writeShellScriptBin "anyrun-dmenu" ''
+      anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true
+    '')
+  ];
+
   programs.anyrun = {
     enable = true;
     config = {
-      plugins = with inputs.anyrun.packages.${pkgs.system}; [
+      plugins = with anyrunPkgs; [
         applications
         # randr
         rink
         shell
         symbols
+        stdin
       ];
       y.fraction = 0.2;
       width = { fraction = 0.3; };
@@ -78,12 +86,57 @@
       maxEntries = 10;
     };
     extraConfigFiles = {
-      "symbols.ron".text = ''
-        Config(
-          prefix: ";sym",
-          max_entries: 3,
-        )
-      '';
+      "shell.ron".text =
+        # rust
+        ''
+          Config(
+              prefix: ">",
+          )
+        '';
+      "applications.ron".text =
+        # rust
+        ''
+          Config(
+            max_entries: 10,
+            terminal: Some("foot"),
+          )
+        '';
+      "symbols.ron".text =
+        # rust
+        ''
+          Config(
+            // The prefix that the search needs to begin with to yield symbol results
+            prefix: ":sy",
+
+            // Custom user defined symbols to be included along the unicode symbols
+            symbols: {
+              // "name": "text to be copied"
+              "shrug": "¯\\_(ツ)_/¯",
+              "tableflip": "(╯°□°)╯︵ ┻━┻",
+              "unflip": "┬─┬ノ( º _ ºノ)",
+            },
+
+            // The number of entries to be displayed
+            max_entries: 3,
+          )
+        '';
+      "websearch.ron".text =
+        # rust
+        ''
+          Config(
+            prefix: ":q",
+            // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
+            //
+            // Custom engines can be defined as such:
+            // Custom(
+            //   name: "Searx",
+            //   url: "searx.be/?q={}",
+            // )
+            //
+            // NOTE: `{}` is replaced by the search query and `https://` is automatically added in front.
+            engines: [Google]
+          )
+        '';
     };
     extraCss = ''
       window {
