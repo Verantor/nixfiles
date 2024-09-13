@@ -1,12 +1,13 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}: let
+{ pkgs
+, inputs
+, config
+, ...
+}:
+let
   # Uncomment to include the maccelModule if needed
   # maccelModule = config.boot.kernelPackages.callPackage ./maccelModule.nix { };
-in {
+in
+{
   # Uncomment to include maccelModule in extra module packages if needed
   # boot.extraModulePackages = [ maccelModule ];
 
@@ -20,7 +21,7 @@ in {
     ./packages.nix
     ./flatpak.nix
   ];
-  networking.nameservers = ["192.168.178.190" "1.1.1.1" "9.9.9.9"];
+  networking.nameservers = [ "192.168.178.190" "1.1.1.1" "9.9.9.9" ];
   virtualisation.containers.enable = true;
 
   services.udev.extraRules = ''
@@ -48,7 +49,7 @@ in {
   #   };
   # };
 
-  environment.pathsToLink = ["share/thumbnailers"];
+  environment.pathsToLink = [ "share/thumbnailers" ];
 
   services.xserver.enable = true;
   # Uncomment to enable GDM display manager if needed
@@ -74,14 +75,14 @@ in {
     # portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
   security.sudo.extraConfig = "Defaults pwfeedback";
   programs.dconf.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Emulated systems
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   security.pam.services.login.enableGnomeKeyring = true;
 }
