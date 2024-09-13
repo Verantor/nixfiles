@@ -2,8 +2,8 @@
   * {
     min-height: 0;
     font-family: "JetBrainsMonoNL Nerd Font";
-    font-size: 10px;
-    font-weight: 900;
+    font-size: 12px;
+    font-weight: 1200;
   }
 
   window#waybar {
