@@ -63,7 +63,7 @@ in
     extraPortals = with pkgs; [
       # xdg-desktop-portal-gtk
       # xdg-desktop-portal-hyprland
-      # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
     ];
   };
 
