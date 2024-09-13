@@ -180,5 +180,12 @@
         desc = "Code action";
       };
     }
+    {
+      key = "<leader>a";
+      action = "<cmd>lua require('fastaction').code_action()<CR>";
+      options = {
+        desc = "Code action";
+      };
+    }
   ];
 }
