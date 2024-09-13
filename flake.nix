@@ -140,7 +140,7 @@
               bootloader
               services #
               gaming #
-              sunshine #
+              # sunshine #
               hmModule #
               scripts
               networking
