@@ -74,6 +74,7 @@ in
         applications
         # randr
         rink
+        websearch
         shell
         symbols
         stdin
