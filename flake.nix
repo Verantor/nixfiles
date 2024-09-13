@@ -35,7 +35,14 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
-
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

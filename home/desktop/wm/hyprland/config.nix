@@ -9,12 +9,8 @@ in
         hyprexpo = {
           columns = 3;
           gap_size = 5;
-          bg_col = "#111111"; # Use hexadecimal notation for RGB color
+          # bg_col = "#111111"; # Use hexadecimal notation for RGB color
           workspace_method = "center current"; # String for the method
-          enable_gesture = true;
-          gesture_fingers = 3;
-          gesture_distance = 300;
-          gesture_positive = true;
         };
       };
       exec-once = [
