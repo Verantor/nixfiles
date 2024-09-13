@@ -4,7 +4,7 @@ _: {
       "blur,waybar"
       "blur,fuzzel"
       "blur,wlogout"
-
+      "blur, logout_dialog"
       "blur,gtk-layer-shell"
       "ignorezero,gtk-layer-shell"
 
