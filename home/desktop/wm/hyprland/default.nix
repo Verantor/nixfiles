@@ -53,7 +53,8 @@
     # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
       # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      pkgs.hyprlandPlugins.hyprspace
     ];
     # package = inputs.hyprland.packages.${pkgs.system}.default;
     systemd = {
