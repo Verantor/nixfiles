@@ -48,7 +48,7 @@ in
       "${modshift},1, exec, hyprnome --previous --move"
       "${modshift},2, exec, hyprnome  --move"
 
-      "${mod},tab,overview:toggle"
+      "${mod},tab,hyprexpo:expo, toggle"
       # workspace controls
       "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
       "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
