@@ -81,6 +81,89 @@
       # showResultsImmediately = false;
       # maxEntries = null;
     };
+    extraConfigFiles = {
+      "symbols.ron".text = ''
+        Config(
+          prefix: ";sym",
+          max_entries: 3,
+        )
+      '';
+    };
+    extraCss = ''
+      window {
+        background: transparent;
+      }
+
+      #match,
+      #entry,
+      #plugin,
+      #main {
+        background: transparent;
+        font-size: 1.1rem;
+      }
+
+      #match.activatable {
+        padding: 12px 14px;
+        border-radius: 12px;
+
+        color: white;
+        margin-top: 4px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      #match.activatable:not(:first-child) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #match.activatable #match-title {
+        font-size: 1.3rem;
+      }
+
+      #match.activatable:hover {
+        border: 2px solid rgba(255, 255, 255, 0.4);
+      }
+
+      #match-title, #match-desc {
+        color: inherit;
+      }
+
+      #match.activatable:hover, #match.activatable:selected {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+
+      #match.activatable:selected + #match.activatable, #match.activatable:hover + #match.activatable {
+        border-top: 2px solid transparent;
+      }
+
+      #match.activatable:selected, #match.activatable:hover:selected {
+        background: rgba(255,255,255,0.1);
+      }
+
+      #match, #plugin {
+        box-shadow: none;
+      }
+
+      #entry {
+        color: white;
+        box-shadow: none;
+        border-radius: 12px;
+      }
+
+      box#main {
+        background: rgba(36, 39, 58, 0.7);
+        border-radius: 16px;
+        padding: 8px;
+        box-shadow: 0px 2px 33px -5px rgba(0, 0, 0, 0.4);
+      }
+
+      row:first-child {
+        margin-top: 6px;
+      }
+    '';
   };
 
   # programs.walker = {

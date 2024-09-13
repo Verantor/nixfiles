@@ -23,7 +23,7 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "${mod},SPACE,exec,fuzzel" #-show drun
+      "${mod},SPACE,exec,anyrun" #-show drun
       "${mod},T,exec,foot"
       "${mod},C,killactive"
       "${mod},P,pseudo"
