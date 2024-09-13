@@ -11,6 +11,7 @@
       # allowBroken = true;
       permittedInsecurePackages = [
         # "electron"
+        "nix-2.24.5"
       ];
     }; #
   };
