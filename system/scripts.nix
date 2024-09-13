@@ -63,7 +63,7 @@
         fi
 
         # Use rofi in dmenu mode to select a command
-        selected_command=$(cat "$COMMANDS_FILE" | fuzzel -d -p "Select a command")
+        selected_command=$(cat "$COMMANDS_FILE" |  anyrun-dmenu)
 
         # Check if a command was selected
         if [[ -n "$selected_command" ]]; then
