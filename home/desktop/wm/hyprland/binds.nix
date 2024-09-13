@@ -1,5 +1,4 @@
-_:
-let
+_: let
   mod = "SUPER";
   modshift = "${mod}SHIFT";
   # binds $mod + [shift +] {1..10} to [move to] workspace {1..10} (stolen from fufie)
@@ -19,8 +18,7 @@ let
   #     ]
   #   )
   #   10);
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "${mod},SPACE,exec,fuzzel" #-show drun
@@ -47,7 +45,7 @@ in
       "${mod},2, exec, hyprnome"
       "${modshift},1, exec, hyprnome --previous --move"
       "${modshift},2, exec, hyprnome  --move"
-      "${mod},tab,hyprexpo:expo, toggle"
+      "${mod},tab,overview:toggle"
       # workspace controls
       "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
       "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws

@@ -54,7 +54,7 @@
     plugins = [
       # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      pkgs.hyprlandPlugins.hyprspace
+      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     # package = inputs.hyprland.packages.${pkgs.system}.default;
     systemd = {
