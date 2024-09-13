@@ -1,11 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }: {
-  imports = [./config.nix ./binds.nix ./rules.nix ./swww.nix];
+  imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
   home.packages = with pkgs;
-  #with inputs.hyprcontrib.packages.${pkgs.system};
+    #with inputs.hyprcontrib.packages.${pkgs.system};
     [
       hyprnome #TODO do config
       pwvucontrol
@@ -57,7 +56,7 @@
     ];
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     systemd = {
-      variables = ["--all"];
+      variables = [ "--all" ];
       extraCommands = [
         "systemctl --user stop graphical-session.target"
         "systemctl --user start hyprland-session.target"
