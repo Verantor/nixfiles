@@ -7,7 +7,7 @@ in
     settings = {
       plugin = {
         hyprexpo = {
-          columns = 1;
+          columns = 3;
           gap_size = 5;
           # bg_col = "#111111"; # Use hexadecimal notation for RGB color
           workspace_method = "center current"; # String for the method
@@ -55,7 +55,7 @@ in
         resize_on_border = true;
         # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
         # apply_sens_to_raw = 0;
-        allow_tearing = false;
+        allow_tearing = true;
       };
 
       decoration = {
@@ -88,7 +88,7 @@ in
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
 
-        vrr = 0;
+        vrr = 2;
         vfr = true;
 
         # dpms
@@ -127,7 +127,7 @@ in
       #  "$kw" = "dwindle:no_gaps_when_only";
 
       monitor = [
-        "DP-2,1920x1080@144,0x0,1"
+        "DP-2,1920x1080@144,0x0,1,vrr"
         "HDMI-A-1,1920x1200@60Hz,-1920x0,1"
       ];
     };
