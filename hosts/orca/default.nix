@@ -1,14 +1,15 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   interface = "wlan0";
-in {
+in
+{
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-    initrd.availableKernelModules = ["xhci_pci" "usbhid" "usb_storage"];
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
     loader = {
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
@@ -24,7 +25,7 @@ in {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
-      options = ["noatime"];
+      options = [ "noatime" ];
     };
   };
 
@@ -32,10 +33,10 @@ in {
     wireless = {
       enable = true;
       # networks."${SSID}".psk = SSIDpassword;
-      interfaces = [interface];
+      interfaces = [ interface ];
     };
   };
-  sops.secrets."wireless.env" = {};
+  sops.secrets."wireless.env" = { };
   networking.wireless.environmentFile = config.sops.secrets."wireless.env".path;
   networking.wireless.networks = {
     "@home_uuid@" = {

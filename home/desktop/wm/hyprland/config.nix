@@ -7,7 +7,7 @@ in
     settings = {
       plugin = {
         hyprexpo = {
-          columns = 3;
+          columns = 1;
           gap_size = 5;
           # bg_col = "#111111"; # Use hexadecimal notation for RGB color
           workspace_method = "center current"; # String for the method
