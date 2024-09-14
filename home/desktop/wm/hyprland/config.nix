@@ -55,7 +55,7 @@ in
         resize_on_border = true;
         # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
         # apply_sens_to_raw = 0;
-        allow_tearing = true;
+        # allow_tearing = true;
       };
 
       decoration = {
@@ -88,7 +88,7 @@ in
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
 
-        vrr = 1;
+        # vrr = 1;
         vfr = true;
 
         # dpms
