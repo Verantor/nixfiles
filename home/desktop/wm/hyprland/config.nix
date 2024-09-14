@@ -127,7 +127,7 @@ in
       #  "$kw" = "dwindle:no_gaps_when_only";
 
       monitor = [
-        "DP-2,1920x1080@144,0x0,1,vrr"
+        "DP-2,1920x1080@144,0x0,1"
         "HDMI-A-1,1920x1200@60Hz,-1920x0,1"
       ];
     };
