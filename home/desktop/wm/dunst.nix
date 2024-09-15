@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   services.dunst = {
-    enable = true;
+    enable = false;
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
