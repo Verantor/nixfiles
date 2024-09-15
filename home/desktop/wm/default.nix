@@ -7,5 +7,6 @@
     ./wofi
     ./wlogout
     ./swayosd.nix
+    ./swaync
   ];
 }
