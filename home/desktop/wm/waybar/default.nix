@@ -19,7 +19,7 @@ _: {
           "mpris"
           "tray"
           "pulseaudio"
-          "network"
+          # "network"
           #"custom/kdeconnect"
           "privacy"
           #"custom/wallpaper"
