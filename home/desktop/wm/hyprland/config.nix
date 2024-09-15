@@ -18,7 +18,7 @@ in
         "swww img ${../../../../theme/wallpapers/leaves-wall.png}"
         "waybar"
         "hypridle"
-
+        "swaync"
         #"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         #"xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store" #Stores only text data
