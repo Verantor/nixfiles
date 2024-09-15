@@ -7,6 +7,10 @@ _: {
       "blur, logout_dialog"
       "blur,gtk-layer-shell"
       "blur, notifications"
+      "blur,swaync"
+      "ignorezero,swaync"
+      "blur,waybar"
+      "ignorezero,waybar"
       "ignorezero,gtk-layer-shell"
 
       "ignorezero, fuzzel"
