@@ -44,5 +44,6 @@
     ./surround.nix
     ./rainbow-delimiters.nix
     ./multicursors.nix
+    ./precognition.nix
   ];
 }
