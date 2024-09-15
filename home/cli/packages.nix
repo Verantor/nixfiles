@@ -96,7 +96,7 @@
       ll = "lsd -l";
       cat = "bat";
       cc = "clear";
-      c = "z";
+      cd = "z";
       nv = "nvim";
       syss = "sudo systemctl status";
       sysr = "sudo systemctl restart";
