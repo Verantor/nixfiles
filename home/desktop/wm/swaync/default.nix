@@ -6,7 +6,7 @@
     #
     settings = {
       positionX = "right";
-      positionY = "bottom"; # Adjusted from "top" to "bottom"
+      positionY = "top"; # Adjusted from "top" to "bottom"
       layer = "overlay";
       control-center-layer = "top";
       layer-shell = true;

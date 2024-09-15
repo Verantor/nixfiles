@@ -6,6 +6,7 @@ _: {
       "blur,wlogout"
       "blur, logout_dialog"
       "blur,gtk-layer-shell"
+      "blur, notifications"
       "ignorezero,gtk-layer-shell"
 
       "ignorezero, fuzzel"
