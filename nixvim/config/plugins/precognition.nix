@@ -1,5 +1,5 @@
 {
-  plugins.precognition = {
-    enable = true;
-  };
+  # plugins.precognition = {
+  #   enable = true;
+  # };
 }
