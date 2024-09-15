@@ -58,7 +58,7 @@ let
         gaps_out=0
         border_size=1
         }
-        bind=SUPER, RETURN, exec, ${lib.getExe pkgs.foot}
+        bind=SUPER, ESCAPE, exec, ${lib.getExe pkgs.foot}
         monitor=DP-2,1920x1080@144,0x0,1
         monitor=,preferred,auto,1,mirror,DP-2
         exec-once = ${pkgs.greetd.regreet}/bin/regreet --config ${regreetConfig}; hyprctl dispatch exit
