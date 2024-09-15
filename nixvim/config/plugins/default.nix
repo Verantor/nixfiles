@@ -45,5 +45,6 @@
     ./rainbow-delimiters.nix
     ./multicursors.nix
     ./precognition.nix
+    ./yanky.nix
   ];
 }
