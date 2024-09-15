@@ -1,9 +1,25 @@
 { ... }: {
   services.swaync = {
     enable = true;
-    # style = ''
-    # '';
-    #
+    style = ''
+      .notification-row {
+        outline: none;
+      }
+
+      .notification-row:focus,
+      .notification-row:hover {
+        background: @noti-bg-focus;
+      }
+
+      .notification {
+        border-radius: 12px;
+        margin: 6px 12px;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+          0 2px 6px 2px rgba(0, 0, 0, 0.3);
+        padding: 0;
+      }
+    '';
+
     settings = {
       positionX = "right";
       positionY = "top"; # Adjusted from "top" to "bottom"
@@ -13,10 +29,10 @@
       cssPriority = "application";
 
       # Converted attributes for control-center
-      # control-center-margin-top = 1; # Adjusted margin values
-      # control-center-margin-bottom = 2;
-      # control-center-margin-right = 1;
-      # control-center-margin-left = 0;
+      control-center-margin-top = 1; # Adjusted margin values
+      control-center-margin-bottom = 2;
+      control-center-margin-right = 1;
+      control-center-margin-left = 0;
 
       notification-2fa-action = true;
       notification-inline-replies = true; # Adjusted from false to true
@@ -25,16 +41,16 @@
       # notification-body-image-width = 180; # Adjusted from 200 to 180
 
       # Additional settings that were in the original code but not present in the template
-      # control-center-width = 350;
-      # control-center-height = 695;
-      # notification-window-width = 300;
+      control-center-width = 350;
+      control-center-height = 695;
+      notification-window-width = 300;
       # timeout = 6;
       # timeout-low = 3;
       # timeout-critical = 0;
       # fit-to-screen = false;
       # keyboard-shortcuts = true;
       # image-visibility = "when available";
-      # transition-time = 200;
+      transition-time = 200;
       # hide-on-clear = false;
       # hide-on-action = true;
       # script-fail-notify = true;
