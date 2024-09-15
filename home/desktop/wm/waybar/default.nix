@@ -10,9 +10,11 @@ _: {
         modules-left = [
           "custom/search"
           "hyprland/workspaces"
+        ];
+        modules-center = [
+          # "hyprland/window"
           "clock"
         ];
-        modules-center = [ "hyprland/window" ];
         modules-right = [
           "mpris"
           "tray"
