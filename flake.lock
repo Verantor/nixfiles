@@ -1671,8 +1671,8 @@
         "nixvim": "nixvim_3"
       },
       "locked": {
-        "lastModified": 1726930808,
-        "narHash": "sha256-VoU+EWPe8MVGxVCGi5tPuMq1Mj7GQNG6nathpRKxi2U=",
+        "lastModified": 1726931301,
+        "narHash": "sha256-Yc5wEb9UE1ukNAadYQKa9SQnEvSkKQ91TY8RiyYQCx0=",
         "path": "/home/ver/.dotfiles/nixvim/",
         "type": "path"
       },
