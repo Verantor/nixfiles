@@ -8,7 +8,7 @@
   };
 
   programs.firefox = {
-    enable = true;
+    enable = false;
     profiles.default = {
       name = "Default";
       settings = {
