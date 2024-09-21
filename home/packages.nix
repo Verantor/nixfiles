@@ -91,7 +91,7 @@
     prismlauncher
 
     ladybird
-    stable.kicad
+    # stable.kicad
     rpi-imager
   ];
 }
