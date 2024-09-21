@@ -5,7 +5,7 @@
     networkmanagerapplet
     vesktop
     bottles
-    firefox
+    # firefox
     # floorp
     anki-bin
     blender-hip
