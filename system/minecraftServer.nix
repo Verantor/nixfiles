@@ -7,7 +7,7 @@ let
   #   url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/1.0.3/pack.toml";
   #   packHash = "sha256-R78NZCVOtpWxuZ4m72gH7ohv3c972OIasiUi+fpy6zY=";
   # };
-  modpack = import ../../minecraftServer/modsdown;
+  # modpack = import ../../minecraftServer/modsdown;
 in
 {
   environment.systemPackages = with pkgs; [
@@ -25,7 +25,7 @@ in
       #openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
       symlinks = {
-        "mods" = "${modpack}/mods";
+        "mods" = "${../../minecraftServer/modsdown}";
       };
       restart = "no";
       serverProperties = {
