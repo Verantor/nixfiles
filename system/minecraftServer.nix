@@ -25,7 +25,7 @@ in
       #openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
       symlinks = {
-        "mods" = "${../../minecraftServer/modsdown}";
+        "mods" = "${../minecraftMods}";
       };
       restart = "no";
       serverProperties = {
