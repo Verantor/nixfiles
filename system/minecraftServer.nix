@@ -3,10 +3,11 @@
 , ...
 }:
 let
-  modpack = pkgs.fetchPackwizModpack {
-    url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/1.0.3/pack.toml";
-    packHash = "sha256-R78NZCVOtpWxuZ4m72gH7ohv3c972OIasiUi+fpy6zY=";
-  };
+  # modpack = pkgs.fetchPackwizModpack {
+  #   url = "https://github.com/Verantor/Modpack-Odd-Fabric-21/raw/1.0.3/pack.toml";
+  #   packHash = "sha256-R78NZCVOtpWxuZ4m72gH7ohv3c972OIasiUi+fpy6zY=";
+  # };
+  modpack = ../../minecraftServer/modsdown;
 in
 {
   environment.systemPackages = with pkgs; [
