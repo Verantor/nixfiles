@@ -67,6 +67,7 @@
     nixvimConfig = {
       url = "path:/home/ver/.dotfiles/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixvim.follows = "nixvim";
     };
     nixarr.url = "github:rasmus-kirk/nixarr";
   };
