@@ -93,5 +93,7 @@
     ladybird
     # stable.kicad
     rpi-imager
+
+    davinci-resolve
   ];
 }
