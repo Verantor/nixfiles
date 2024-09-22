@@ -7,10 +7,8 @@ _: {
       "blur, logout_dialog"
       "blur,gtk-layer-shell"
       "blur, notifications"
-      "blur, swaync-control-center"
-      "blur, swaync-notification-window"
-      # "ignorezero, swaync-control-center"
-      # "ignorezero, swaync-notification-window"
+      "ignorezero, swaync-control-center"
+      "ignorezero, swaync-notification-window"
       "ignorealpha 0.5, swaync-control-center"
       "ignorealpha 0.5, swaync-notification-window"
       "blur,swaync"
@@ -22,6 +20,9 @@ _: {
       "ignorezero, fuzzel"
       "ignorezero, waybar"
       "xray 1, waybar"
+
+      "blur, swaync-control-center"
+      "blur, swaync-notification-window"
     ];
     windowrulev2 = [
       # only allow shadows for floating windows
