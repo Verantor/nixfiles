@@ -11,7 +11,7 @@
       layer = "overlay";
       control-center-layer = "top";
       layer-shell = true;
-      cssPriority = "user";
+      cssPriority = "application";
 
       "control-center-width" = 380;
       "control-center-height" = 860;
