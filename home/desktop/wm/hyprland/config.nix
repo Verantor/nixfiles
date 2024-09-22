@@ -65,8 +65,8 @@ in
         # blur
         blur = {
           enabled = true;
-          size = 12;
-          passes = 3;
+          size = 9;
+          passes = 1;
           ignore_opacity = false;
           new_optimizations = 1;
           xray = true;
@@ -76,7 +76,7 @@ in
         };
 
         # shadow config
-        drop_shadow = "yes";
+        drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 5;
         # "col.shadow" = "rgba(292c3cee)";
@@ -102,19 +102,16 @@ in
         first_launch_animation = false;
 
         bezier = [
-          "smoothOut, 0.36, 0, 0.66, -0.56"
-          "smoothIn, 0.25, 1, 0.5, 1"
-          "overshot, 0.4,0.8,0.2,1.2"
+          "myBezier, 0.05, 0.9, 0.1, 1.05"
         ];
 
         animation = [
-          "windows, 1, 4, overshot, slide"
-          "windowsOut, 1, 4, smoothOut, slide"
-          "border,1,10,default"
-
-          "fade, 1, 10, smoothIn"
-          "fadeDim, 1, 10, smoothIn"
-          "workspaces,1,4,overshot,slidevert"
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default   "
         ];
       };
 
