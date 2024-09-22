@@ -16,7 +16,7 @@
 
 /* Avoid 'annoying' backgroud */
 .blank-window {
-  background: transparent;
+  /* background: transparent; */
 }
 
 /* CONTROL CENTER ------------------------------------------------------------------------ */
