@@ -16,7 +16,7 @@
 
 /* Avoid 'annoying' backgroud */
 .blank-window {
-  /* background: transparent; */
+  background: transparent;
 }
 
 /* CONTROL CENTER ------------------------------------------------------------------------ */
@@ -26,8 +26,8 @@
   border-radius: 10px;
   border: 1px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
-  margin: 18px;
-  padding: 12px;
+  margin: 2px;
+  padding: 4px;
 }
 
 /* Notifications  */

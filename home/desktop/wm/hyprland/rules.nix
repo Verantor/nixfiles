@@ -1,8 +1,6 @@
 _: {
   wayland.windowManager.hyprland.settings = {
     layerrule = [
-      "blur,waybar"
-      "blur,fuzzel"
       "blur,wlogout"
       "blur, logout_dialog"
       "blur,gtk-layer-shell"
@@ -13,16 +11,15 @@ _: {
       "ignorezero,waybar"
       "ignorezero,gtk-layer-shell"
 
-      "ignorezero, fuzzel"
-      "ignorezero, waybar"
       "xray 1, waybar"
-
-      "ignorezero, swaync-control-center"
-      "ignorezero, swaync-notification-window"
-      "ignorealpha 0.5, swaync-control-center"
-      "ignorealpha 0.5, swaync-notification-window"
-      "blur, swaync-control-center"
-      "blur, swaync-notification-window"
+      "ignorezero,swaync"
+      "blur,swaync"
+      # "ignorezero, swaync-control-center"
+      # "ignorezero, swaync-notification-window"
+      # "ignorealpha 0.5, swaync-control-center"
+      # "ignorealpha 0.5, swaync-notification-window"
+      # "blur, swaync-control-center"
+      # "blur, swaync-notification-window"
     ];
     windowrulev2 = [
       # only allow shadows for floating windows
