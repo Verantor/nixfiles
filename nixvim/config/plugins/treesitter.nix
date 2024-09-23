@@ -18,7 +18,7 @@
     #grr for rename
     enable = true;
     highlightCurrentScope = {
-      enable = true;
+      enable = false;
     };
     highlightDefinitions = {
       enable = true;

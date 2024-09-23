@@ -1,37 +1,16 @@
 {
   plugins.harpoon = {
-    enable = true;
+    enable = false;
     enableTelescope = true;
-    menu = {
-      borderChars = [
-        "─"
-        "│"
-        "─"
-        "│"
-        "╭"
-        "╮"
-        "╯"
-        "╰"
-      ];
-      height = 10;
-      width = 60;
-    };
-    projects = {
-      "$HOME/.dotfiled" = {
-        termCommands = [
-          "nixrb"
-          "nixup"
-        ];
-      };
-    };
+    keymapsSilent = true;
     keymaps = {
       addFile = "<leader>ha";
       toggleQuickMenu = "<C-e>";
-      navNext = "<leader>hn";
-      navPrev = "<leader>hp";
-      tmuxGotoTerminal = {
-        "1" = "<C-1>";
-        "2" = "<C-2>";
+      navFile = {
+        "1" = "<leader>hj";
+        "2" = "<leader>hk";
+        "3" = "<leader>hl";
+        "4" = "<leader>hm";
       };
     };
   };
