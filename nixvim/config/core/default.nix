@@ -65,6 +65,16 @@
     # Enable auto indenting and set it to spaces
     smartindent = true;
     shiftwidth = 2;
+
+    swapfile = false;
+    autoread = true;
+    backup = false;
+    undofile = true;
+
+    cursorline = true; # Highlight the line where the cursor is located
+
+    encoding = "utf-8";
+    fileencoding = "utf-8";
   };
   keymaps = [
     {
