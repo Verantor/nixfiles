@@ -46,5 +46,6 @@
     ./multicursors.nix
     ./precognition.nix
     ./yanky.nix
+    ./spectre.nix
   ];
 }
