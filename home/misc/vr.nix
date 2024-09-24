@@ -1,6 +1,6 @@
 { pkgs
 , config
-,
+, ...
 }: {
   xdg.configFile."openxr/1/active_runtime.json".text = ''
     {
