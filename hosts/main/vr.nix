@@ -21,7 +21,7 @@
     wlx-overlay-s
   ];
 
-  wivrn = {
+  services.wivrn = {
     enable = true;
     package = inputs.lemonake.packages.${pkgs.system}.wivrn-git;
     openFirewall = false;
