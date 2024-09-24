@@ -60,7 +60,7 @@
             group = 0;
           }
         ];
-        application = inputs.nixpkgs-xr.packages.${pkgs.system}.wlx-overlay-s;
+        application = pkgs.wlx-overlay-s;
         tcp_only = true;
       };
     };
