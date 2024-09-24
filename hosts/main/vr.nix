@@ -2,6 +2,9 @@
 , inputs
 , ...
 }: {
+  imports = [
+    ./wivrn.nix
+  ];
   programs.envision = {
     enable = true;
     openFirewall = true;
