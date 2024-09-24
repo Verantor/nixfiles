@@ -47,6 +47,7 @@
         "https://ai.cachix.org"
         "https://walker.cachix.org"
         "https://anyrun.cachix.org"
+        "https://passivelemon.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -57,6 +58,7 @@
         "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
         "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+        "passivelemon.cachix.org-1:ScYjLCvvLi70S95SMMr8lMilpZHuafLP3CK/nZ9AaXM="
       ];
     };
   };
