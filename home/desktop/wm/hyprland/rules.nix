@@ -12,8 +12,8 @@ _: {
       "ignorezero,gtk-layer-shell"
 
       "xray 1, waybar"
-      "ignorezero,swaync"
-      "blur,swaync"
+      "ignorezero,swaync-control-center"
+      "blur,swaync-control-center"
       # "ignorezero, swaync-control-center"
       # "ignorezero, swaync-notification-window"
       # "ignorealpha 0.5, swaync-control-center"
