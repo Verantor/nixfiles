@@ -27,7 +27,7 @@
   border-radius: 10px;
   border: 1px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
-  margin: 6px;
+  margin: 2px;
   padding: 4px;
 }
 
@@ -246,8 +246,8 @@ progressbar {
 
 /* Volume */
 .widget-volume {
-  background: @background-sec;
-  color: @background;
+  background: @background-alt;
+  color: @text;
   padding: 4px;
   margin: 6px;
   border-radius: 6px;
