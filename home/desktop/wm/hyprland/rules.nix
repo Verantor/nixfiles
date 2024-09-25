@@ -12,14 +12,12 @@ _: {
       "ignorezero,gtk-layer-shell"
 
       "xray 1, waybar"
-      "ignorezero,swaync-control-center"
-      "blur,swaync-control-center"
-      # "ignorezero, swaync-control-center"
-      # "ignorezero, swaync-notification-window"
-      # "ignorealpha 0.5, swaync-control-center"
-      # "ignorealpha 0.5, swaync-notification-window"
-      # "blur, swaync-control-center"
-      # "blur, swaync-notification-window"
+      "ignorezero, swaync-control-center"
+      "ignorezero, swaync-notification-window"
+      "ignorealpha 0.5, swaync-control-center"
+      "ignorealpha 0.5, swaync-notification-window"
+      "blur, swaync-control-center"
+      "blur, swaync-notification-window"
     ];
     windowrulev2 = [
       # only allow shadows for floating windows
