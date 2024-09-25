@@ -47,5 +47,6 @@
     ./precognition.nix
     ./yanky.nix
     ./spectre.nix
+    ./web-devicons.nix
   ];
 }
