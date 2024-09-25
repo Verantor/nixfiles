@@ -49,7 +49,8 @@ in
       "${modshift},S, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
       "${modshift}, O, exec, gamemode-hyprland"
 
-      "${mod},tab,hyprexpo:expo, toggle"
+      # "${mod},tab,hyprexpo:expo, toggle"
+      "${mod},tab,overview:toggle"
       # workspace controls
       "${modshift},L,movetoworkspace,+1" # move focused window to the next ws
       "${modshift},H,movetoworkspace,-1" # move focused window to the previous ws
