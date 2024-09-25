@@ -95,5 +95,7 @@
     rpi-imager
 
     davinci-resolve
+
+    rquickshare
   ];
 }

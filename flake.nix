@@ -1,6 +1,5 @@
 {
   description = "cornflakes";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -103,7 +102,6 @@
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylixMod = inputs.stylix.nixosModules.stylix;
       nixarr = inputs.nixarr.nixosModules.default;
-      #chaotic = inputs.chaotic.nixosModules.default;
       shared = [ core sops ];
 
       home-manager = {
