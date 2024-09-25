@@ -16,7 +16,8 @@
 
 /* Avoid 'annoying' backgroud */
 .blank-window {
-  background: transparent;
+  background: rgba(24, 24, 37, 0.6);
+
 }
 
 /* CONTROL CENTER ------------------------------------------------------------------------ */
