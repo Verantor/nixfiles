@@ -3,7 +3,7 @@
 , ...
 }: {
   imports = [
-    # ./wivrn.nix
+ ./../../modules/wivrn.nix 
   ];
   programs.envision = {
     enable = true;
