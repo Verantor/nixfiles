@@ -72,7 +72,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixvim.follows = "nixvim";
     };
-    nixarr.url = "github:rasmus-kirk/nixarr";
+    nixpkgs-xr = {
+      url = "github:nix-community/nixpkgs-xr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     { self
@@ -101,6 +104,7 @@
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylixMod = inputs.stylix.nixosModules.stylix;
+      nixpkgs-xr = nixpkgs-xr.nixosModules.nixpkgs-xr;
       nixarr = inputs.nixarr.nixosModules.default;
       shared = [ core sops ];
 
@@ -172,6 +176,7 @@
               nixDB
               stylixMod
               theme
+              nixpkgs-xr
               #chaotic
               # server
               flatpak
