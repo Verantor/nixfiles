@@ -5,10 +5,10 @@
   imports = [
     ./../../modules/wivrn.nix
   ];
-  programs.envision = {
-    enable = true;
-    openFirewall = true;
-  };
+  # programs.envision = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
   # services.monado = {
   #   enable = true;
   #   defaultRuntime = true; # Register as default OpenXR runtime
@@ -26,7 +26,7 @@
     openFirewall = true;
     defaultRuntime = true;
     autoStart = false;
-    package = pkgs.callPackage ../../pkgs/package.nix;
+    package = pkgs.callPackage ../../pkgs/package.nix { };
     monadoEnvironment = {
       XRT_COMPOSITOR_LOG = "debug";
       XRT_PRINT_OPTIONS = "on";
