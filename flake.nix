@@ -104,7 +104,7 @@
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylixMod = inputs.stylix.nixosModules.stylix;
-      nixpkgs-xr = nixpkgs-xr.nixosModules.nixpkgs-xr;
+      nixpkgs-xr = inputs.nixpkgs-xr.nixosModules.nixpkgs-xr;
       nixarr = inputs.nixarr.nixosModules.default;
       shared = [ core sops ];
 
