@@ -99,13 +99,13 @@
         desc = "search and replace in file";
       };
     }
-    {
-      key = "<leader>yf";
-      action = "<cmd>%y<cr>";
-      options = {
-        desc = "yank current file to the clipboard buffer";
-      };
-    }
+    # {
+    #   key = "<leader>yf";
+    #   action = "<cmd>%y<cr>";
+    #   options = {
+    #     desc = "yank current file to the clipboard buffer";
+    #   };
+    # }
     {
       key = "<leader>df";
       action = "<cmd>%d_<cr>";
