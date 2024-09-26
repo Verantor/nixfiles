@@ -50,6 +50,6 @@
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
     libGL
-    libSDL2
+    SDL2
   ];
 }
