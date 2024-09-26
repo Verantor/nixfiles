@@ -197,5 +197,33 @@
         desc = "Code action";
       };
     }
+    {
+      key = "<leader>y";
+      action = "+y";
+      options = {
+        desc = "Copy to system clipboard";
+      };
+    }
+    {
+      key = "<leader>Y";
+      action = "+yg_";
+      options = {
+        desc = "Copy to system clipboard";
+      };
+    }
+    {
+      key = "<leader>p";
+      action = "+p";
+      options = {
+        desc = "Paste from system clipboard";
+      };
+    }
+    {
+      key = "<leader>P";
+      action = "+P";
+      options = {
+        desc = "Paste from system clipboard";
+      };
+    }
   ];
 }
