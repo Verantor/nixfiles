@@ -51,7 +51,10 @@
     };
   };
   luaLoader.enable = true;
-  clipboard.providers.wl-copy.enable = true;
+  clipboard = {
+    providers.wl-copy.enable = true;
+    register = "unnamedplus";
+  };
   opts = {
     # Enable relative line numbers
     number = true;
