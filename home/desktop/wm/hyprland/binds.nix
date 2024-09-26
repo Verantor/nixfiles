@@ -48,6 +48,7 @@ in
       "${modshift},R, exec, hyprpicker -a" # screenshot focused region
       "${modshift},S, exec, hyprshot -m output --raw | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
       "${modshift}, O, exec, gamemode-hyprland"
+      "${modshift}, W, exec, woomer"
 
       # "${mod},tab,hyprexpo:expo, toggle"
       "${mod},tab,overview:toggle"
