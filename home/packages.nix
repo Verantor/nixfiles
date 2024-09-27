@@ -97,5 +97,6 @@
     davinci-resolve
 
     rquickshare
+    oculante
   ];
 }
