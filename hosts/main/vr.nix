@@ -59,7 +59,7 @@
           }
         ];
         application = pkgs.wlx-overlay-s;
-        tcp_only = true;
+        tcp_only = false;
       };
     };
   };
