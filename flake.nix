@@ -100,6 +100,7 @@
       server = ./system/server.nix;
       minecraftServer = ./system/minecraftServer.nix;
       virt = ./system/virt.nix;
+      specialisation = ./system/specialisation.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
@@ -180,6 +181,7 @@
               #chaotic
               # server
               flatpak
+              specialisation
               minecraftServer
               virt
               { inherit home-manager; } #
