@@ -22,12 +22,14 @@ in
       gnome = {
         enable = mkOption {
           type = types.bool;
+          default = false;
           description = "GNOME, a desktop environment";
         };
       };
       hyprland = {
         enable = mkOption {
           type = types.bool;
+          default = true;
           description = "Hyprland, a custom desktop environment";
         };
       };
