@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
+{ lib
+, pkgs
+, config
+, ...
+}: {
+  home.packages = lib.mkIf config.sys.gnome.enable (with pkgs; [
     gnomeExtensions.dash-to-dock
     gnomeExtensions.tiling-assistant
     gnomeExtensions.forge
@@ -8,9 +12,9 @@
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.blur-my-shell
     valent
-    #adw-gtk3
+    # adw-gtk3
     gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.pano
-  ];
+  ]);
 }

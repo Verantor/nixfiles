@@ -21,6 +21,7 @@ in
     ./packages.nix
     ./flatpak.nix
     ./vr.nix
+    ./gnome.nix
   ];
   networking.nameservers = [ "192.168.178.190" "1.1.1.1" "9.9.9.9" ];
   virtualisation.containers.enable = true;
@@ -52,10 +53,6 @@ in
 
   environment.pathsToLink = [ "share/thumbnailers" ];
 
-  services.xserver.enable = true;
-  # Uncomment to enable GDM display manager if needed
-  # services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   # Uncomment to enable Plasma 6 desktop manager if needed
   # services.xserver.desktopManager.plasma6.enable = true;
 

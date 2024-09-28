@@ -1,9 +1,11 @@
 { pkgs
 , inputs
+, lib
+, config
 , ...
 }: {
   imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
-  home.packages = with pkgs;
+  home.packages = lib.mkIf config.sys.hyprland.enable (with pkgs;
     #with inputs.hyprcontrib.packages.${pkgs.system};
     [
       inputs.woomer.packages.${system}.default
@@ -46,10 +48,10 @@
         fi
         hyprctl reload
       '')
-    ];
+    ]);
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = lib.mkIf config.sys.hyprland.enable;
     xwayland.enable = true;
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
@@ -68,7 +70,7 @@
   services = {
     wlsunset = {
       # TODO: fix opaque red screen issue
-      enable = true;
+      enable = lib.mkIf config.sys.hyprland.enable;
       latitude = "52.0";
       longitude = "21.0";
       temperature = {

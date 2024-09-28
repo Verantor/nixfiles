@@ -1,6 +1,9 @@
-{ theme, ... }: {
+{ lib
+, config
+, ...
+}: {
   programs.hyprlock = {
-    enable = true;
+    enable = lib.mkIf config.hyprland.enable;
     settings = {
       general = {
         disable_loading_bar = true;

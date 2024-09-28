@@ -18,8 +18,6 @@ let
     types
     maintainers
     ;
-
-  cfg = config.sys.hyprland;
 in
 {
   options = {
@@ -28,11 +26,10 @@ in
     };
   };
 
-  imports = mkIf cfg.enable [
+  imports = [
     ./hyprland
     ./waybar
     ./lock.nix
-    ./dunst.nix
     ./wofi
     ./wlogout
     ./swayosd.nix

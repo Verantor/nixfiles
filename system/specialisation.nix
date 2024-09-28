@@ -1,18 +1,14 @@
-{ config, ... }:
-let
-  cfg = config.sys;
-in
-{
+{ config, ... }: {
   specialisation = {
     hyprland.configuration = {
       system.nixos.tags = [ "hyprland" ];
-      cfg.hyprland.enable = true;
-      cfg.gnome.enable = false;
+      config.sys.hyprland.enable = true;
+      config.sys.gnome.enable = false;
     };
     gnome.configuration = {
       system.nixos.tags = [ "gnome" ];
-      cfg.hyprland.enable = false;
-      cfg.gnome.enable = true;
+      config.sys.hyprland.enable = false;
+      config.sys.gnome.enable = true;
     };
   };
 }

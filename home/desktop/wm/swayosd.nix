@@ -1,5 +1,8 @@
-_: {
+{ lib
+, config
+, ...
+}: {
   services.swayosd = {
-    enable = true;
+    enable = lib.mkIf config.sys.hyprland.enable;
   };
 }

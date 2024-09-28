@@ -18,8 +18,6 @@ let
     types
     maintainers
     ;
-
-  cfg = config.sys.gnome;
 in
 {
   options = {
@@ -27,7 +25,7 @@ in
       enable = mkEnableOption "GNOME, a desktop environment";
     };
   };
-  imports = mkIf cfg.enable [
+  imports = [
     ./gnome.nix
   ];
 }

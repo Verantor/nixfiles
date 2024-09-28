@@ -1,6 +1,9 @@
-_: {
+{ lib
+, config
+, ...
+}: {
   programs.waybar = {
-    enable = true;
+    enable = lib.mkIf config.sys.hyprland.enable;
     style = import ./style.css;
     settings = {
       mainBar = {
