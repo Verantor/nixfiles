@@ -47,7 +47,7 @@
   # };
   programs.gamemode = {
     enable = true;
-    enableRenice = true;
+    # enableRenice = true;
     settings = {
       # general = {
       #   renice = 10;
