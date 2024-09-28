@@ -64,8 +64,8 @@
       #   amd_performance_level = "high";
       # };
       custom = {
-        start = "sudo /root/scripts/start_game.sh && gamemode-hyprland";
-        end = "sudo /root/scripts/stop_game.sh && gamemode-hyprland";
+        start = "sudo /root/scripts/start_game.sh & gamemode-hyprland";
+        end = "sudo /root/scripts/stop_game.sh & gamemode-hyprland";
       };
     };
   };
