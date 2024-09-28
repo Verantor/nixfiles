@@ -16,6 +16,7 @@ _: {
           "clock"
         ];
         modules-right = [
+          "gamemode"
           "mpris"
           "tray"
           "wireplumber"
@@ -169,6 +170,18 @@ _: {
           "tooltip-format-wifi" = "Connected to {essid} ({signalStrength}󰏰 Strength) over {ifname} via {gwaddr}";
           "tooltip-format-ethernet" = "󱎔 {ifname}";
           "tooltip-disconnected" = "Disconnected";
+        };
+        gamemode = {
+          format = "{glyph}";
+          format-alt = "{glyph} {count}";
+          glyph = "󰊴";
+          hide-not-running = true;
+          use-icon = true;
+          icon-name = "input-gaming-symbolic";
+          icon-spacing = 4;
+          icon-size = 20;
+          tooltip = true;
+          tooltip-format = "Games running: {count}";
         };
         wireplumber = {
           format = "{icon} {volume}󰏰";
