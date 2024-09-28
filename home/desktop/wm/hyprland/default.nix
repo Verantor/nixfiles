@@ -4,8 +4,9 @@
 , config
 , ...
 }: {
-  imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
   config = {
+    imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
+
     home.packages = lib.mkIf config.sys.hyprland.enable (with pkgs;
       #with inputs.hyprcontrib.packages.${pkgs.system};
       [
