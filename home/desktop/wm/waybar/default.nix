@@ -18,7 +18,7 @@ _: {
         modules-right = [
           "mpris"
           "tray"
-          "pulseaudio"
+          "wireplumber"
           # "network"
           #"custom/kdeconnect"
           "privacy"
@@ -170,28 +170,23 @@ _: {
           "tooltip-format-ethernet" = "󱎔 {ifname}";
           "tooltip-disconnected" = "Disconnected";
         };
-        pulseaudio = {
+        wireplumber = {
           format = "{icon} {volume}󰏰";
-          "format-bluetooth" = "{icon} {volume}󰏰";
           "format-muted" = "󰝟";
           "format-icons" = {
-            "headphone" = "󰋋";
-            "hands-free" = "󰋋";
-            "headset" = "󰋋";
-            "phone" = "";
-            "portable" = "";
-            "car" = "";
             "default" = [
-              "󰖀"
-              "󰕾"
+              ""
+              ""
+              ""
             ];
           };
-          "on-click-right" = "microphone_changer.py";
-          "on-click" = "audio_changer.py";
+          "on-click-right" = "helvum";
+          "on-click" = "pwvucontrol";
           "on-scroll-up" = "pamixer -i 5";
           "on-scroll-down" = "pamixer -d 5";
           "on-click-middle" = "pwvucontrol";
-          "scroll-step" = 5;
+          "max-volume" = 150;
+          "scroll-step" = 0.2;
         };
       };
     };
