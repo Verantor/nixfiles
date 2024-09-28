@@ -27,7 +27,7 @@ in
       enable = mkEnableOption "GNOME, a desktop environment";
     };
   };
-  imports = mkIf cfg.sys.gnome [
+  imports = mkIf cfg.enable [
     ./gnome.nix
   ];
 }
