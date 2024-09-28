@@ -138,7 +138,7 @@
             #   import ./home {
             #     inherit config inputs lib outputs;
             #   })
-            # ./home
+            ./home
           ];
           _module.args.theme = import ./theme;
         };
