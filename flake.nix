@@ -169,7 +169,7 @@
           modules =
             [
               { networking.hostName = "main"; }
-
+              options
               ./hosts/main
               amd #
               bootloader
@@ -189,7 +189,7 @@
               #chaotic
               # server
               flatpak
-              options
+
               specialisation
               minecraftServer
               virt
