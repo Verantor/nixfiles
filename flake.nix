@@ -134,7 +134,10 @@
 
         users.ver = {
           imports = [
-            ({ config, ... }:
+            ({ config
+             , inputs
+             , ...
+             }:
               import ./home {
                 inherit config;
               })
