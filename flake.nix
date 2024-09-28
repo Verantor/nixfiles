@@ -80,6 +80,7 @@
   outputs =
     { self
     , nixpkgs
+    , config
     , ...
     } @ inputs:
     let
@@ -118,6 +119,7 @@
           inherit inputs;
           inherit self;
           inherit outputs;
+          inherit config;
         };
         sharedModules = [
           {
@@ -134,10 +136,11 @@
 
         users.ver = {
           imports = [
-            ({ config, ... }:
-              import ./home {
-                inherit config inputs outputs;
-              })
+            # ({config, ...}:
+            #   import ./home {
+            #     inherit config inputs lib outputs;
+            #   })
+            ./home
           ];
           _module.args.theme = import ./theme;
         };
