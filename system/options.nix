@@ -19,7 +19,7 @@ in
 {
   options = {
     sys = {
-      gnome = mkEnableOption "GNOME, a desktop environment";
+      gnome.enable = mkEnableOption "GNOME, a desktop environment";
       # gnome = {
       # enable = mkOption {
       #   type = types.bool;
@@ -27,7 +27,7 @@ in
       #   description = "GNOME, a desktop environment";
       # };
       # };
-      hyprland = mkEnableOption "Hyprland, a custom desktop environment";
+      hyprland.enable = mkEnableOption "Hyprland, a custom desktop environment";
       # hyprland = {
       #   enable = mkOption {
       #     type = types.bool;
