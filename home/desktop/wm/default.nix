@@ -6,7 +6,7 @@
     ./hyprland
     ./waybar
     ./lock.nix
-    ./wofi
+    ./anyrun
     ./wlogout
     ./swayosd.nix
     ./swaync
