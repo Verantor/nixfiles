@@ -136,7 +136,7 @@
           imports = [
             ({ config, ... }:
               import ./home {
-                inherit config;
+                inherit config inputs outputs;
               })
           ];
           _module.args.theme = import ./theme;
