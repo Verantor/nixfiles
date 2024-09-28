@@ -53,9 +53,10 @@
     enable = true;
     enableRenice = true;
     settings = {
-      # general = {
-      #   renice = 10;
-      # };
+      general = {
+        softrealtime = "auto";
+        renice = 15;
+      };
 
       # Warning: GPU optimisations have the potential to damage hardware
       # gpu = {
@@ -64,8 +65,8 @@
       #   amd_performance_level = "high";
       # };
       custom = {
-        start = "sudo /root/scripts/start_game.sh & gamemode-hyprland";
-        end = "sudo /root/scripts/stop_game.sh & gamemode-hyprland";
+        start = "gamemode-hyprland";
+        end = "hyprland-gamemode";
       };
     };
   };
