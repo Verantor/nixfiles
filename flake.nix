@@ -80,7 +80,6 @@
   outputs =
     { self
     , nixpkgs
-    , config
     , ...
     } @ inputs:
     let
@@ -119,7 +118,6 @@
           inherit inputs;
           inherit self;
           inherit outputs;
-          inherit config;
         };
         sharedModules = [
           {
