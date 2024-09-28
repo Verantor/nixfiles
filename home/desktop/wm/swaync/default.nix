@@ -1,9 +1,6 @@
-{ lib
-, config
-, ...
-}: {
+{ ... }: {
   services.swaync = {
-    enable = lib.mkIf config.sys.hyprland.enable;
+    enable = true;
     style = ''
       @import "${./style/notifications.css}";
       @import "${./style/central_controll.css}";

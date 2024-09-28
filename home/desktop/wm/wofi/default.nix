@@ -1,22 +1,74 @@
 { pkgs
 , inputs
-, lib
-, config
 , ...
 }:
 let
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
 {
+  # programs.wofi = {
+  #   enable = true;
+  #   # style = import ./style.nix;
+  #   settings = {
+  #     hide_scroll = true;
+  #     show = "drun";
+  #     width = "30%";
+  #     lines = "8";
+  #     line_wrap = "word";
+  #     term = "foot";
+  #     allow_markup = true;
+  #     always_parse_args = false;
+  #     show_all = true;
+  #     print_command = true;
+  #     layer = "overlay";
+  #     allow_images = true;
+  #     sort_order = "alphabetical";
+  #     gtk_dark = true;
+  #     prompt = "";
+  #     image_size = 20;
+  #     display_generic = false;
+  #     location = "center";
+  #     key_expand = "Tab";
+  #     insensitive = false;
+  #   };
+  # };
+  # # programs.rofi = {
+  # #   enable = true;
+  # #   location = "center";
+  # #   package = pkgs.rofi-wayland-unwrapped;
+  # #   terminal = "foot";
+  # # };
+  # programs.fuzzel = {
+  #   enable = true;
+  #   settings = {
+  #     main = {
+  #       # font = "${theme.font}";
+  #       terminal = "${pkgs.foot}/bin/foot";
+  #       layer = "overlay";
+  #       width = 60;
+  #       line-height = 50;
+  #       lines = 5;
+  #       fields = "filename,name,generic,keywords";
+  #     };
+  #     # colors = {
+  #     #   background = "1e1e2edd";
+  #     #   text = "cdd6f4ff";
+  #     #   match = "f38ba8ff";
+  #     #   selection = "585b70ff";
+  #     #   selection-match = "f38ba8ff";
+  #     #   selection-text = "cdd6f4ff";
+  #     #   border = "b4befeff";
+  #     # };
+  #   };
+  # };
   home.packages = [
     (pkgs.writeShellScriptBin "anyrun-dmenu" ''
       anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true --max-entries 15
     '')
   ];
 
-  programs.anyrun = lib.mkIf config.sys.hyprland.enable {
+  programs.anyrun = {
     enable = true;
-    # enable = true;
     config = {
       plugins = with anyrunPkgs; [
         applications

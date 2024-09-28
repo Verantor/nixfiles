@@ -1,9 +1,6 @@
-{ lib
-, config
-, ...
-}: {
+_: {
   programs.wlogout = {
-    enable = lib.mkIf config.sys.hyprland.enable;
+    enable = true;
     layout = [
       {
         label = "lock";
