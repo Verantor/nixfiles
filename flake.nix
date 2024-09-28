@@ -133,7 +133,12 @@
         ];
 
         users.ver = {
-          imports = [ ./home ];
+          imports = [
+            ({ config, ... }:
+              import ./home.nix {
+                inherit config;
+              })
+          ];
           _module.args.theme = import ./theme;
         };
       };
