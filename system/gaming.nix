@@ -1,7 +1,11 @@
 { pkgs, ... }: {
   #RADV_PERFTEST=sam,nggc,gpl VKD3D_CONFIG=dxr
   # chaotic.mesa-git.enable = true;
-
+  users.users = {
+    ver = {
+      extraGroups = [ "gamemode" ];
+    };
+  };
   # nixpkgs.config.allowUnfree
   programs.steam = {
     enable = true;
@@ -47,7 +51,7 @@
   # };
   programs.gamemode = {
     enable = true;
-    # enableRenice = true;
+    enableRenice = true;
     settings = {
       # general = {
       #   renice = 10;
