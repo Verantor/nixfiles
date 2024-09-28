@@ -60,14 +60,8 @@
         amd_performance_level = "high";
       };
       custom = {
-        start = ''
-          notify-send "GameMode started"
-          sudo /root/scripts/start_game.sh
-        '';
-        end = ''
-          notify-send "GameMode stopped"
-          sudo /root/scripts/stop_game.sh
-        '';
+        start = "sudo /root/scripts/start_game.sh";
+        end = "sudo /root/scripts/stop_game.sh";
       };
     };
   };
