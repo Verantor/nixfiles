@@ -52,7 +52,7 @@
     enable = true;
     xwayland.enable = true;
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
