@@ -15,7 +15,8 @@ in
   ];
 
   programs.anyrun = {
-    enable = lib.mkIf config.sys.hyprland.enable;
+    # enable = lib.mkIf config.sys.hyprland.enable;
+    enable = true;
     config = {
       plugins = with anyrunPkgs; [
         applications
