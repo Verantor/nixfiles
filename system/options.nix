@@ -20,10 +20,16 @@ in
   options = {
     sys = {
       gnome = {
-        enable = mkEnableOption "GNOME, a desktop environment";
+        enable = mkOption {
+          type = types.bool;
+          description = "GNOME, a desktop environment";
+        };
       };
       hyprland = {
-        enable = mkEnableOption "Hyprland, a Wayland compositor";
+        enable = mkOption {
+          type = types.bool;
+          description = "Hyprland, a custom desktop environment";
+        };
       };
     };
   };
