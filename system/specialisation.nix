@@ -1,12 +1,16 @@
-{ ... }: {
+{ config, ... }:
+let
+  cfg = config.sys;
+in
+{
   specialisation = {
     hyprland.configuration = {
-      sys.hyprland.enable = true;
-      sys.gnome.enable = false;
+      cfg.hyprland.enable = true;
+      cfg.gnome.enable = false;
     };
     gnome.configuration = {
-      sys.hyprland.enable = false;
-      sys.gnome.enable = true;
+      cfg.hyprland.enable = false;
+      cfg.gnome.enable = true;
     };
   };
 }
