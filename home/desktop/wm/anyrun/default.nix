@@ -8,12 +8,12 @@ let
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
 {
-  home.packages = [
-    (pkgs.writeShellScriptBin "anyrun-dmenu" ''
-      anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true --max-entries 15
-    '')
-  ];
   config = {
+    home.packages = [
+      (pkgs.writeShellScriptBin "anyrun-dmenu" ''
+        anyrun --plugins "${anyrunPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true --show-results-immediately true --max-entries 15
+      '')
+    ];
     programs.anyrun = lib.mkIf config.sys.hyprland.enable {
       enable = true;
       # enable = true;
