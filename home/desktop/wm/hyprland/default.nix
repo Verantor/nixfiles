@@ -4,54 +4,54 @@
 , config
 , ...
 }: {
+  imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
+  # lib.mkIf config.sys.hyprland.enable
+  home.packages = with pkgs;
+    #with inputs.hyprcontrib.packages.${pkgs.system};
+    [
+      inputs.woomer.packages.${system}.default
+      hyprnome #TODO do config
+      pwvucontrol
+      playerctl
+      libnotify
+      wf-recorder
+      pamixer
+      slurp
+      hypridle
+      hyprshot
+      satty
+      hyprpicker
+      waypaper
+      swappy
+      wl-clip-persist
+      wl-clipboard
+      cliphist
+      pavucontrol
+      udiskie
+      baobab # Disk usage analyser
+      fd # Find alternative TODO move to cli
+      file-roller # Archive file manager
+      gnome-calculator # Calculator
+      gnome-disk-utility # Disks manager
+      nautilus # File manager
+      (writeShellScriptBin "gamemode-hyprland" ''
+        HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+        if [ "$HYPRGAMEMODE" = 1 ] ; then
+            hyprctl --batch "\
+                keyword animations:enabled 0;\
+                keyword decoration:drop_shadow 0;\
+                keyword decoration:blur:enabled 0;\
+                keyword general:gaps_in 0;\
+                keyword general:gaps_out 0;\
+                keyword general:border_size 1;\
+                keyword decoration:rounding 0"
+            exit
+        fi
+        hyprctl reload
+      '')
+    ];
+
   config = {
-    imports = [ ./config.nix ./binds.nix ./rules.nix ./swww.nix ];
-
-    home.packages = lib.mkIf config.sys.hyprland.enable (with pkgs;
-      #with inputs.hyprcontrib.packages.${pkgs.system};
-      [
-        inputs.woomer.packages.${system}.default
-        hyprnome #TODO do config
-        pwvucontrol
-        playerctl
-        libnotify
-        wf-recorder
-        pamixer
-        slurp
-        hypridle
-        hyprshot
-        satty
-        hyprpicker
-        waypaper
-        swappy
-        wl-clip-persist
-        wl-clipboard
-        cliphist
-        pavucontrol
-        udiskie
-        baobab # Disk usage analyser
-        fd # Find alternative TODO move to cli
-        file-roller # Archive file manager
-        gnome-calculator # Calculator
-        gnome-disk-utility # Disks manager
-        nautilus # File manager
-        (writeShellScriptBin "gamemode-hyprland" ''
-          HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-          if [ "$HYPRGAMEMODE" = 1 ] ; then
-              hyprctl --batch "\
-                  keyword animations:enabled 0;\
-                  keyword decoration:drop_shadow 0;\
-                  keyword decoration:blur:enabled 0;\
-                  keyword general:gaps_in 0;\
-                  keyword general:gaps_out 0;\
-                  keyword general:border_size 1;\
-                  keyword decoration:rounding 0"
-              exit
-          fi
-          hyprctl reload
-        '')
-      ]);
-
     wayland.windowManager.hyprland = {
       enable = lib.mkIf config.sys.hyprland.enable;
       xwayland.enable = true;
