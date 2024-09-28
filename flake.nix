@@ -101,6 +101,8 @@
       minecraftServer = ./system/minecraftServer.nix;
       virt = ./system/virt.nix;
       specialisation = ./system/specialisation.nix;
+      options = ./system/options.nix;
+
       hmModule = inputs.home-manager.nixosModules.home-manager;
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
@@ -181,6 +183,7 @@
               #chaotic
               # server
               flatpak
+              options
               specialisation
               minecraftServer
               virt
