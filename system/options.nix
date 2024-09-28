@@ -21,14 +21,14 @@ in
     sys = {
       gnome = {
         enable = mkOption {
-          type = types.bool;
+          type = types.boolean;
           default = false;
           description = "GNOME, a desktop environment";
         };
       };
       hyprland = {
         enable = mkOption {
-          type = types.bool;
+          type = types.boolean;
           default = true;
           description = "Hyprland, a custom desktop environment";
         };
