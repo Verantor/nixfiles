@@ -135,7 +135,7 @@
         users.ver = {
           imports = [
             ({ config, ... }:
-              import ./home.nix {
+              import ./home {
                 inherit config;
               })
           ];
