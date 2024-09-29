@@ -29,6 +29,8 @@ in
       "${mod},P,pseudo"
       "${mod},E,exec,nautilus"
       "${mod},F,exec,firefox"
+      "${mod},M,exec,spotify"
+      "${mod},W,exec,neovide"
       "${mod},H,movefocus,l"
       "${mod},L,movefocus,r"
       "${mod},K,movefocus,u"

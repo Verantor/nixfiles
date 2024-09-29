@@ -98,5 +98,6 @@
 
     rquickshare
     oculante
+    neovide
   ];
 }
