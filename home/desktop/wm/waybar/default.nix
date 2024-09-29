@@ -193,11 +193,11 @@ _: {
               ""
             ];
           };
-          "on-click-right" = "helvum";
-          "on-click" = "pwvucontrol";
+          "on-click-right" = "pwvucontrol";
+          "on-click" = "setaudio";
           "on-scroll-up" = "pamixer -i 5";
           "on-scroll-down" = "pamixer -d 5";
-          "on-click-middle" = "pwvucontrol";
+          "on-click-middle" = "helvum";
           "max-volume" = 150;
           "scroll-step" = 0.2;
         };
