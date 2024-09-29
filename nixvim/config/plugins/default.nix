@@ -48,5 +48,6 @@
     ./yanky.nix
     ./spectre.nix
     ./web-devicons.nix
+    ./render-markdown.nix
   ];
 }
