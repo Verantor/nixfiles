@@ -44,6 +44,9 @@
         (builtins.readFile ../scripts/audio_changer.py)
     )
     (
+      writeShellScriptBin "setaudio" (builtins.readFile ../scripts/setaudio.sh)
+    )
+    (
       writeShellScriptBin "nixbr" ''
         nixos-rebuild --target-host root@192.168.178.190 switch --flake .#orca  --log-format internal-json -v |& nom --json
       ''
