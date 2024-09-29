@@ -14,6 +14,15 @@
     ./cli
     ./packages.nix
   ];
+  xdg.configFile."neovide/config.toml".text =
+    /*
+      toml
+    */
+    ''
+      [font]
+      normal = ["JetBrainsMono Nerd Font"] # Will use the bundled Fira Code Nerd Font by default
+      size = 10.0
+    '';
   home = {
     stateVersion = "23.11"; # Please read the comment before changing.
     username = "ver";
