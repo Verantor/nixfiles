@@ -11,10 +11,6 @@
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # lemonake = {
-    #   url = "github:passivelemon/lemonake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     nixvim = {
       url = "github:nix-community/nixvim/"; #nixos-24.05
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`

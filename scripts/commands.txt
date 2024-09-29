@@ -1,4 +1,5 @@
 hyprpicker -a
+/home/ver/mixxxx/result/bin/mixxx
 gamemode-hyprland
 cliphist list | anyrun-dmenu | cliphist decode | wl-copy
 foot bash -c "btop"
