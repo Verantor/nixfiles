@@ -20,7 +20,10 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    woomer.url = "github:coffeeispower/woomer";
+    woomer = {
+      url = "github:coffeeispower/woomer";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -59,7 +62,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim-config.url = "github:nicolas-goudry/nixvim-config";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 

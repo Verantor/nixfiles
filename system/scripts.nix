@@ -29,20 +29,20 @@
       cd /
       sudo ${pkgs.gdu}/bin/gdu
     '')
-    (
-      pkgs.writers.writePython3Bin "microphone_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/microphone_changer.py)
-    )
-    (
-      pkgs.writers.writePython3Bin "audio_changer.py"
-        {
-          flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
-        }
-        (builtins.readFile ../scripts/audio_changer.py)
-    )
+    # (
+    #   pkgs.writers.writePython3Bin "microphone_changer.py"
+    #     {
+    #       flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
+    #     }
+    #     (builtins.readFile ../scripts/microphone_changer.py)
+    # )
+    # (
+    #   pkgs.writers.writePython3Bin "audio_changer.py"
+    #     {
+    #       flakeIgnore = [ "E265" "E225" "E501" "W292" "W293" "E305" "E302" ];
+    #     }
+    #     (builtins.readFile ../scripts/audio_changer.py)
+    # )
     (
       writeShellScriptBin "setaudio" (builtins.readFile ../scripts/setaudio.sh)
     )

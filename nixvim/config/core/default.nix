@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   version = "1.0.3";
-in {
+in
+{
   extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "fastaction.nvim";
@@ -43,12 +45,12 @@ in {
           italic = true;
         };
         floats = "dark";
-        functions = {};
+        functions = { };
         keywords = {
           italic = true;
         };
         sidebars = "dark";
-        variables = {};
+        variables = { };
       };
       terminal_colors = true;
       transparent = false;
