@@ -16,7 +16,7 @@ in
       };
     })
   ];
-  extraConfig = ''
+  extraConfigLua = ''
         lua require("fastaction").setup({
       dismiss_keys = { "j", "k", "<c-c>", "q" },
       override_function = function(_) end,
