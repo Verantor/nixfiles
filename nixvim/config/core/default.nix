@@ -12,7 +12,7 @@ in
         owner = "Chaitanyabsprip";
         repo = "fastaction.nvim";
         rev = "v${version}";
-        # hash = "sha256-L7na78FsE+QHlEwxMpiwQcoOPhtmrknvdTZfzUoDANI=";
+        hash = "sha256-QCPE2hmSnNLO1/EfZXTc/PP8Q0QRw5D8T8EN+NyUv2s=";
       };
     })
   ];
