@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   version = "1.0.3";
-in
-{
+in {
   extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "fastaction.nvim";
@@ -16,26 +14,7 @@ in
       };
     })
   ];
-  extraConfigLua = ''
-        lua require("fastaction").setup({
-      dismiss_keys = { "j", "k", "<c-c>", "q" },
-      override_function = function(_) end,
-      keys = "qwertyuiopasdfghlzxcvbnm",
-      popup = {
-        border = "rounded",
-        hide_cursor = true,
-        highlight = {
-          divider = "FloatBorder",
-          key = "MoreMsg",
-          title = "Title",
-          window = "NormalFloat",
-        },
-        title = "Select one of:",
-      },
-      priority = {
-      },
-     register_ui_select = true,
-    })  '';
+  extraConfigLua = "require('fastaction').setup({dismiss_keys = {'j', 'k', '<c-c>', 'q'}, override_function = function(_) end, keys = 'qwertyuiopasdfghlzxcvbnm', popup = {border = 'rounded', hide_cursor = true, highlight = {divider = 'FloatBorder', key = 'MoreMsg', title = 'Title', window = 'NormalFloat'}, title = 'Select one of:'}, priority = {}, register_ui_select = false})";
 
   globals.mapleader = " ";
   performance = {
@@ -64,12 +43,12 @@ in
           italic = true;
         };
         floats = "dark";
-        functions = { };
+        functions = {};
         keywords = {
           italic = true;
         };
         sidebars = "dark";
-        variables = { };
+        variables = {};
       };
       terminal_colors = true;
       transparent = false;
