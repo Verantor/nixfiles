@@ -16,6 +16,26 @@ in
       };
     })
   ];
+  extraConfig = ''
+        lua require("fastaction").setup({
+      dismiss_keys = { "j", "k", "<c-c>", "q" },
+      override_function = function(_) end,
+      keys = "qwertyuiopasdfghlzxcvbnm",
+      popup = {
+        border = "rounded",
+        hide_cursor = true,
+        highlight = {
+          divider = "FloatBorder",
+          key = "MoreMsg",
+          title = "Title",
+          window = "NormalFloat",
+        },
+        title = "Select one of:",
+      },
+      priority = {
+      },
+     register_ui_select = true,
+    })  '';
 
   globals.mapleader = " ";
   performance = {
@@ -196,7 +216,7 @@ in
       action = "<Cmd>lua require('fastaction').code_action()<CR>";
       options = {
         desc = "Code action";
-        buffer = true;
+        # buffer = true;
       };
     }
     {
