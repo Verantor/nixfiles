@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   services.moonraker = {
     user = "root";
     enable = true;
