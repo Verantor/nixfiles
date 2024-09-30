@@ -192,7 +192,7 @@
       action = "<Cmd>lua require('fastaction').code_action()<CR>";
       options = {
         desc = "Code action";
-        buffer = "bufnr";
+        buffer = true;
       };
     }
     {
