@@ -188,14 +188,7 @@
     }
     {
       key = "<leader>ca";
-      action = "<Cmd>lua vim.lsp.buf.code_action()<CR>";
-      options = {
-        desc = "Code action";
-      };
-    }
-    {
-      key = "<leader>a";
-      action = "<cmd>lua require('fastaction').code_action()<CR>";
+      action = "<Cmd>lua require('fastaction').code_action()<CR>";
       options = {
         desc = "Code action";
       };
