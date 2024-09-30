@@ -1,13 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  version = "1.0.3";
+in
+{
   extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "fastaction.nvim";
-      version = "v1.0.3";
+      version = version;
 
       src = pkgs.fetchFromGitHub {
         owner = "Chaitanyabsprip";
         repo = "fastaction.nvim";
-        # rev = "2384dea7ba81d2709d0bee0e4bc7a8831ff13a9d";
+        rev = "v${version}";
         # hash = "sha256-L7na78FsE+QHlEwxMpiwQcoOPhtmrknvdTZfzUoDANI=";
       };
     })
