@@ -12,17 +12,7 @@
       };
     })
   ];
-  extraConfigLua =
-    /*
-      lua
-    */
-    ''          
-      vim.keymap.set(
-                'n',
-                '<leader>a',
-                '<cmd>lua require(" fastaction ").code_action()<CR>',
-                { buffer = bufnr }
-            )'';
+
   globals.mapleader = " ";
   performance = {
     byteCompileLua.enable = true;
@@ -197,13 +187,14 @@
         desc = "Move line up";
       };
     }
-    # {
-    #   key = "<leader>ca";
-    #   action = "<Cmd>lua require('fastaction').code_action()<CR>";
-    #   options = {
-    #     desc = "Code action";
-    #   };
-    # }
+    {
+      key = "<leader>ca";
+      action = "<Cmd>lua require('fastaction').code_action()<CR>";
+      options = {
+        desc = "Code action";
+        buffer = "bufnr";
+      };
+    }
     {
       key = "<leader>y";
       action = "+y";
