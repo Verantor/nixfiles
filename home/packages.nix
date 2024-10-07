@@ -25,7 +25,7 @@
     # ianny
     libnotify
     obsidian
-    qbittorrent-qt5
+    qbittorrent
     exiftool
     digikam
     evince
