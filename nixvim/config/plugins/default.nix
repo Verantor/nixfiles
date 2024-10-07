@@ -12,22 +12,13 @@
 #   );
 # in
 # lib.mkMerge (map (file: import ./${file}) definitions)
-{ lib, ... }:
-let
-  definitions = lib.attrNames (
-    lib.filterAttrs
-      (
-        filename: kind:
-          filename != "default.nix" && (kind == "regular" || kind == "directory")
-      )
-      (builtins.readDir ./.)
-  );
+{ ... }: {
+  # imports by full path without copying to /nix/store
+  imports = builtins.map (n: toString ./. + "/${n}") (builtins.attrNames (builtins.removeAttrs (builtins.readDir ./.) [ (builtins.unsafeGetAttrPos "_" { _ = null; }).file ]));
 
-  # Using map to create a list of attribute sets
-  importedFiles = map (file: import ./${file}) definitions;
-in
-# Merging the list of attribute sets into one
-lib.mkMerge importedFiles
+  # copies all files from the current directory to /nix/store and imports from /nix/store
+  # imports = builtins.map (n: "${./.}/${n}") (builtins.attrNames (builtins.removeAttrs (builtins.readDir ./.) [(builtins.unsafeGetAttrPos "_" {_ = null;}).file]));
+}
 # {
 #   #Importallyourconfigurationmoduleshere
 #   imports = [
