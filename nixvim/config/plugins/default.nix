@@ -1,17 +1,33 @@
+# { lib, ... }:
+# let
+#   definitions = lib.attrNames (
+#     lib.filterAttrs
+#       (
+#         filename: kind:
+#           filename
+#           != "default.nix"
+#           && (kind == "regular" || kind == "directory")
+#       )
+#       (builtins.readDir ./.)
+#   );
+# in
+# lib.mkMerge (map (file: import ./${file}) definitions)
 { lib, ... }:
 let
   definitions = lib.attrNames (
     lib.filterAttrs
       (
         filename: kind:
-          filename
-          != "default.nix"
-          && (kind == "regular" || kind == "directory")
+          filename != "default.nix" && (kind == "regular" || kind == "directory")
       )
       (builtins.readDir ./.)
   );
+
+  # Using map to create a list of attribute sets
+  importedFiles = map (file: import ./${file}) definitions;
 in
-lib.mkMerge (map (file: import ./${file}) definitions)
+# Merging the list of attribute sets into one
+lib.mkMerge importedFiles
 # {
 #   #Importallyourconfigurationmoduleshere
 #   imports = [

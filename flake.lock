@@ -1147,8 +1147,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1728327286,
-        "narHash": "sha256-79BgDJOrX9GSUB5pHygwSbASuQ6VFV2PDwxs9GWAsbo=",
+        "lastModified": 1728327509,
+        "narHash": "sha256-7wQfLql1kt0modjT2Wq9KQb3CHsoT9cKZxNy0dg/h6E=",
         "path": "/home/ver/.dotfiles/nixvim/",
         "type": "path"
       },
