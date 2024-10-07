@@ -55,7 +55,7 @@ in
   services.xserver.enable = true;
   # Uncomment to enable GDM display manager if needed
   # services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
   # Uncomment to enable Plasma 6 desktop manager if needed
   # services.xserver.desktopManager.plasma6.enable = true;
 
@@ -64,7 +64,7 @@ in
     extraPortals = with pkgs; [
       # xdg-desktop-portal-gtk
       # xdg-desktop-portal-hyprland
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+      # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
     ];
   };
 
