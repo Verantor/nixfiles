@@ -19,6 +19,7 @@
     xwaylandvideobridge
     # lapce
     darktable
+    rawtherapee
     unrar
     wireguard-tools
     halloy
