@@ -248,19 +248,19 @@ in
     }
     {
       mode = "n";
-      key = "<F7>";
+      key = "<F5>";
       action = "<Cmd>execute v:count . 'ToggleTerm'<CR>";
       options.desc = "Toggle terminal";
     }
     {
       mode = "t";
-      key = "<F7>";
+      key = "<F5>";
       action = "<Cmd>ToggleTerm<CR>";
       options.desc = "Toggle terminal";
     }
     {
       mode = "i";
-      key = "<F7>";
+      key = "<F5>";
       action = "<Esc><Cmd>ToggleTerm<CR>";
       options.desc = "Toggle terminal";
     }
