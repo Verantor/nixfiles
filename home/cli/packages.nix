@@ -34,13 +34,13 @@
   ];
 
   programs.tmux = {
-    enable = true;
+    enable = false;
     clock24 = true;
     mouse = true;
   };
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
     settings = {
       on_force_close = "quit";
       simplified_ui = true;
@@ -92,8 +92,8 @@
       '';
 
     shellAliases = {
-      ls = "lsd";
-      ll = "lsd -l";
+      ls = "eza";
+      ll = "eza -l";
       cat = "bat";
       cc = "clear";
       c = "z";
@@ -103,15 +103,14 @@
       jctl = "journalctl -u --follow";
     };
   };
-  programs.lsd = {
+  programs.eza = {
     enable = true;
-    settings = {
-      date = "relative";
-      ignore-globs = [
-        #".git"
-        #".hg"
-      ];
-    };
+    enableFishIntegration = true;
+    extraOptions = [
+      "--group-directories-first"
+      "--header"
+    ];
+    icons = true;
   };
   programs.nushell = {
     enable = false;
