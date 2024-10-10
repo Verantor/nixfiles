@@ -228,5 +228,41 @@ in
         desc = "Paste from system clipboard";
       };
     }
+    {
+      mode = "n";
+      key = "<Leader>tf";
+      action = "<Cmd>ToggleTerm direction=float<CR>";
+      options.desc = "Open floating terminal";
+    }
+    {
+      mode = "n";
+      key = "<Leader>th";
+      action = "<Cmd>ToggleTerm size=10 direction=horizontal<CR>";
+      options.desc = "Open terminal in horizontal split";
+    }
+    {
+      mode = "n";
+      key = "<Leader>tv";
+      action = "<Cmd>ToggleTerm size=80 direction=vertical<CR>";
+      options.desc = "Open terminal in vertical split";
+    }
+    {
+      mode = "n";
+      key = "<F7>";
+      action = "<Cmd>execute v:count . 'ToggleTerm'<CR>";
+      options.desc = "Toggle terminal";
+    }
+    {
+      mode = "t";
+      key = "<F7>";
+      action = "<Cmd>ToggleTerm<CR>";
+      options.desc = "Toggle terminal";
+    }
+    {
+      mode = "i";
+      key = "<F7>";
+      action = "<Esc><Cmd>ToggleTerm<CR>";
+      options.desc = "Toggle terminal";
+    }
   ];
 }
