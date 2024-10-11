@@ -9,7 +9,7 @@
     # floorp
     anki-bin
     blender-hip
-    pureref
+    stable.pureref
 
     libreoffice-fresh
     goverlay
