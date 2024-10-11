@@ -18,6 +18,7 @@
         "org.surge_synth_team.surge-xt"
         "org.hydrogenmusic.Hydrogen"
         "com.prusa3d.PrusaSlicer"
+        "org.beeref.BeeRef"
       ];
       uninstallUnmanaged = true;
     };
