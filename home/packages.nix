@@ -7,7 +7,6 @@
     # firefox
     # floorp
     anki-bin
-    blender-hip
 
     libreoffice-fresh
     goverlay
@@ -17,8 +16,7 @@
     usbutils
     xwaylandvideobridge
     # lapce
-    darktable
-    rawtherapee
+
     unrar
     wireguard-tools
     halloy
@@ -27,7 +25,7 @@
     obsidian
     qbittorrent
     exiftool
-    digikam
+
     evince
     thud
     gnome-epub-thumbnailer
@@ -93,8 +91,6 @@
     ladybird
     # stable.kicad
     rpi-imager
-
-    davinci-resolve
 
     rquickshare
     oculante

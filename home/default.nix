@@ -1,7 +1,6 @@
-{
-  inputs,
-  lib,
-  ...
+{ inputs
+, lib
+, ...
 }: {
   imports = [
     inputs.nix-index-database.hmModules.nix-index
@@ -18,7 +17,7 @@
   ];
   xdg.configFile."neovide/config.toml".text =
     /*
-    toml
+      toml
     */
     ''
       [font]
