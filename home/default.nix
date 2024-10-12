@@ -13,6 +13,7 @@
     ./desktop
     ./cli
     ./packages.nix
+    ./creative.nix
   ];
   xdg.configFile."neovide/config.toml".text =
     /*
@@ -54,7 +55,7 @@
   manual = {
     # home.file = { };
     html.enable = false;
-    manpages.enable = false;
+    manpages.enable = true;
     json.enable = false;
   };
   programs.home-manager.enable = true;
