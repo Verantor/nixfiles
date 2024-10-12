@@ -1,6 +1,7 @@
-{ inputs
-, lib
-, ...
+{
+  inputs,
+  lib,
+  ...
 }: {
   imports = [
     inputs.nix-index-database.hmModules.nix-index
@@ -17,7 +18,7 @@
   ];
   xdg.configFile."neovide/config.toml".text =
     /*
-      toml
+    toml
     */
     ''
       [font]
@@ -55,7 +56,7 @@
   manual = {
     # home.file = { };
     html.enable = false;
-    manpages.enable = true;
+    manpages.enable = false;
     json.enable = false;
   };
   programs.home-manager.enable = true;
