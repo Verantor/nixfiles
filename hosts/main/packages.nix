@@ -47,6 +47,7 @@
     nix-fast-build
     distrobox
     nix-tree
+    inputs.umu.packages.${pkgs.system}.umu
     inputs.nixvimConfig.packages.${system}.default
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [

@@ -74,10 +74,15 @@
       url = "github:nix-community/nixpkgs-xr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    umu = {
+      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-stable
     , ...
     } @ inputs:
     let
@@ -95,10 +100,11 @@
       openrgb = ./system/openrgb.nix;
       borg = ./system/borg.nix;
       theme = ./theme/stylix.nix;
-      server = ./system/server.nix;
+      server = ./system/server;
       minecraftServer = ./system/minecraftServer.nix;
       virt = ./system/virt.nix;
       hmModule = inputs.home-manager.nixosModules.home-manager;
+
       flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
       nixDB = inputs.nix-index-database.nixosModules.nix-index;
       stylixMod = inputs.stylix.nixosModules.stylix;
@@ -185,7 +191,7 @@
             ++ shared;
           specialArgs = { inherit inputs outputs; };
         };
-        orca = nixpkgs.lib.nixosSystem {
+        orca = nixpkgs-stable.lib.nixosSystem {
           system = "aarch64-linux";
           modules =
             [

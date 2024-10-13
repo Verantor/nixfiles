@@ -20,6 +20,7 @@ in
     vim
     qrencode
     mpv
+    usbutils
   ];
   fileSystems = {
     "/" = {
@@ -43,6 +44,12 @@ in
       psk = "@home_psk@";
     };
   };
+  # networking.wireless = {
+  #   secretsFile = config.sops.secrets."wireless.env".path;
+  #   networks = {
+  #     "ext:FBA".psk = "ext:home_psk";
+  #   };
+  # };
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "23.11";
