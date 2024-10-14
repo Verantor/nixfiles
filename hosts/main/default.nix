@@ -20,7 +20,7 @@ in
     ./fonts.nix
     ./packages.nix
     ./flatpak.nix
-    ./vr.nix
+    # ./vr.nix
     ./nautilus.nix
   ];
   networking.nameservers = [ "192.168.178.190" "1.1.1.1" "9.9.9.9" ];

@@ -4,6 +4,6 @@
     darktable
     rawtherapee
     digikam
-    davinci-resolve
+    # davinci-resolve
   ];
 }

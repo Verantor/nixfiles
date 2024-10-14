@@ -1,6 +1,7 @@
 { config
 , pkgs
 , inputs
+, lib
 , ...
 }: {
   home.packages = with pkgs; [
@@ -43,23 +44,33 @@
     enableFishIntegration = false;
     settings = {
       on_force_close = "quit";
+      default-shell = "zsh";
       simplified_ui = true;
-      default_layout = "default";
-      ui.pane_frames.rounded_corners = true;
-      # theme = "tokyonight_storm";
-      themes.tokyonight_storm = {
-        fg = "#c0caf5";
-        bg = "#292e42";
-        black = "#1d202f";
-        red = "#f7768e";
-        green = "#9ece6a";
-        yellow = "#e0af68";
-        blue = "#7aa2f7";
-        magenta = "#bb9af7";
-        cyan = "#7dcfff";
-        white = "#a9b1d6";
-        orange = "#ff9e64";
+      copy_command = lib.getExe' pkgs.wl-clipboard "wl-copy";
+      pane_frames = false;
+      default_layout = "compact";
+      copy_on_select = false;
+      hide_session_name = true;
+      session_serialization = true;
+      ui.pane_frames = {
+        hide_session_name = true;
+        rounded_corners = true;
       };
+      plugins = [ "compact-bar" "session-manager" "filepicker" "welcome-screen" ];
+      theme = lib.mkForce "tokyonight-storm";
+      # themes.tokyonight_storm = {
+      #   fg = "#c0caf5";
+      #   bg = "#292e42";
+      #   black = "#1d202f";
+      #   red = "#f7768e";
+      #   green = "#9ece6a";
+      #   yellow = "#e0af68";
+      #   blue = "#7aa2f7";
+      #   magenta = "#bb9af7";
+      #   cyan = "#7dcfff";
+      #   white = "#a9b1d6";
+      #   orange = "#ff9e64";
+      # };
     };
   };
   programs.atuin = {
@@ -98,6 +109,8 @@
       cc = "clear";
       c = "z";
       nv = "nvim";
+      zj = "zellij";
+      za = "zellij a";
       syss = "sudo systemctl status";
       sysr = "sudo systemctl restart";
       jctl = "journalctl -u --follow";
