@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    blender-hip
+    stable.blender-hip
     darktable
     rawtherapee
     digikam

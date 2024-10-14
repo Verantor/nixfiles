@@ -16,8 +16,8 @@ in
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
-    eula = false;
-    enable = true;
+    eula = true;
+    enable = false;
 
     servers.modded-minecraft-server = {
       enable = true;
