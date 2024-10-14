@@ -118,7 +118,7 @@ in
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
-        no_gaps_when_only = false;
+        # no_gaps_when_only = false;
       };
 
       #  "$kw" = "dwindle:no_gaps_when_only";
