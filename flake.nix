@@ -207,6 +207,22 @@
             ++ shared;
           specialArgs = { inherit inputs outputs; };
         };
+        nas = nixpkgs-stable.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules =
+            [
+              { networking.hostName = "nas"; }
+
+              ./hosts/nas
+              # server
+              scripts
+              # nixarr
+              # minecraftServer
+              # {inherit home-manager;} #
+            ]
+            ++ shared;
+          specialArgs = { inherit inputs outputs; };
+        };
       };
     };
 }

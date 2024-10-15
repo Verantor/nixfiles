@@ -47,8 +47,13 @@
       writeShellScriptBin "setaudio" (builtins.readFile ../scripts/setaudio.sh)
     )
     (
-      writeShellScriptBin "nixbr" ''
+      writeShellScriptBin "nixbrpi" ''
         nixos-rebuild --target-host root@192.168.178.190 switch --flake .#orca  --log-format internal-json -v |& nom --json
+      ''
+    )
+    (
+      writeShellScriptBin "nixbrnas" ''
+        nixos-rebuild --target-host root@192.168.178.44 switch --flake .#nas  --log-format internal-json -v |& nom --json
       ''
     )
     (

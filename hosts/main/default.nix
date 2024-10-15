@@ -23,7 +23,7 @@ in
     # ./vr.nix
     ./nautilus.nix
   ];
-  networking.nameservers = [ "192.168.178.190" "1.1.1.1" "9.9.9.9" ];
+  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   virtualisation.containers.enable = true;
 
   services.udev.extraRules = ''
