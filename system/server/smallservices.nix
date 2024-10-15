@@ -1,8 +1,5 @@
 { pkgs, ... }: {
-  # services.mealie = {
-  #   enable = true;
-  #   port = 9000;
-  # };
+
   services.audiobookshelf = {
     enable = true;
     host = "0.0.0.0";

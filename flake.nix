@@ -79,81 +79,84 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-stable,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    core = ./system/core;
-    bootloader = ./system/core/boot.nix;
-    sunshine = ./system/sunshine.nix;
-    services = ./system/services.nix;
-    gaming = ./system/gaming.nix;
-    amd = ./system/amd.nix;
-    sops = ./system/sops.nix;
-    scripts = ./system/scripts.nix;
-    networking = ./system/core/networking.nix;
-    polkit = ./system/polkit.nix;
-    openrgb = ./system/openrgb.nix;
-    borg = ./system/borg.nix;
-    theme = ./theme/stylix.nix;
-    server = ./system/server;
-    minecraftServer = ./system/minecraftServer.nix;
-    virt = ./system/virt.nix;
-    hmModule = inputs.home-manager.nixosModules.home-manager;
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-stable
+    , ...
+    } @ inputs:
+    let
+      inherit (self) outputs;
+      core = ./system/core;
+      bootloader = ./system/core/boot.nix;
+      sunshine = ./system/sunshine.nix;
+      services = ./system/services.nix;
+      gaming = ./system/gaming.nix;
+      amd = ./system/amd.nix;
+      sops = ./system/sops.nix;
+      scripts = ./system/scripts.nix;
+      networking = ./system/core/networking.nix;
+      polkit = ./system/polkit.nix;
+      openrgb = ./system/openrgb.nix;
+      borg = ./system/borg.nix;
+      theme = ./theme/stylix.nix;
+      server = ./system/server;
+      minecraftServer = ./system/minecraftServer.nix;
+      virt = ./system/virt.nix;
+      nas = ./system/nas;
+      hmModule = inputs.home-manager.nixosModules.home-manager;
 
-    flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
-    nixDB = inputs.nix-index-database.nixosModules.nix-index;
-    stylixMod = inputs.stylix.nixosModules.stylix;
-    nixpkgs-xr = inputs.nixpkgs-xr.nixosModules.nixpkgs-xr;
-    nixarr = inputs.nixarr.nixosModules.default;
-    shared = [core sops];
+      flatpak = inputs.nix-flatpak.nixosModules.nix-flatpak;
+      nixDB = inputs.nix-index-database.nixosModules.nix-index;
+      stylixMod = inputs.stylix.nixosModules.stylix;
+      nixpkgs-xr = inputs.nixpkgs-xr.nixosModules.nixpkgs-xr;
+      nixarr = inputs.nixarr.nixosModules.default;
+      shared = [ core sops ];
 
-    home-manager = {
-      useUserPackages = true;
-      useGlobalPkgs = true;
-      extraSpecialArgs = {
-        inherit inputs;
-        inherit self;
-        inherit outputs;
-      };
-      sharedModules = [
-        {
-          stylix = {
-            targets = {
-              mangohud.enable = false;
-              waybar.enable = false;
-              hyprpaper.enable = false;
-              hyprland.enable = false;
+      home-manager = {
+        useUserPackages = true;
+        useGlobalPkgs = true;
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit self;
+          inherit outputs;
+        };
+        sharedModules = [
+          {
+            stylix = {
+              targets = {
+                mangohud.enable = false;
+                waybar.enable = false;
+                hyprpaper.enable = false;
+                hyprland.enable = false;
+              };
             };
-          };
-        }
-      ];
+          }
+        ];
 
-      users.ver = {
-        imports = [./home];
-        _module.args.theme = import ./theme;
+        users.ver = {
+          imports = [ ./home ];
+          _module.args.theme = import ./theme;
+        };
       };
-    };
-  in
+    in
     #rec for recursion
     {
-      checks = nixpkgs.lib.genAttrs ["x86_64-linux"] (
-        system: let
+      checks = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (
+        system:
+        let
           inherit (nixpkgs) lib;
           nixosMachines =
             lib.mapAttrs'
-            (
-              name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel
-            )
-            ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
+              (
+                name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel
+              )
+              ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
         in
-          nixosMachines
+        nixosMachines
       );
 
-      overlays = import ./system/overlays.nix {inherit inputs;};
+      overlays = import ./system/overlays.nix { inherit inputs; };
 
       nixosConfigurations = {
         main = nixpkgs.lib.nixosSystem {
@@ -161,7 +164,7 @@
 
           modules =
             [
-              {networking.hostName = "main";}
+              { networking.hostName = "main"; }
 
               ./hosts/main
               amd #
@@ -184,16 +187,16 @@
               flatpak
               minecraftServer
               virt
-              {inherit home-manager;} #
+              { inherit home-manager; } #
             ]
             ++ shared;
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = { inherit inputs outputs; };
         };
         orca = nixpkgs-stable.lib.nixosSystem {
           system = "aarch64-linux";
           modules =
             [
-              {networking.hostName = "orca";}
+              { networking.hostName = "orca"; }
 
               ./hosts/orca
               server
@@ -203,23 +206,24 @@
               # {inherit home-manager;} #
             ]
             ++ shared;
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = { inherit inputs outputs; };
         };
         nas = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules =
             [
-              {networking.hostName = "nas";}
+              { networking.hostName = "nas"; }
 
               ./hosts/nas
               # server
               scripts
+              nas
               # nixarr
               # minecraftServer
               # {inherit home-manager;} #
             ]
             ++ shared;
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = { inherit inputs outputs; };
         };
       };
     };

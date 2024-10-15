@@ -32,6 +32,7 @@
     #android-studio
     ffmpeg
     ripgrep
+    htpasswd
   ];
 
   programs.tmux = {
