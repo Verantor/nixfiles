@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs = {
     bash.promptInit = ''eval "$(${pkgs.starship}/bin/starship init bash)"'';
   };
@@ -13,30 +13,28 @@
     hardwareClockInLocalTime = true;
   };
 
-  i18n =
-    let
-      defaultLocale = "en_US.UTF-8";
-      de = "de_DE.UTF-8";
-    in
-    {
-      inherit defaultLocale;
-      extraLocaleSettings = {
-        LANG = defaultLocale;
-        LC_COLLATE = defaultLocale;
-        LC_CTYPE = defaultLocale;
-        LC_MESSAGES = defaultLocale;
+  i18n = let
+    defaultLocale = "en_US.UTF-8";
+    de = "de_DE.UTF-8";
+  in {
+    inherit defaultLocale;
+    extraLocaleSettings = {
+      LANG = defaultLocale;
+      LC_COLLATE = defaultLocale;
+      LC_CTYPE = defaultLocale;
+      LC_MESSAGES = defaultLocale;
 
-        LC_ADDRESS = de;
-        LC_IDENTIFICATION = de;
-        LC_MEASUREMENT = de;
-        LC_MONETARY = de;
-        LC_NAME = de;
-        LC_NUMERIC = de;
-        LC_PAPER = de;
-        LC_TELEPHONE = de;
-        LC_TIME = de;
-      };
+      LC_ADDRESS = de;
+      LC_IDENTIFICATION = de;
+      LC_MEASUREMENT = de;
+      LC_MONETARY = de;
+      LC_NAME = de;
+      LC_NUMERIC = de;
+      LC_PAPER = de;
+      LC_TELEPHONE = de;
+      LC_TIME = de;
     };
+  };
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -49,7 +47,5 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
-    libGL
-    SDL2
   ];
 }
