@@ -17,16 +17,16 @@ in
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
     eula = true;
-    enable = false;
+    enable = true;
 
     servers.modded-minecraft-server = {
       enable = true;
       #autoStart = true;
-      #openFirewall = true;
+      # openFirewall = true;
       package = pkgs.fabricServers.fabric-1_21_1;
-      symlinks = {
-        "mods" = "${../minecraftMods}";
-      };
+      # symlinks = {
+      #   "mods" = "${../minecraftMods}";
+      # };
       restart = "no";
       serverProperties = {
         server-port = 25565;
@@ -37,7 +37,7 @@ in
         motd = "swans in mein arsch";
         white-list = false;
         enable-rcon = false;
-        jvmOpts = "-Xms8184M -Xmx8184M";
+        jvmOpts = "-Xms256m -Xmx4G";
       };
     };
   };

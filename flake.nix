@@ -185,7 +185,7 @@
               #chaotic
               # server
               flatpak
-              minecraftServer
+              # minecraftServer
               virt
               { inherit home-manager; } #
             ]

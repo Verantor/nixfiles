@@ -4,6 +4,7 @@
     ./dashboard.nix
     ./mealie.nix
     ./filesharing.nix
-    # ./filebrowser.nix
+    ./filebrowser.nix
+    ../minecraftServer.nix
   ];
 }

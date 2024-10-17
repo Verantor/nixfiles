@@ -11,10 +11,10 @@ let
     log = "stdout";
     database = "${dataDir}/filebrowser.db";
     root = "";
-    "auth.method" = "json";
-    username = "${user}";
-    # Generate password: htpasswd -nBC 10 "" | tr -d ':\n'
-    password = "test";
+    "auth.method" = "noauth";
+    # username = "${user}";
+    # # Generate password: htpasswd -nBC 10 "" | tr -d ':\n'
+    # password = "$2y$10$TCcl3dK.TA1j3kXd9ZkkCuxUW.0QB4D4zxQHdSx80guwSk.rdIWdi";
   };
 in
 {
