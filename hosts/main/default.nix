@@ -22,6 +22,7 @@ in
     ./flatpak.nix
     # ./vr.nix
     ./nautilus.nix
+./disko.nix
   ];
   networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   virtualisation.containers.enable = true;
