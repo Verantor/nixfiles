@@ -1,30 +1,36 @@
 {disks ? ["/dev/nvme0n1"], ...}: {
   disko.devices = {
     disk = {
-      main = {
+      vdb = {
         device = builtins.elemAt disks 0;
         type = "disk";
         content = {
-                 type = "gpt";
-            ESP = {
-              end = "500M";
-              type = "EF00";
+          type = "table";
+          format = "gpt";
+          partitions = [
+            {
+              name = "ESP";
+              start = "1MiB";
+              end = "500MiB";
+              bootable = true;
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
               };
-            };
-            root = {
+            }
+            {
               name = "root";
+              start = "500MiB";
               end = "100%";
+              part-type = "primary";
               content = {
                 type = "filesystem";
                 format = "bcachefs";
                 mountpoint = "/";
               };
-            };
+            }
+          ];
         };
       };
     };
