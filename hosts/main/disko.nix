@@ -1,4 +1,5 @@
 {disks ? ["/dev/nvme0n1"], ...}: {
+boot.supportedFilesystems = [ "bcachefs" ];
   disko.devices = {
     disk = {
       main = {
